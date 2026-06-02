@@ -1898,7 +1898,7 @@ template: inverse
 ---
 ## Unreal Engine 5
 
-.center[<img src="../02_scripts/img/02/unreal_01.png" alt="unreal_01" style="width:80%;">  
+.center[<img src="../02_scripts/img/unreal/unreal_01.png" alt="unreal_01" style="width:80%;">  
 .imgref[[[pcgamesn]](https://www.pcgamesn.com/unreal-engine-5-demo)]]
 
 ---
@@ -2037,7 +2037,7 @@ Unreal
 ## Unreal in Virtual Production
 
 
-.center[<img src="../02_scripts/img/02/vp_01.png" alt="vp_01" style="width:80%;">  
+.center[<img src="../02_scripts/img/unreal/vp_01.png" alt="vp_01" style="width:80%;">  
 .imgref[[[mages.edu.sg]](https://mages.edu.sg/blog/unreal-engine-and-virtual-production/)]]
 
 ---
@@ -2057,7 +2057,7 @@ All in all, we will focus on image generation rather than game mechanics.
 ---
 ## But What About Harry?
 
-.center[<img src="../02_scripts/img/02/houdini_02.jpg" alt="houdini_02" style="width:100%;"> .imgref[[[newrepublic]](https://newrepublic.com/article/119015/edmund-wilson-houdini)]]
+.center[<img src="../02_scripts/img/unreal/houdini_02.jpg" alt="houdini_02" style="width:100%;"> .imgref[[[newrepublic]](https://newrepublic.com/article/119015/edmund-wilson-houdini)]]
 
 ???
   
@@ -2070,7 +2070,7 @@ All in all, we will focus on image generation rather than game mechanics.
 ## SideFX’s Houdini
 
 
-.center[<img src="../02_scripts/img/02/houdini_03.png" alt="hohoudini_03udini_02" style="width:100%;">  
+.center[<img src="../02_scripts/img/unreal/houdini_03.png" alt="hohoudini_03udini_02" style="width:100%;">  
 .imgref[[[newrepublic]](https://newrepublic.com/article/119015/edmund-wilson-houdini)]]
 
 
@@ -2120,7 +2120,7 @@ Introduction to a 3D offline rendering package such as Blender, Maya, 3dsMax, Ci
 
 ---
 
-.center[<img src="../02_scripts/img/02/houdini_04.png" alt="houdini_04" style="width:84%;">] 
+.center[<img src="../02_scripts/img/unreal/houdini_04.png" alt="houdini_04" style="width:84%;">] 
 .imgref[[[cg.tuwien]](https://www.cg.tuwien.ac.at/courses/Visualisierung2/HallOfFame/2018/OtherTopic02/html/detail.html)]
 
 
@@ -2160,7 +2160,7 @@ Houdini represents the procedural generation paradigm with a node-based system o
 
 ## Why Houdini So Far?
 
-.center[<img src="../02_scripts/img/02/photoshop_01.png" alt="houdini_04" style="width:70%;">  
+.center[<img src="../02_scripts/img/unreal/photoshop_01.png" alt="houdini_04" style="width:70%;">  
 .imgref[[[goskills]](https://www.goskills.com/Course/Photoshop-Basic/Lesson/196/History-States)]]
 
 ---
@@ -2169,7 +2169,7 @@ Houdini represents the procedural generation paradigm with a node-based system o
 
 --
 
-.center[<img src="../02_scripts/img/02/curve.jpg" alt="curve" style="width:48%;">]
+.center[<img src="../02_scripts/img/unreal/curve.jpg" alt="curve" style="width:48%;">]
 
 ---
 

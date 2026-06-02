@@ -50,7 +50,7 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de
 
 ## What is Unreal?
 
-![unreal_01](img/02/unreal_01.png)
+![unreal_01](img/unreal/unreal_01.png)
 [[pcgamesn]](https://www.pcgamesn.com/unreal-engine-5-demo)
 
 
@@ -96,7 +96,7 @@ Unreal
 
 ## Unreal in Virtual Production
 
-![vp_01](img/02/vp_01.png)
+![vp_01](img/unreal/vp_01.png)
 [[mages.edu.sg]](https://mages.edu.sg/blog/unreal-engine-and-virtual-production/)
 
 * [Virtual Production Sizzle Reel 2022 - Unreal Engine](https://www.youtube.com/embed/_oMH_gy7r60)

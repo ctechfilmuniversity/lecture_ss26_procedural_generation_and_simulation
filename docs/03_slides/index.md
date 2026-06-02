@@ -12,4 +12,4 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de \
   
 ## Slides
 
-* [Slides Chapter Introduction](pgs_01_intro_slides.html)
+* [Slides - Introduction](pgs_01_intro_slides.html)
