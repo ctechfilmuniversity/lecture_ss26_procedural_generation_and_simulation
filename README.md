@@ -1,1 +1,1 @@
-# lecture_ss26_procedural_generation_and_simulation
+https://ctechfilmuniversity.github.io/lecture_ss25_procedural_generation_and_simulation/
