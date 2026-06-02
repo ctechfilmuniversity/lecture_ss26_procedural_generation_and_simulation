@@ -1,0 +1,155 @@
+// _sass/custom/custom.scss
+// Monokai Pro syntax highlighting for Just the Docs (Rouge tokenizer).
+// This file is auto-imported by JTD — do not rename it.
+//
+// Token reference: https://rouge.jneen.net/token-index
+// Monokai Pro palette: https://monokai.pro
+
+// ── Sidebar width ─────────────────────────────────────────────────────────────
+// Not properly working yet
+// $nav-width: 200px !default;
+
+// .side-bar {
+//   width: 200px !important;
+//   min-width: 200px !important;
+// }
+
+// @media (min-width: 50rem) {
+//   .main {
+//     margin-left: 200px !important;
+//   }
+// }
+
+
+
+// ── Site title ────────────────────────────────────────────────────────────────
+.site-title {
+  font-size: 0.8em !important;
+//   font-weight: bold !important;
+}
+
+// ── Tables ────────────────────────────────────────────────────────────────────
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #aaa !important;
+  padding: 0.3rem 0.6rem !important;
+}
+
+// ── Code block chrome ─────────────────────────────────────────────────────────
+.highlight,
+div.highlighter-rouge {
+  background: #2d2a2e !important;
+  border-radius: 6px;
+  border: 1px solid #403e41;
+}
+
+.highlight pre,
+pre.highlight {
+  background: #2d2a2e !important;
+  color: #fcfcfa;
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+// ── Base text ─────────────────────────────────────────────────────────────────
+.highlight .text,
+.highlight .n  { color: #fcfcfa; }                 // name / plain text
+
+// ── Comments ──────────────────────────────────────────────────────────────────
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cs,
+.highlight .cp,
+.highlight .cpf { color: #727072; font-style: italic; }
+
+// ── Keywords ──────────────────────────────────────────────────────────────────
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr { color: #ff6188; }
+
+.highlight .kt  { color: #78dce8; }                // keyword type
+
+// ── Strings ───────────────────────────────────────────────────────────────────
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .ss  { color: #ffd866; }
+
+// ── Numbers ───────────────────────────────────────────────────────────────────
+.highlight .m,
+.highlight .mi,
+.highlight .mf,
+.highlight .mh,
+.highlight .mo,
+.highlight .il  { color: #ab9df2; }
+
+// ── Function / method names ───────────────────────────────────────────────────
+.highlight .nf,
+.highlight .fm,
+.highlight .fc,
+.highlight .nx  { color: #a9dc76; }               // #a9dc76 = Monokai Pro green
+
+// ── Class names ───────────────────────────────────────────────────────────────
+.highlight .nc  { color: #78dce8; }
+
+// ── Built-ins ─────────────────────────────────────────────────────────────────
+.highlight .nb,
+.highlight .bp  { color: #78dce8; }
+
+// ── Attribute / tag names ─────────────────────────────────────────────────────
+.highlight .na  { color: #fc9867; }
+.highlight .nt  { color: #ff6188; }                // HTML/XML tag name
+
+// ── Variables ─────────────────────────────────────────────────────────────────
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi  { color: #fcfcfa; }
+
+// ── Operators ─────────────────────────────────────────────────────────────────
+.highlight .o,
+.highlight .ow  { color: #ff6188; }
+
+// ── Punctuation ───────────────────────────────────────────────────────────────
+.highlight .p,
+.highlight .pi  { color: #fcfcfa; }
+
+// ── Error token (visible so you know something went wrong) ───────────────────
+.highlight .err { color: #ff6188; background: none; }
+
+// ── Diffs ─────────────────────────────────────────────────────────────────────
+.highlight .gi   { color: #a9dc76; }               // inserted line
+.highlight .gd   { color: #ff6188; }               // deleted line
+.highlight .gi .x{ color: #ffd866; }               // inserted change
+.highlight .gd .x{ color: #fc9867; }               // deleted change
+.highlight .gu   { color: #78dce8; font-weight: bold; } // diff header
+
+// ── Line numbers (when enabled with {% highlight ... linenos %}) ──────────────
+.highlight .gl,
+.highlight .ln  { color: #5b595c; user-select: none; margin-right: 12px; }
+
+// ── Inline code (backtick spans) ─────────────────────────────────────────────
+// Targets inline <code> outside of fenced/highlighted blocks
+:not(.highlight) > code,
+:not(pre) > code {
+  color: #3a3a3a;
+  background: #ebebeb;
+  border-radius: 4px;
+  padding: 0.1em 0.1em;
+  font-size: 0.9em;
+  // font-family is inherited from the <code> element — no override needed
+}
