@@ -11,7 +11,7 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de
 
 ---
 
-![webb_01](02_scripts/img/01/webb_01.png)  
+![webb_01](02_scripts/img/introduction/webb_01.png)  
 [[Cassiopeia A; 2023, NASA, ESA, CSA]](https://webbtelescope.org/contents/media/images/2023/121/01GWQBBY77MHGFV3M3N63KDCEJ?itemsPerPage=100&page=1&filterUUID=91dfa083-c258-4f9f-bef1-8f40c26f4c97), [[Zoom into the image →]](https://webbtelescope.org/resource-gallery/images/zoomable-cassiopeia-a)
 
 <!-- 
