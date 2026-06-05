@@ -140,9 +140,14 @@ Even though mathematical sets such as the Mandelbrot set are stunningly beautifu
 
 -->
 
+---
+
+<br />
+
+.center[<iframe width="966" height="543" src="https://www.youtube.com/embed/b005iHf8Z3g" title="Mandelbrot Zoom Sequence" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>]
 
 ---
-layout:false
+
 
 <br />
 
@@ -376,7 +381,9 @@ What is a specific example for a pattern?
 > *Where do we find patterns?*
 
 
+--
 
+* Everywhere!
 
 ---
 .header[Patterns]
@@ -541,7 +548,8 @@ And eternity in an hour
 ]
 
 
-
+???
+William Blake (28 November 1757 – 12 August 1827) was an English poet, painter and printmaker. Largely unrecognised during his life, Blake has become a seminal figure in the history of the poetry and visual art of the Romantic Age. 
 
 
 ---
@@ -721,6 +729,23 @@ Artists moved away from
 * What do you see?
 * Cubism contributed to the formation of the Italian artistic style of *Futurism*, an artistic and social movement that sought to break every known rule of art. While still representational, the style emphasizes speed and visualizing movement. You can go as far as saying futurists fetishized speed, technology, violence and industrialization and many of them are said to be fascists. Key artist are Joseph Stella, Umberto Boccioni and Giacomo Balla.
 
+---
+.header[Abstraction in Art]
+
+## Surrealism
+
+<img src="../02_scripts/img/introduction/magritte_01.jpg" alt="magritte_01" style="width:50%;">  
+.footnote[[[René Magritte, The Treachery of Images , 1929]](https://en.wikipedia.org/wiki/The_Treachery_of_Images)]  
+
+
+???
+
+Surrealism was an artistic and literary movement active roughly from the mid-1920s through the 1940s, centered in Paris and spreading internationally after World War II displaced many of its practitioners.
+The core idea: bypass rational thought and access the unconscious directly, treating dreams, chance, and psychological irrationality as legitimate creative material. Heavily influenced by Freud.
+Two artists:
+Salvador Dalí painted hallucinatory precision: photorealistic technique applied to impossible scenarios. Melting clocks, burning giraffes, dreamscapes rendered with the care of a Dutch master.
+René Magritte worked more quietly but more philosophically: ordinary objects placed in impossible relationships to destabilize how we read images. A pipe labeled "this is not a pipe." A man in a bowler hat with an apple obscuring his face.
+
 
 ---
 .header[Abstraction in Art]
@@ -732,6 +757,12 @@ Artists moved away from
 
 
 ???
+
+Dorothea Tanning (1910–2012) was an American Surrealist painter, sculptor, and writer, one of the movement's longest-lived practitioners and arguably underrecognized relative to her male contemporaries for much of her career.
+Her early work features uncanny domestic interiors: corridors, doors, half-dressed figures, and a persistent sense that something just happened or is about to. The painting Birthday (1942) is a good entry point: a self-portrait with a bare chest, a fantastical winged creature at her feet, and an infinite recession of doors behind her. Ordinary space made deeply strange.
+Later her work became more abstract and visceral: figures merging with fabric, flesh dissolving into soft sculptural forms, identity becoming unstable at the edges.
+She was married to Max Ernst, another Surrealist heavyweight, which for a long time overshadowed critical attention to her own work. Reassessment has been ongoing since the 1990s and accelerated after her death.
+Worth looking at if Magritte feels too cerebral and Dalí too theatrical. Tanning operates in a register that is more bodily and psychologically uncomfortable.
   
 
 * What do you see?
@@ -1150,32 +1181,15 @@ As parameter we could use the spacing of the grid and the probability for choosi
 <img src="../02_scripts/img/introduction/10print_02.png" alt="10print_01" style="width:30%;">
 <img src="../02_scripts/img/introduction/10print_03.png" alt="10print_01" style="width:30%;">
 
----
-## Procedural Generation
-
-* Notoriously difficult to control
-
---
-* We almost always need some form of *parametrization* of an algorithm
-
-
-
 ???
-  
+* Notoriously difficult to control
+* We almost always need some form of *parametrization* of an algorithm
 
 An important but notoriously difficult aspect of using procedural generation for content creation is the *parametrization* of an algorithm. 
 
---
-
 Ideally, control should be
-
---
 * Intuitively understandable 
-
---
 * Expressive
-
---
 * Balance manual creation and automation
 
 ---
