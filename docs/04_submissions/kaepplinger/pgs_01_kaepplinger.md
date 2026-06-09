@@ -113,6 +113,7 @@ After getting through the interface and coming to terms with its more than flawe
 I'm still not happy with the camera animation, but I didn't have much time left.
 The material setup was fairly simple. I gave the mesh three separate materials: one for the sides, one for the back, and one for the front.
 
+> Important: The Gif is quiet big so wait for it to load :DD
 
 <div align="center">
     <td align="center"><img src="imgs/MotionDesignTest/MotionDesignTest_v2.gif" width="500"><br><b>Motion Design Page Exercise</b></td>
