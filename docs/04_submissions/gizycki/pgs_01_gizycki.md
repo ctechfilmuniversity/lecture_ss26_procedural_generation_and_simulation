@@ -116,3 +116,8 @@ I chose **The Symphony of Nature** by **Six N. Five**.
 
 What I love about it is how it recreates nature in a way that feels hyper-real and dreamlike at the same time. The light glows from within the scene, very similar to what I admire in the Impressionist paintings I chose -> soft, diffused, blooming. The organic forms feel alive and procedural, as if they were grown rather than modeled.
 I consider it artistic because it goes beyond technical skill. It creates an emotional atmosphere. Nature is not just represented but reinterpreted, which is exactly what I want to explore in my own work.
+
+---
+# Task 01.07 - Unreal Documentation & Getting Started - 7 Points
+
+watched some of the starter tutorials so far...
