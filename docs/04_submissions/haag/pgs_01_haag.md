@@ -32,3 +32,5 @@ I want to integrate that style also into my work.
 # Task 01.06
 
 Explain briefly what you like about the image and why you consider it to be artistic.
+
+I love how it is organic, but repetitive, and how more patterns within an object differentitae from each other. i like that someone ha to take a sloser look in order to see the patterns.
