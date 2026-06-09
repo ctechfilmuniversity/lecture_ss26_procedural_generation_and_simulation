@@ -42,7 +42,8 @@ This assignment should take <= 6h.
 * Are there any further topics regarding procedural generation and simulation that would interest you?
 * Is there a different tool than Unreal that you would prefer to do the exercises with (e.g. Houdini, Unity, Maya, Blender, JavaScript, p5, GLSL, ...)? If so, which one, and why?
 
----
+
+
 *Submission*: 
 
 I’m especially interested in Pattern/Function Design. A lot of that interest comes from Instagram posts featuring fascinating abstract and organic patterns that I found visually compelling, and I’m excited to learn more about how they are created.Some of my inspirations are listed below. 
@@ -60,7 +61,6 @@ And those are also super cool examples:
 - https://www.instagram.com/_mini_uv/reel/DF2-TmQN9M-/
 - https://www.instagram.com/_mini_uv/p/DQHSDKSgvGj/
 
----
 
 
 ## Introduction
@@ -73,7 +73,24 @@ And those are also super cool examples:
 
 Take at least one picture of a natural pattern and at least one of a man-made one (patterns can be two or three-dimensional). Try to include at least one pattern with self-similarity. Taking pictures with your phone is just fine. 
 
-*Submission*: Link all images in your submission file.  
+
+
+*Submission*: 
+
+Pattern with self-similarity: Leaf & Clouds
+
+<table>
+  <tr>
+    <td align="center"><img src="img/pgs_01_human_foil.png"   width="500"><br><b>Hum. Pattern Foil </b></td>
+    <td align="center"><img src="img/pgs_01_human_stone.png"   width="500"><br><b>Hum. Pattern Stone</b></td>
+    <td align="center"><img src="img/pgs_01_nature_clouds.png"   width="500"><br><b>Nat. Pattern Cloud</b></td>
+    <td align="center"><img src="img/pgs_01_nature_eye.png" width="500"><br><b>Nat. Pattern Eye</b></td>
+    <td align="center"><img src="img/pgs_01_nature_plant.png" width="500"><br><b>Nat. Pattern Leaf</b></td>
+    <td align="center"><img src="img/pgs_01_human_bread.png" width="500"><br><b>Nat.& Hum. Pattern Bread</b></td>
+  </tr>
+</table>
+</div>
+
 
 
 ### Task 01.03 - Designing Patterns - 3 Points
@@ -81,21 +98,44 @@ Take at least one picture of a natural pattern and at least one of a man-made on
 Create a visual pattern yourself. The pattern must be repetitive - and hand-drawn! It can either be abstracted (CTech) or realism oriented (VFX) or both.
 Give pseudo code for its creation algorithm.
 
-*Submission*: Link at least one preview image and give your pseudo code in your submission file.  
+*Submission*: 
+
+<table>
+  <tr>
+    <td align="center"><img src="img/pgs_pattern_drawing_01.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_pattern_drawing_02.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_pattern_drawing_03.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_pattern_drawing_04.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_pattern_drawing_05.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_pattern_drawing_06.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_pattern_drawing_07.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_pattern_drawing_08.png"   width="500"></td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td align="center"><img src="img/pgs_pattern_drawing_All-4.png"   width="500"><br><b>Hum. Pattern 4 times </b></td>
+    <td align="center"><img src="img/pgs_pattern_drawing_All-16.png"   width="500"><br><b>Hum. Pattern 16 times (Changed strategy)</b></td>
+  </tr>
+</table>
+</div>
 
 
 ### Task 01.04 - Seeing Faces - 1 Point
 
 As an exercise to see and understand the environment around you (and to have some fun 😊), try to find at least two faces.  
 
-<div align="center">
-    <td align="center"><img src="img/pgs_01_face-1.png" width="400"><br><b>INTERSTELLAR (2014) -  The 'Gargantua' Black Hole Scene</b></td>
-</div>
-<br>
+*Submission*:  
 
-[Image sources left to right, top to bottom: [1](https://www.google.com/imgres?imgurl=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F378800000719377900%2F45f6f5459fe0d5678de052e8741700d0_400x400.jpeg&imgrefurl=https%3A%2F%2Ftwitter.com%2Ffacespics&docid=JoT1wUHfRfTWbM&tbnid=x30M4EKn_ft1wM%3A&vet=10ahUKEwisyqXc27_hAhXGJlAKHXNpArEQMwg_KAAwAA..i&w=400&h=400&bih=915&biw=1680&q=faces%20in%20things&ved=0ahUKEwisyqXc27_hAhXGJlAKHXNpArEQMwg_KAAwAA&iact=mrc&uact=8#h=400&imgdii=PorYURvb5HYYdM:&vet=10ahUKEwisyqXc27_hAhXGJlAKHXNpArEQMwg_KAAwAA..i&w=400), [2](https://www.themarysue.com/things-that-look-like-faces-pareidolia/), [3](https://www.themarysue.com/things-that-look-like-faces-pareidolia/), [4](http://www.abovetopsecret.com/forum/thread1159632/pg1), [5](https://lockerdome.com/buzzfeed.com/6814745186674964), [6](https://twitter.com/FacesPics/status/1086717380837953536), [7](https://laughingsquid.com/faces-in-things-funny-photos-of-objects-that-appear-to-have-faces/), [8](https://twitter.com/facespixx)]
+<table>
+  <tr>
+    <td align="center"><img src="img/pgs_01_face-2.png"   width="500"><br><b>Scale</b></td>
+    <td align="center"><img src="img/pgs_01_face-1.png"   width="500"><br><b>Power outlet</b></td>
+  </tr>
+</table>
 
-*Submission*: Link all images in your submission file.  
 
 
 ### Task 01.05 - Painting - 2 Points
