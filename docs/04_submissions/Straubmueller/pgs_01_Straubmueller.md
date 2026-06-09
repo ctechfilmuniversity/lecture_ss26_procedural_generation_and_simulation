@@ -102,22 +102,22 @@ Give pseudo code for its creation algorithm.
 
 <table>
   <tr>
-    <td align="center"><img src="img/pgs_pattern_drawing_01.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_02.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_03.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_04.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_05.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_06.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_07.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_08.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_01.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_02.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_03.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_04.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_05.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_06.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_07.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_08.png"   width="500"></td>
   </tr>
 </table>
 
 
 <table>
   <tr>
-    <td align="center"><img src="img/pgs_pattern_drawing_All-4.png"   width="500"><br><b>Pattern 4 times (repeats the same shape afterward) </b></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_All-16.png"   width="500"><br><b>Pattern 16 times (changed strategy, began freely)</b></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_All-4.png"   width="500"><br><b>Pattern 4 times (repeats the same shape afterward) </b></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_All-16.png"   width="500"><br><b>Pattern 16 times (changed strategy, began freely)</b></td>
   </tr>
 </table>
 
@@ -200,14 +200,34 @@ If you are completely new to Unreal, the goal of this task is that you get famil
   
 *Hint:* Make sure to plan in a bit of time for the installation of Unreal (~ 10GB) as it takes a while.
 
-
 We also have a collection of tutorials and resources for you in the [Unreal script](../../02_scripts/pgs_02_unreal_script.md), e.g. [First Steps Tutorials](../../02_scripts/pgs_02_unreal_script.md#first-steps-tutorials). You can additionally pick a tutorial there, or choose your own one online but this is up to you.
-  
-You have to submit at least one preview image of the scene that you worked on (for now, screenshots are just fine). If you are a beginner, the image can be a really simple scene, and be completely unpolished. If you are more advanced, I recommend that you polish your scene and image (also depending on the topic you chose to learn and whether it includes visual design). Consciously constructing an image and polishing it somewhat is always good practice.
+
   
 
 
-*Submission*: Links to the documentation pages you worked through and at least one preview image, linked in your submission file.  
+*Submission*: 
+
+- All the mentioned pages above (exept Levels)
+
+- Level Designer Quick Start
+
+https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine
+
+
+- Importieren von statischen Meshs
+
+https://dev.epicgames.com/documentation/unreal-engine/importing-static-meshes-in-unreal-engine
+
+
+<table>
+  <tr>
+    <td align="center"><img src="img/pgs_01_unreal_LevelDesignQuickStart.png"   width="500"><br><b>Level design quick start</b></td>
+    <td align="center"><img src="img/pgs_01_unreal_ImportStaticMeshes.png"   width="500"><br><b>Import static meshes</b></td>
+  </tr>
+</table>
+
+
+
 
 
 ## Learnings
@@ -216,7 +236,17 @@ You have to submit at least one preview image of the scene that you worked on (f
 
 Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?
 
-*Submission*: Answer in your markdown submission file.  
+*Submission*: 
+
+
+Thinking in code logic is still a bit challenging for me, but I am getting better at it. Drawing the pattern was fun and helped me understand what is happening. I realize that I mostly need to build up my terminology and learn small logic snippets so I can write pseudocode more confidently.
+
+During my bachelor studies, I also captured images of structures, but with a different goal. It was enjoyable to approach the same task from a new perspective and examine it through an algorithmic lens.
+
+Since I only completed an Unreal Engine tutorial a few years ago, everything feels new again. I am not proficient in gaming, so navigation takes some time to internalize. However, it was fun learning the basics again and noticing the differences compared to other 3D programs. I learned how to set up scenes, load and transform static meshes, create a basic light setup, navigate the environment, and use the main interface functions.
+
+What was especially challenging for me was going beyond the standard documentation pages to research and test light baking in Unreal Engine. This is an area where I generally do not have much experience.
+
 
 
 ---
