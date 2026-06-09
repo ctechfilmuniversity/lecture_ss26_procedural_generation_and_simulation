@@ -3,8 +3,8 @@ layout: default
 title: Session
 nav_exclude: true
 ---
-
-# Task 01.01 - 1 Point
+# Session 01 - 20 Points
+## Task 01.01 - 1 Point
 *- Which of the chapter topics given in the syllabus are of most interest to you? Why?*
 
 - Pattern generation and simulation, particularly how natural patterns can be recreated and animated digitally. I'm drawn to the mathematical foundations behind procedural generation, especially how simple rules like repetition and self-similarity can produce visually complex results. The section about particle systems and agents was exciting to me because of its potential for creating organic, flowing, psychedelic visuals -> moving patterns that feel alive and rooted in nature. The CGI artists shown in the script, like Alberty Omoss and Sage Jenson represent a design direction which I find interesting.  
@@ -21,9 +21,9 @@ nav_exclude: true
 - I have a background in Blender so I would obviously feel comfortable working there, I've also been curious about TouchDesigner, which seems well-suited for real-time, audio-reactive, and generative visual work. However, for this course I plan to work with Unreal Engine, as it offers powerful procedural tools, and I see it as a valuable skill to develop, especially given its use in film and virtual production contexts.
 
 ---
-# Task 01.02 - Seeing Patterns - 1 Point
+## Task 01.02 - Seeing Patterns - 1 Point
 
-## Nature
+### Nature
 
 ![CaladiumBlatt](img/CaladiumBlatt.png)
 **Caladium Blatt:** Beispiel für Self-Similarity. Die Blattadern verzweigen sich immer weiter, vom Hauptstamm in der Mitte zu immer kleineren Ästen. Das gleiche Verzweigungsprinzip wiederholt sich auf jeder Skala. Genau wie ein Fraktal. 
@@ -46,7 +46,7 @@ nav_exclude: true
 **Schmetterlinge:** Die Flügelmuster sind symmetrisch und repetitiv, aber nicht wirklich selbstähnlich im mathematischen Sinne. Eher ein Symmetrie-Pattern. Die Puppen und Blätter im Hintergrund zeigen aber organische Texturen mit wiederholenden Strukturen. 
 
 ---
-# Task 01.03 - Designing Patterns - 3 Points
+## Task 01.03 - Designing Patterns - 3 Points
 
 ![HandDrawnPattern](img/HandDrawnPattern.png)
 
@@ -59,7 +59,7 @@ nav_exclude: true
 - Dann Regeln für jeden Teilbereich anwenden (organische Form reinzeichnen)
 - Ähnlich wie Voronoi Partitionierung aus dem Script!
 
-## Pseudo Code
+### Pseudo Code
 **SETUP:**
 - Definiere ein Grid mit gleichmäßigen Abständen
 - Platziere Knotenpunkte an den Grid-Schnittpunkten
@@ -84,12 +84,12 @@ WIEDERHOLUNG:
  - Tile das ganze Pattern über die gesamte Fläche
 
 ---
-# Task 01.04 - Seeing Faces - 1 Point
+## Task 01.04 - Seeing Faces - 1 Point
 ![HausFace](img/HausFace.png)
 ![MuellGesicht](img/MuellGesicht.png)
 
 ---
-# Task 01.05 - Painting - 2 Points
+## Task 01.05 - Painting - 2 Points
 
 ![Monet](img/Monet.jpg)
 ![Renoir](img/Renoir.png)
@@ -100,7 +100,7 @@ What I like about both is how light feels like it comes from within the scene: s
 For my own work, both inspire me in terms of the use of light and color. Also the forms created by the trees are very inspiring because it all is very crowded and moving like an own organic being.
 
 ---
-# Task 01.06 - Artistic Expression in CGI - 2 Points
+## Task 01.06 - Artistic Expression in CGI - 2 Points
 
 ![Die Symphonie der Natur](img/SymphonyNature.png)
 [Quelle](https://www.mocomuseum.com/de/exhibitions/amsterdam/die-symphonie-der-natur/)
@@ -118,6 +118,6 @@ What I love about it is how it recreates nature in a way that feels hyper-real a
 I consider it artistic because it goes beyond technical skill. It creates an emotional atmosphere. Nature is not just represented but reinterpreted, which is exactly what I want to explore in my own work.
 
 ---
-# Task 01.07 - Unreal Documentation & Getting Started - 7 Points
+## Task 01.07 - Unreal Documentation & Getting Started - 7 Points
 
 watched some of the starter tutorials so far...
