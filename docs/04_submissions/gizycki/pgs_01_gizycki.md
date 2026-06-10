@@ -140,3 +140,9 @@ I consider it artistic because it goes beyond technical skill. It creates an emo
   </tr>
 </table>
 </div>
+
+## Task 01.08 - 3 Points
+
+This session connected well to my own interests. Seeing how simple rules can create complex natural patterns was inspiring. The connection between math and visual results made a lot of sense to me.
+
+For the practical part I worked through the Niagara particle light emission tutorial. It was easier than expected. The only challenge was getting used to Unreal's terminology. For example "Level" instead of viewport felt unfamiliar coming from Blender. I chose a Niagara tutorial on purpose because particle systems are closest to the aesthetic I want to explore: glowing, organic, moving forms.
