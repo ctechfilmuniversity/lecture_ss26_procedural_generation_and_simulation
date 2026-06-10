@@ -82,7 +82,7 @@ Choose one "traditional" and analog painting that is inspirational to you. The i
 
 Explain briefly what you like about the painting and how it might inspire you for your own work.
 
-*Submission*: Answer in your  submission file and link all images there.  
+*Submission*: Answer in your submission file and link all images there.  
 
 
 ### Task 01.06 - Artistic Expression in CGI - 2 Points
