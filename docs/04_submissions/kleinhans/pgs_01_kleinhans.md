@@ -49,8 +49,8 @@ As a child I spend a lot of time in the woods, where a lot of naturally occurrin
 
 **tools**
 
-I do not have any experiences with Unreal Engine yet (what it offers me or not) but in general I would like to learn raw shader languages like GLSL, because I can implement it in Touchdesigner which I am using a lot for live visual practices.
-I'd also like to learn Houdini, because it is also node based and specialized for procedual generation or step back into Geometry Nodes in Blender.
+I do not have any experiences with Unreal Engine yet (what it offers me or not) but in general I would like to learn raw shader languages like GLSL, because I can implement it in Touchdesigner which I am using a lot for live visual practices (or to use Touchdesigner at all!).
+I'd also like to learn Houdini, because it is also node based and specialized for procedual generation or step back into Geometry Nodes in Blender, because both programms seem to be more relevant for my furure artistic practice than Unreal Engine.
 
 ## Introduction
 
@@ -69,7 +69,9 @@ Take at least one picture of a natural pattern and at least one of a man-made on
 
 ![Spezi feather pattern](img/0102_pattern_natural.jpg)
 
-*diestel - self-similarity*
+*self-similarity*
+
+![Ahorn](img/0102_pattern_natural-03.jpeg)
 
 ![Diestel](img/0102_pattern_natural-02.jpeg)
 
@@ -191,3 +193,19 @@ Summarize your learnings in whole sentences. What was challenging for you in thi
 
 *Submission*: Answer in your markdown submission file.  
 
+**Unreal Enginge**
+
+I do not have any experiences whith Unreal Engine yet, besides that I downloaded it once, because I thought I maybe want to step into it. The reason it didn't work out was that I didn't have enough storage space on my laptop.
+So I went from 0 here again and I got a better understandig of the main functionality of the Engine. Unlike Blender or other common 3D animation programs I've worked with, it has this real-time component. As a game engine, it offers interactive events and interactions. I skipped through the "Erste Schritte" documentation pages [Erste Schritte](https://dev.epicgames.com/documentation/unreal-engine/get-started).
+
+I learned about creating different project types or using an prebuild scenes (first-person, third-person), to navigate in my project and basic editing like adding objects and furthermore moving, scaling and rotating them. In the beginner turorial I also had a look at basic material parameters (colors, metallic etc.) and physics of objects (particles, collisions). I steped through the interface, tools and project browsers but I still do feel quite new and inexperienced there.
+
+Without any more knowledge I learned how to add audio files and plugins when I went through the Audio Synesthesia NRT Documentation ([Audio Synesthesia](https://dev.epicgames.com/documentation/unreal-engine/audio-synesthesia-in-unreal-engine?lang=en-US)). I created an Actor Blueprint for the first time and got roughly familiar with the assets browser, construction skript and the event editor and their functionality. In some way I felt quite confortable here because I worked with nodes, but I quickly reached my limits when it comes to really implement them and understand the realtions between the construction skript and event editor and how I finally run my idea in the project. So I definitly challenged me here by trying to figure out my problem, researching for tutorials or understanding the Audio Synesthesia chapter.
+
+Besides my hands on practice, I also experienced the Unreal Enging documentation as not very clear or a bit overloaded, which, of course, may also be due to my beginner starter point.
+
+**Patterns**
+
+I really had a lot of fun with looking out for patterns and faces. The assignments helped me establish a visual connection to the outside world. They also reminded me of one of my first assignments in my bachelors program, where we were asked to photograph structures and abstract them into a pattern in 5 to 10 steps, starting with a fineliner copy on a transparent paper. 
+
+I noticed that I actually have a lot of patterns in my room and even if I do not get all the maths by heart behind it I would like to explore this further and maybe include it in my final submission.
