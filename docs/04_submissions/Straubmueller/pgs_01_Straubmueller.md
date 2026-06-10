@@ -102,26 +102,33 @@ Give pseudo code for its creation algorithm.
 
 <table>
   <tr>
-    <td align="center"><img src="img/pgs_pattern_drawing_01.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_02.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_03.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_04.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_05.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_06.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_07.png"   width="500"></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_08.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_01.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_02.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_03.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_04.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_05.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_06.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_07.png"   width="500"></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_08.png"   width="500"></td>
   </tr>
 </table>
 
 
 <table>
   <tr>
-    <td align="center"><img src="img/pgs_pattern_drawing_All-4.png"   width="500"><br><b>Hum. Pattern 4 times </b></td>
-    <td align="center"><img src="img/pgs_pattern_drawing_All-16.png"   width="500"><br><b>Hum. Pattern 16 times (Changed strategy)</b></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_All-4.png"   width="500"><br><b>Pattern 4 times (repeats the same shape afterward) </b></td>
+    <td align="center"><img src="img/pgs_01_pattern_drawing_All-16.png"   width="500"><br><b>Pattern 16 times (changed strategy, began freely)</b></td>
   </tr>
 </table>
-</div>
 
+*Pseudo Code:*
+
+1. Draw two lines at +60° and -60° relative to the current orientation.
+2. Draw a connector line with length x in the current orientation.
+3. Store the endpoint of the connector line as the new starting position.
+4. If the current motif is not the fourth motif of the cycle, rotate the orientation by 90°.
+5. If the current motif is the fourth motif of the cycle, keep the current orientation and begin a new cycle from the stored endpoint.
+6. Repeat the process 4 times.
 
 ### Task 01.04 - Seeing Faces - 1 Point
 
@@ -144,7 +151,16 @@ Choose one "traditional" and analog painting that is inspirational to you. The i
 
 Explain briefly what you like about the painting and how it might inspire you for your own work.
 
-*Submission*: Answer in your  submission file and link all images there.  
+*Submission*: 
+<table>
+  <tr>
+    <td align="center"><img src="img/pgs_01_inspiration_painting.png"   width="500"><br><b>Jean Metzinger - Teestunde, 1911, Öl auf Pappe, 75,9 x 70,2 cm, Philadelphia Museum of Art, The Louise and Walter Arensberg Collection, 1950, Philadelphia</b></td>
+  </tr>
+</table>
+
+The painting Teestunde by Jean Metzinger inspires me because I struggle to uncover the rules that divide it into different shapes. It is abstracted in a way where some lines don't align with a realistic body, yet they still fit into a coherent system, making the human form recognizable while remaining abstract. 
+
+This difficulty in understanding the underlying system is fascinating and inspiring to me. It shows how common, realistic shapes can be reinterpreted in a new, simplified way. I also admire how Metzinger works with color and gradients to suggest light and shadow.
 
 
 ### Task 01.06 - Artistic Expression in CGI - 2 Points
@@ -153,7 +169,15 @@ Choose one CG image, which you like and of which you think that it has an artist
 
 Explain briefly what you like about the image and why you consider it to be artistic. 
 
-*Submission*: Answer in your submission file and link all images there.  
+*Submission*: 
+
+<table>
+  <tr>
+    <td align="center"><img src="img/pgs_01_inspiration_CGI.png"   width="500"><br><b>japparii -  https://www.instagram.com/p/CF1ixMahrfZ/</b></td>
+  </tr>
+</table>
+
+I really enjoy this CGI image by the artist Japparii because I love both the color combinations and the diverse structures of the insect. It feels like it creatively mixes a natural being with unrealistic additions which is a concept I find truly artistic. This image inspired me to add more layers and structures to my own work.
 
 
 ## Unreal Engine
@@ -176,14 +200,34 @@ If you are completely new to Unreal, the goal of this task is that you get famil
   
 *Hint:* Make sure to plan in a bit of time for the installation of Unreal (~ 10GB) as it takes a while.
 
-
 We also have a collection of tutorials and resources for you in the [Unreal script](../../02_scripts/pgs_02_unreal_script.md), e.g. [First Steps Tutorials](../../02_scripts/pgs_02_unreal_script.md#first-steps-tutorials). You can additionally pick a tutorial there, or choose your own one online but this is up to you.
-  
-You have to submit at least one preview image of the scene that you worked on (for now, screenshots are just fine). If you are a beginner, the image can be a really simple scene, and be completely unpolished. If you are more advanced, I recommend that you polish your scene and image (also depending on the topic you chose to learn and whether it includes visual design). Consciously constructing an image and polishing it somewhat is always good practice.
+
   
 
 
-*Submission*: Links to the documentation pages you worked through and at least one preview image, linked in your submission file.  
+*Submission*: 
+
+- All the mentioned pages above (exept Levels)
+
+- Level Designer Quick Start
+
+https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine
+
+
+- Importieren von statischen Meshs
+
+https://dev.epicgames.com/documentation/unreal-engine/importing-static-meshes-in-unreal-engine
+
+
+<table>
+  <tr>
+    <td align="center"><img src="img/pgs_01_unreal_LevelDesignQuickStart.png"   width="500"><br><b>Level design quick start</b></td>
+    <td align="center"><img src="img/pgs_01_unreal_ImportStaticMeshes.png"   width="500"><br><b>Import static meshes</b></td>
+  </tr>
+</table>
+
+
+
 
 
 ## Learnings
@@ -192,7 +236,17 @@ You have to submit at least one preview image of the scene that you worked on (f
 
 Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?
 
-*Submission*: Answer in your markdown submission file.  
+*Submission*: 
+
+
+Thinking in code logic is still a bit challenging for me, but I am getting better at it. Drawing the pattern was fun and helped me understand what is happening. I realize that I mostly need to build up my terminology and learn small logic snippets so I can write pseudocode more confidently.
+
+During my bachelor studies, I also captured images of structures, but with a different goal. It was enjoyable to approach the same task from a new perspective and examine it through an algorithmic lens.
+
+Since I only completed an Unreal Engine tutorial a few years ago, everything feels new again. I am not proficient in gaming, so navigation takes some time to internalize. However, it was fun learning the basics again and noticing the differences compared to other 3D programs. I learned how to set up scenes, load and transform static meshes, create a basic light setup, navigate the environment, and use the main interface functions.
+
+What was especially challenging for me was going beyond the standard documentation pages to research and test light baking in Unreal Engine. This is an area where I generally do not have much experience.
+
 
 
 ---
