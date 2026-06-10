@@ -191,7 +191,7 @@ My plan was to make this sphere audioreactive. I recreated the actor class, but 
 
 Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?
 
-*Submission*: Answer in your markdown submission file.  
+*Submission*:  
 
 **Unreal Enginge**
 
