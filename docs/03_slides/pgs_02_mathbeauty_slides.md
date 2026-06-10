@@ -1245,6 +1245,8 @@ function draw() {
 
 ## Golden Spiral
 
+--
+
 Growth factor $b$ is based on $\varphi$, the golden ratio:
 
 .center[<img src="../02_scripts/img/maths/spiral_08.png" alt="spiral_08" style="width:60%;">  
@@ -1275,6 +1277,8 @@ The special value for the growth factor $b$ is based on $\varphi$, the golden ra
 .header[Curves]
 
 ## Golden Spiral
+
+
 
 Approximates the segmentation of a rectangle as follows:
 
