@@ -188,20 +188,49 @@ Further resources:
 
 How you organize your project is of course completely up to your own preferences and judgement. However, it is usually good practice to establish a cohesive system, as sometimes your project folders can become very large and contain hundreds of files. There are certain general naming conventions and folder organisation strategies within the Unreal community, which might help structure your content in a way that makes it more approachable to both yourself and other developers who may want to access your project.
 
-General Rules
-* All asset dependencies should be in the same folder. (except for shared assets)
-* Asset type determines prefix.
-Blueprint is *BP_assetname_01*
-* Certain types (eg. textures) use a suffix to specify sub-types. Eg. 
-*T_Grass_01_N* for normal maps
-* Use underscores to split type from identifier and numeric values. Eg. 
-*SM_DoorHandle_01*
-* Use numeric values with 2 digits. Eg. 
-*SM_Pipe_01*
+In Unreal Engine 5.6, the industry standard is to create a dedicated Top-Level Folder for your specific project content.
 
-All game content is placed in a sub-folder. eg. *Content/MyGame/UI/…* This helps in migrating between projects and splitting your content from marketplace packs that are added like *Content/MyMarketplacePack/…*
+1. The Top-Level Folder Strategy
 
-Here is a [condensed naming convention guide](https://www.tomlooman.com/unreal-engine-naming-convention-guide/) and a very extensive [style guide](https://github.com/Allar/ue5-style-guide) you can apply to your Unreal projects.
+Create one main folder named after your project (e.g., MyAwesomeGame) inside the Content folder. All of your custom work should reside inside this directory.
+
+
+2. Recommended Subfolder Structure
+
+Inside your main project folder, organize by asset type or system. A common production-ready structure looks like this:
+
+Content
+* MyAwesomeGame (Your Top-Level Folder)
+* Blueprints (Logic, PlayerControllers, GameModes)
+* Maps (Levels and Sub-levels)
+* Materials (Master Materials and Material Instances)
+* Meshes (Static and Skeletal Meshes)
+* Textures (Base Color, Normal, and Mask maps)
+* VFX (Niagara Systems and Emitters)
+* Audio (MetaSounds and Sound Cues)
+
+
+3. Asset Naming Conventions
+
+To keep your folders searchable, use standardized prefixes. This allows you to find assets quickly using the search bar regardless of which folder you are in:
+
+| Asset Type        | Prefix | Example                |
+| ----------------- | ------ | ---------------------- |
+| Blueprint Class   | `BP_`  | BP_PlayerCharacter     |
+| Static Mesh       | `SM_`  | SM_Chair               |
+| Material          | `M_ `  | M_Wood_Master          |
+| Material Instance | `MI_`  | MI_Wood_Oak            |
+| Texture           | `T_`   | T_Wood_BC (Base Color) |
+| Niagara System    | `NS_`  | NS_Explosion           |
+| Level/Map         | `L_`   | L_MainForest           |
+
+
+References
+* [Unreal's Project Structure & Naming Conventions](https://dev.epicgames.com/community/learning/courses/qEl/unreal-engine-technical-guide-to-linear-content-creation-pipeline-development/mX6b/unreal-engine-project-structure-naming-conventions)
+* [Gamemakin UE4 Style Guide](https://github.com/Allar/ue5-style-guide) - references in various resources
+* [Tom Looman's Unreal Engine Naming Convention Guide](https://www.tomlooman.com/unreal-engine-naming-convention-guide/) (I don't know who that is, just as an example)
+
+
 
 
 ### Level and Maps
