@@ -120,4 +120,23 @@ I consider it artistic because it goes beyond technical skill. It creates an emo
 ---
 ## Task 01.07 - Unreal Documentation & Getting Started - 7 Points
 
-watched some of the starter tutorials so far...
+[Tutorial I followed](https://dev.epicgames.com/documentation/unreal-engine/how-to-create-particle-effects-that-emit-light-in-niagara-for-unreal-engine)
+
+
+<div align="center">
+<table>
+  <tr>
+    <td align="center"><img src="img/LevelView.gif" width="550"><br><b>Level View</b></td>
+    <td align="center"><img src="img/Preview.gif" width="560"><br><b>Preview Window</b></td>
+  </tr>
+</table>
+</div>
+
+<div align="center">
+<table>
+  <tr>
+    <td align="center"><img src="img/1.png" 
+    width="250"><br><b>Nodes</b></td>
+  </tr>
+</table>
+</div>
