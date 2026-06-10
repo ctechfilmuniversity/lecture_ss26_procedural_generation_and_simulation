@@ -54,10 +54,10 @@ I want to integrate that style also into my work.
 
 # Task 01.06
 
-! [Inspo03](img06/Bildschirmfoto 2026-06-09 um 16.31.00.png)
-! [Inspo04](img06/Bildschirmfoto 2026-06-09 um 16.31.12.png)
-! [Inspo05](img06/Bildschirmfoto 2026-06-09 um 16.31.47.png)
+![Inspo03](img06/shells.png)
+![Inspo04](img06/shells02.png)
+![Inspo05](img06/shells03.png)
 
 Explain briefly what you like about the image and why you consider it to be artistic.
 
-I love how it is organic, but repetitive, and how more patterns within an object differentitae from each other. I like that someone ha to take a closer look in order to see the patterns.
+I love how it is organic, but repetitive, and how more patterns within an object differentitae from each other. I like that someone has to take a closer look in order to see the patterns.
