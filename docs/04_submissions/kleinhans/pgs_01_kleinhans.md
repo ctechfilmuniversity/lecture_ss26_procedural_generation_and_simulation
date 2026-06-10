@@ -179,6 +179,10 @@ My plan was to make this sphere audioreactive. I recreated the actor class, but 
 
 ![tutorial start](img/0107_scene.png)
 
+![tutorial start](img/0107_eventeditor.png)
+
+![tutorial start](img/0107_eventeditor-2.png)
+
 ## Learnings
 
 ### Task 01.08 - 3 Points
@@ -186,30 +190,4 @@ My plan was to make this sphere audioreactive. I recreated the actor class, but 
 Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?
 
 *Submission*: Answer in your markdown submission file.  
-
-
----
-## How To Submit
-
-### CTech
-
-Answer all questions directly in a copy of this file and **also link and display all of your images in that file**. Submit your copy as `pgs_XX_lastname.md` in your submissions folder (replace the XX with the number of the session). 
-
-Please add `nav_exclude: true` to the header of your submission file that it is not added to the navigation bar of the overall website.
-
-### VFX
-
-To hand in your homework assignment, you submit images and texts in your OwnCloud document:
-
-* [The OwnCloud Folder](https://owncloud.gwdg.de/index.php/s/CSVXtrxMNDyER3T)
-* Open your file, add your text, links, etc.
-  
-
-
-
-  
-
----
-
-**Happy Starting!**
 
