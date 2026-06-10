@@ -46,6 +46,11 @@ nav_exclude: true
 **Schmetterlinge:** Die Flügelmuster sind symmetrisch und repetitiv, aber nicht wirklich selbstähnlich im mathematischen Sinne. Eher ein Symmetrie-Pattern. Die Puppen und Blätter im Hintergrund zeigen aber organische Texturen mit wiederholenden Strukturen. 
 
 ---
+### Man-Made
+![AsciiPattern](img/AsciiPattern.png)
+**AsciiPattern:** Es ist ein stochastisches Pattern (Stochastic Models). Keine Self-Similarity. But it has a clear repetetive Pattern. But ein Punkt bleibt ein Punkt, er teilt sich nicht in kleinere Punkte auf.
+
+---
 ## Task 01.03 - Designing Patterns - 3 Points
 
 ![HandDrawnPattern](img/HandDrawnPattern.png)
