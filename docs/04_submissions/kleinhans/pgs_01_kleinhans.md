@@ -134,6 +134,12 @@ Explain briefly what you like about the image and why you consider it to be arti
 
 *Submission*: Answer in your submission file and link all images there.  
 
+As my CGI example I chose this abstract of the short film *Modul* by Maxim Zhestkov at this point. I skipped through the artists an this was the one that fascinated me a lot - even it is no image but I think the principle might also works on the screenshots. It bases on simple math algorithms and principles of a design language tranferred into a 3D space.
+
+![Maxim Zhestkov, Modul](img/0106_cgi-1.png)
+
+![Maxim Zhestkov, Modul](img/0106_cgi-2.png)
+
 
 ## Unreal Engine
 
