@@ -1563,7 +1563,7 @@ Multiplication on a Circle With Modulo
 * Connect start number with its result
 * Easier
     
-
+https://editor.p5js.org/legie/sketches/zv3Vf3JZI
 
 https://www.redblobgames.com/x/1847-mathologer-modulo-circle/#N=500&M=2&color=angle  
 https://demonstrations.wolfram.com/ModularMultiplicationOnACircle/
