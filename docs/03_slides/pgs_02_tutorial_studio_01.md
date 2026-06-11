@@ -1,3 +1,9 @@
+---
+layout: default
+title: Tutorial
+nav_exclude: true
+---
+
 # Tutorial - Setting Up a Studio Environment
 
 
