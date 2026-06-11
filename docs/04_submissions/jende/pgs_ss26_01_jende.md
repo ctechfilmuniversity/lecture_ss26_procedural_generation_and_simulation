@@ -16,25 +16,25 @@ Maria Jende, 06/09/2026
 
 ### Task 01.01 - 1 Point
 
-* *1. Which of the chapter topics given in the syllabus are of most interest to you? Why?*
-* *2. Are there any further topics regarding procedural generation and simulation that would interest you?*
-* *3. Is there a different tool than Unreal that you would prefer to do the exercises with (e.g. Houdini, Unity, Maya, Blender, JavaScript, p5, GLSL, ...)? If so, which one, and why?*
+* *Which of the chapter topics given in the syllabus are of most interest to you? Why?*
 
-*Submission: Answer in your submission file.*
+    &rarr; I liked the introduction with the Mandelbrot fractal because I found it interesting and motivating to look at the math behind it. I also liked looking at different styles of art throughout history and the idea of looking at what had already been done and then reinterpreting it. It was refreshing.
 
-1. I liked the introduction with the Mandelbrot fractal because I found it interesting and motivating to look at the math behind it. I also liked looking at different styles of art throughout history and the idea of looking at what had already been done and then reinterpreting it. It was refreshing.
+<br>
 
-2. Not yet, since we are at the beginning of the class. Maybe, but that might only be me, it could be interesting to look at different fields of design, such as architecture, where parametric design is a huge thing (keywords like Zaha Hadid, Voronoi facades, etc.).
+* *Are there any further topics regarding procedural generation and simulation that would interest you?*
 
-3. I really would have loved to work with Houdini since I worked with it last semester and would have loved to continue using it. But I see the advantages of Unreal and enjoy being able to work on projects outside the university without having to worry about the license.
+    &rarr; Not yet, since we are at the beginning of the class. Maybe, but that might only be me, it could be interesting to look at different fields of design, such as architecture, where parametric design is a huge thing.(keywords like Zaha Hadid, Voronoi facades, etc.). The program Grasshopper, a part of the CAD program Rhino, is often used for that in indutstrial design as well as architecture.
+
+<br>
+
+* *Is there a different tool than Unreal that you would prefer to do the exercises with (e.g. Houdini, Unity, Maya, Blender, JavaScript, p5, GLSL, ...)? If so, which one, and why?*
+
+    &rarr; I really would have loved to work with Houdini since I worked with it last semester and would have loved to continue using it. But I see the advantages of Unreal and enjoy being able to work on projects outside the university without having to worry about the license.
 
 <br>
 
 ### Task 01.02 - Seeing Patterns - 1 Point
-
-*Take at least one picture of a natural pattern and at least one of a man-made one (patterns can be two or three-dimensional). Try to include at least one pattern with self-similarity. Taking pictures with your phone is just fine.*
-
-*Submission: Link all images in your submission file.*
 
 #### Natural
 
@@ -56,18 +56,11 @@ Maria Jende, 06/09/2026
 
 ### Task 01.03 - Designing Patterns - 3 Points
 
-*Create a visual pattern yourself. The pattern must be repetitive - and hand-drawn! It can either be abstracted (CTech) or realism oriented (VFX) or both.
-Give pseudo code for its creation algorithm.*
-
-*Submission: Link at least one preview image and give your pseudo code in your submission file.*
+XXXXX
 
 <br>
 
 ### Task 01.04 - Seeing Faces - 1 Point
-
-*As an exercise to see and understand the environment around you (and to have some fun 😊), try to find at least two faces.*
-
-*Submission: Link all images in your submission file.*
 
 <img src="./img/pgs_01.04_jende_face1.jpg" alt="Face 1 - Tree Bork" width="300"/>
 
@@ -77,37 +70,31 @@ Give pseudo code for its creation algorithm.*
 
 ### Task 01.05 - Painting - 2 Points
 
-*Choose one "traditional" and analog painting that is inspirational to you. The image can come from the [script](../../02_scripts/pgs_01_intro_script.md#abstraction-in-art) or you can refer to any artist or image you like. It can either be abstracted (CTech) or realism oriented (VFX).*
+| <img src="https://www.christies.com.cn/img/LotImages/2018/CKS/2018_CKS_15474_0228_000(gerhard_richter_rot-blau-gelb093925).jpg?mode=max" width="300"> | <img src="https://brooklynrail.org/_next/image/?url=https%3A%2F%2Fstudio.brooklynrail.org%2Fassets%2F96bbf257-d505-4c24-ba20-0d0db3b15792&w=1200&q=75" width="300"> | <img src="https://sites.stedwards.edu/fbrowni/files/2014/03/Sothebys-London-23-June-1999-Gerhard-Richter-qkphtl.jpeg" width="300"> |
+| ----- | ----- |  ----- |
+| Rot-Blau-Gelb (1973) | Cell (1988) | Blurred Landscape (n.a.) |
 
-*Explain briefly what you like about the painting and how it might inspire you for your own work.*
+<br>
 
-*Submission: Answer in your  submission file and link all images there.*  
+Those are all paintings by Gerhard Richter. I really like his blurred, gradient style. Whether his works are photographic or more abstract, he always incorporates transparent gradients, regardless of the medium.
 
-| <img src="https://www.pinakothek-der-moderne.de/wp-content/uploads/2025/01/30_6_2024-Mischtechnik-297-x-210-mm-%C2%A9-Gerhard-Richter-2025-500x707.png" alt="Mood 1" width="300"> | <img src="https://www.christies.com.cn/img/LotImages/2018/CKS/2018_CKS_15474_0228_000(gerhard_richter_rot-blau-gelb093925).jpg?mode=max" width="300"> | <img src="https://brooklynrail.org/_next/image/?url=https%3A%2F%2Fstudio.brooklynrail.org%2Fassets%2F96bbf257-d505-4c24-ba20-0d0db3b15792&w=1200&q=75" width="300"> | <img src="https://sites.stedwards.edu/fbrowni/files/2014/03/Sothebys-London-23-June-1999-Gerhard-Richter-qkphtl.jpeg" width="300"> |
-| ----- | ----- |  ----- |  ----- |
-| Untitled (2024) | Rot-Blau-Gelb (1973) | Cell (1988) | Blurred Landscape (n.a.) |
+Especially the *Rot-Blau-Gelb* painting has a lot of depth due to the gradient colors, even though it's "just" 2D lines.
+
+In the motion-blurred, photographic-like images, it is not the depicted objects, people or scenery that are the focus. Instead, the dynamic blurriness itself is in the center, creating a kind of eerie, fleeting scene.
 
 <br>
 
 ### Task 01.06 - Artistic Expression in CGI - 2 Points
 
-Choose one CG image, which you like and of which you think that it has an artistic quality to it (also here, it can be realistic and in a VFX context). The image doesn't need to be from the script, again you can choose any CGI image you like (it should use 3D graphics). You can find more examples in the [Summary of Artists](../../02_scripts/pgs_01_intro_script.md#summary-of-artists) section.  
+![](./img/pgs_1.06_jende_mortell.gif)
 
-Explain briefly what you like about the image and why you consider it to be artistic. 
-
-*Submission*: Answer in your submission file and link all images there.  
+I really like this video by Joe Mortell because it visualizes a natural scene while looking very clean, polished, and artificial. This kind of aesthetic, with the water drop perfectly shaped, like a pearl, and the bouncy, velvety leaves endlessly repeating, has something both meditative and magical about it to me.
 
 <br>
 
 ## Unreal Engine
 
 ### Task 01.07 - Unreal Documentation & Getting Started - 7 Points
-
-*For this task, no matter your level, pick one or more chapters in [Unreal's documentation](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-7-documentation?lang=en-US) that you don't know yet and learn that topic.*
-  
-*You have to submit at least one preview image of the scene that you worked on (for now, screenshots are just fine). If you are a beginner, the image can be a really simple scene, and be completely unpolished. If you are more advanced, I recommend that you polish your scene and image (also depending on the topic you chose to learn and whether it includes visual design). Consciously constructing an image and polishing it somewhat is always good practice.*
-
-*Submission: Links to the documentation pages you worked through and at least one preview image, linked in your submission file.*
 
 Unreal Documentation Entry I've done: https://dev.epicgames.com/documentation/unreal-engine/how-to-create-a-ribbon-effect-in-niagara-for-unreal-engine
 
@@ -127,6 +114,8 @@ Final Result
 
 ### Task 01.08 - 3 Points
 
-*Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?*
+The most challenging part of this session for me was checking in with Unreal again. I haven't worked with it for almost 2.5 years, and the changes to the UI really challenged me (and will continue to be an ongoing challenge), because I can't simply fall back on the experience of "once I see it again, my previous knowledge of how to navigate Unreal comes back".
 
-*Submission: Answer in your markdown submission file.*
+What was new to me was Niagara Systems in Unreal. That's why I chose an example from the documentation that uses them. I'm generally interested in simulations and can imagine connecting some future assignments to them when appropriate.
+
+Also, I haven't used Blueprints for anything other than materials in the past, so I'm looking forward to working with them more.
