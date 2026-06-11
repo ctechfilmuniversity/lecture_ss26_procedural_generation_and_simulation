@@ -1,3 +1,9 @@
+---
+layout: default
+title: Homework
+nav_exclude: true
+---
+
 ## Task 01.01  
 _Which of the chapter topics given in the syllabus are of most interest to you? Why?_
 
