@@ -46,6 +46,11 @@ nav_exclude: true
 **Schmetterlinge:** Die Flügelmuster sind symmetrisch und repetitiv, aber nicht wirklich selbstähnlich im mathematischen Sinne. Eher ein Symmetrie-Pattern. Die Puppen und Blätter im Hintergrund zeigen aber organische Texturen mit wiederholenden Strukturen. 
 
 ---
+### Man-Made
+![AsciiPattern](img/AsciiPattern.png)
+**AsciiPattern:** Es ist ein stochastisches Pattern (Stochastic Models). Keine Self-Similarity. But it has a clear repetetive Pattern. But ein Punkt bleibt ein Punkt, er teilt sich nicht in kleinere Punkte auf.
+
+---
 ## Task 01.03 - Designing Patterns - 3 Points
 
 ![HandDrawnPattern](img/HandDrawnPattern.png)
@@ -120,4 +125,29 @@ I consider it artistic because it goes beyond technical skill. It creates an emo
 ---
 ## Task 01.07 - Unreal Documentation & Getting Started - 7 Points
 
-watched some of the starter tutorials so far...
+[Tutorial I followed](https://dev.epicgames.com/documentation/unreal-engine/how-to-create-particle-effects-that-emit-light-in-niagara-for-unreal-engine)
+
+
+<div align="center">
+<table>
+  <tr>
+    <td align="center"><img src="img/LevelView.gif" width="550"><br><b>Level View</b></td>
+    <td align="center"><img src="img/Preview.gif" width="560"><br><b>Preview Window</b></td>
+  </tr>
+</table>
+</div>
+
+<div align="center">
+<table>
+  <tr>
+    <td align="center"><img src="img/1.png" 
+    width="250"><br><b>Nodes</b></td>
+  </tr>
+</table>
+</div>
+
+## Task 01.08 - 3 Points
+
+This session connected well to my own interests. Seeing how simple rules can create complex natural patterns was inspiring. The connection between math and visual results made a lot of sense to me.
+
+For the practical part I worked through the Niagara particle light emission tutorial. It was easier than expected. The only challenge was getting used to Unreal's terminology. For example "Level" instead of viewport felt unfamiliar coming from Blender. I chose a Niagara tutorial on purpose because particle systems are closest to the aesthetic I want to explore: glowing, organic, moving forms.

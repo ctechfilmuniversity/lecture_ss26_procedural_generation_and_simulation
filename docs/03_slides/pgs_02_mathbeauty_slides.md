@@ -1245,6 +1245,8 @@ function draw() {
 
 ## Golden Spiral
 
+--
+
 Growth factor $b$ is based on $\varphi$, the golden ratio:
 
 .center[<img src="../02_scripts/img/maths/spiral_08.png" alt="spiral_08" style="width:60%;">  
@@ -1275,6 +1277,8 @@ The special value for the growth factor $b$ is based on $\varphi$, the golden ra
 .header[Curves]
 
 ## Golden Spiral
+
+
 
 Approximates the segmentation of a rectangle as follows:
 
@@ -1559,7 +1563,7 @@ Multiplication on a Circle With Modulo
 * Connect start number with its result
 * Easier
     
-
+https://editor.p5js.org/legie/sketches/zv3Vf3JZI
 
 https://www.redblobgames.com/x/1847-mathologer-modulo-circle/#N=500&M=2&color=angle  
 https://demonstrations.wolfram.com/ModularMultiplicationOnACircle/

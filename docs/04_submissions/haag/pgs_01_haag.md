@@ -1,3 +1,9 @@
+---
+layout: default
+title: Session
+nav_exclude: true
+---
+
 ## Task 01.01
 
 _Which of the chapter topics given in the syllabus are of most interest to you? Why?_
@@ -15,11 +21,25 @@ Blender, because I'm most foreign in this program and I started learning how to 
 
 The pictures are in folder img02.
 
+![ManMade](img02/IMG_1347.jpeg)
+![ManMade02](img02/IMG_1348.jpeg)
+
+![Natural](img02/IMG_1350.jpeg)
+
 ## Task 01.03 - Designing Patterns
 
 The pictures are in folder img03.
+![Pattern](img03/IMG_1344.jpeg)
+
+## Task 01.04
+
+![Face01](img04/IMG_1351.jpeg)
+![Face02](img04/IMG_1353.jpeg)
+![Face03](img04/IMG_1355.jpeg)
 
 ## Task 01.05
+
+![](img04/IMG_1355.jpeg)
 
 _Explain briefly what you like about the painting and how it might inspire you for your own work._
 
@@ -29,8 +49,15 @@ I like the style of the artist because it combines depth and flatness. She has a
 
 I want to integrate that style also into my work.
 
+![Inspo](img05/okeeffe04.png)
+![Inspo02](img05/okeeffe05.png)
+
 # Task 01.06
+
+![Inspo03](img06/shells.png)
+![Inspo04](img06/shells02.png)
+![Inspo05](img06/shells03.png)
 
 Explain briefly what you like about the image and why you consider it to be artistic.
 
-I love how it is organic, but repetitive, and how more patterns within an object differentitae from each other. i like that someone ha to take a sloser look in order to see the patterns.
+I love how it is organic, but repetitive, and how more patterns within an object differentitae from each other. I like that someone has to take a closer look in order to see the patterns.
