@@ -16,5 +16,4 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de \
     * [Board - Mandelbrot Set](./pgs_01_mandelbrot_01.pdf)
 * [Slides 02 - Beauty in Maths](./pgs_02_mathbeauty_slides.html)
     * [Board - Circle Representations](./pgs_02_circle_representations_01.pdf)
-    * [Unreal - Studio Environment](./pgs_02_tutorial_studio_01.md)
 * [Slides 03 - Function Designs](./pgs_03_functions_slides.html)
