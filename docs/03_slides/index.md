@@ -8,7 +8,7 @@ has_children: false
 
 # Procedural Generation and Simulation
   
-Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de \  
+Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de   
   
 ## Slides
 
