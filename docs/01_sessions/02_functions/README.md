@@ -55,7 +55,7 @@ With this task, I want you to practice **understanding and building individual f
 * GLSL fragment shader
     * Examples: [start scene](./glsl/examples/functiondesign_startscene.glsl), [sin](./glsl/examples/sin.frag), [circle pattern](./glsl/examples/pattern_circles.glsl) (also see the [explanations in the script](../../02_scripts/pgs_04_functions_script.md#example-circle-pattern)), [kishimisu](./glsl/examples/kishimisu_commented_01.glsl)
 * Unreal Materials
-    * Example materials in the Unreal Project `pgs_functiondesigns` (in the `Content Browser` under `All/Content/pgs_functionsdesigns` -> level `LV_functiondesigns`)
+    * There are two example materials in the [Unreal Project `pgs_functiondesigns`](https://github.com/ctechfilmuniversity/lecture_ss26_procedural_generation_and_simulation/blob/main/docs/01_sessions/02_functions/unreal/pgs_functiondesigns.zip) (inside of the project in the `Content Browser` under `All/Content/pgs_functionsdesigns` -> level `LV_functiondesigns`)
         1. Function design with nodes in `M_pattern_circles_nodes`
         2. Function design with code (HLSL) in `M_pattern_circles_hlsl` .
 
