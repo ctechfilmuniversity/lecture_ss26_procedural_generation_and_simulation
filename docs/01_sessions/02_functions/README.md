@@ -21,7 +21,7 @@ This assignment should take <= 6h. As this assignment is open-ended, it is up to
     * [Task 02.01 - Inspiration - 4 Points](#task-0201---inspiration---4-points)
     * [Task 02.02 - Function Design - 13 Points](#task-0202---function-design---13-points)
 * [Learnings](#learnings)
-    * [Task 02.04 - 3 Points](#task-0204---3-points)
+    * [Task 02.03 - 3 Points](#task-0203---3-points)
 * [How To Submit](#how-to-submit)
     * [CTech](#ctech)
     * [VFX](#vfx)
@@ -54,20 +54,20 @@ With this task, I want you to practice **understanding and building individual f
 
 * GLSL fragment shader
     * Examples: [start scene](./glsl/examples/functiondesign_startscene.glsl), [sin](./glsl/examples/sin.frag), [circle pattern](./glsl/examples/pattern_circles.glsl) (also see the [explanations in the script](../../02_scripts/pgs_04_functions_script.md#example-circle-pattern)), [kishimisu](./glsl/examples/kishimisu_commented_01.glsl)
-* Unreal Material Node Network
-    * See the Unreal scene -> `M_pattern_circles_nodes`
-* Unreal Material Custom Node + HLSL
-  * See the Unreal scene -> `M_pattern_circles_hlsl`
+* Unreal Materials
+    * Example materials in the Unreal Project `pgs_functiondesigns` (in the `Content Browser` under `All/Content/pgs_functionsdesigns`)
+        1. Function design with nodes in `M_pattern_circles_nodes`
+        2. Function design with code (HLSL) in `M_pattern_circles_hlsl` .
 
  
 
-*Submission:* At least three image of your resulting pattern (an Unreal screenshot is still fine), linked in your submission file. If you started with given code or a given setup, briefly explain your changes.
+*Submission:* At least three different image of your resulting pattern (screenshots are still fine), linked in your submission file. 
 
 
 
 ## Learnings
 
-### Task 02.04 - 3 Points
+### Task 02.03 - 3 Points
 
 Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?
 
