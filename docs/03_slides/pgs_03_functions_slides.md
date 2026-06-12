@@ -378,7 +378,7 @@ Let's start with creating a circle...
 
 --
 
-...by plotting the distance of each coordinate to the center point `0.5`, `0.5`.
+...by plotting the distance of each coordinate to the center point `0.0`, `0.0`.
 
 
 ???

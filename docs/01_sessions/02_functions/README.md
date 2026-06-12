@@ -18,9 +18,8 @@ This session is due on **Wednesday, June 17th** before class.
 This assignment should take <= 6h. As this assignment is open-ended, it is up to you to manage your time.
 
 * [Function Designs](#function-designs)
-    * [Task 02.01 - Inspiration - 2 Points](#task-0201---inspiration---2-points)
-    * [Task 02.02 - Brick Pattern - 5 Points](#task-0202---brick-pattern---5-points)
-    * [Task 02.03 - Pattern Experiments - 10 Points](#task-0203---pattern-experiments---10-points)
+    * [Task 02.01 - Inspiration - 4 Points](#task-0201---inspiration---4-points)
+    * [Task 02.02 - Pattern Experiments - 13 Points](#task-0202---pattern-experiments---13-points)
 * [Learnings](#learnings)
     * [Task 02.04 - 3 Points](#task-0204---3-points)
 * [How To Submit](#how-to-submit)
@@ -30,7 +29,7 @@ This assignment should take <= 6h. As this assignment is open-ended, it is up to
 ## Function Designs
 
 
-### Task 02.01 - Inspiration - 2 Points
+### Task 02.01 - Inspiration - 4 Points
 
 Go to the [shadertoy](https://www.shadertoy.com/browse) site and browse the examples a bit. Submit the link to at least one example you like (you don't have to understand the code). Think about *what* you like about the example and *why*. You don't have to write anything about that in your submission but be able to explain it in class.
 
@@ -39,25 +38,12 @@ Go to the [shadertoy](https://www.shadertoy.com/browse) site and browse the exam
 *Submission:* Links in your submission file.
 
 
-### Task 02.02 - Brick Pattern - 5 Points
 
-Understand the given brick pattern code in the [`brick.frag`](./glsl/brick.frag) file and insert comments explaining for each code line of the brick pattern what it does. 
+### Task 02.02 - Pattern Experiments - 13 Points
 
-TO BE ADDED: Unreal / HLSL Version
-
-One cell of the brick pattern is parameterized as follows:
-
-![tex_brick_params](./img/tex_brick_params.png)
-
-*Note:* For running the code, install the Visual Studio Code extension [glsl-canvas](https://marketplace.visualstudio.com/items/?itemName=circledev.glsl-canvas). With this plugin, you can display a `.frag` fragment shader file directly in VSCode. For rendering, select from VSCode's Command Palette the command `Show glslCanvas`.
-
-*Submission:* Submit commented copy of the code as `brick_lastname.frag` in the assignments folder. 
-
-### Task 02.03 - Pattern Experiments - 10 Points
-
-Create a digital 2D pattern of your liking, e.g. the one you designed for the last homework by hand (Task 01.03) but this is entirely up to you.  
+Create a digital 2D pattern of your liking, e.g. the one you designed for the last homework by hand (Task 01.03) but this is entirely up to you. Show different versions of that pattern by changing some parameters.
   
-With this task, I want you to practice **understanding and building individual function designs**. You are free to choose any design and environment you want, as long as it includes the building of a somewhat complex function, which has a visual outcome. Choose the scenario you are interested in and/or helps you in your learning. Your options are (LINKS TO BE ADDED): 
+With this task, I want you to practice **understanding and building individual function designs**. You are free to choose any design and environment you want, as long as it includes the building of a somewhat complex function, which has a visual outcome. Choose the scenario you are interested in and/or helps you in your learning. Your options are (LINKS & MORE INFOS TO BE ADDED BY LENA): 
 
 * GLSL fragment shader
     * See the GLSL examples
@@ -68,7 +54,7 @@ With this task, I want you to practice **understanding and building individual f
 
  
 
-*Submission:* At least one image of your resulting pattern (an Unreal screenshot is still fine), linked in your submission file. If you started with given code or a given setup, briefly explain your changes.
+*Submission:* At least three image of your resulting pattern (an Unreal screenshot is still fine), linked in your submission file. If you started with given code or a given setup, briefly explain your changes.
 
 
 
