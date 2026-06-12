@@ -28,6 +28,11 @@ This assignment should take <= 6h. As this assignment is open-ended, it is up to
 
 ## Function Designs
 
+* [Slides Function Designs](../../03_slides/pgs_03_functions_slides.html)
+* [Script Function Designs](../../02_scripts/pgs_04_functions_script.md) 
+* (we haven't covered all topics in slides and script yet)
+
+
 
 ### Task 02.01 - Inspiration - 4 Points
 
@@ -48,7 +53,7 @@ Show different versions of that pattern by changing some parameters (sizing, col
 With this task, I want you to practice **understanding and building individual function designs**. You are free to choose any design and environment you want, as long as it includes the building of a somewhat complex function, which has a visual outcome. Choose the scenario you are interested in and/or helps you in your learning. You can use the given start scenes and examples as basis. 
 
 * GLSL fragment shader
-    * Examples: [start scene](./glsl/examples/functiondesign_startscene.glsl), [sin](./glsl/examples/sin.frag), [circle pattern](./glsl/examples/pattern_circles.glsl), [kishimisu](./glsl/examples/kishimisu_commented_01.glsl)
+    * Examples: [start scene](./glsl/examples/functiondesign_startscene.glsl), [sin](./glsl/examples/sin.frag), [circle pattern](./glsl/examples/pattern_circles.glsl) (also see the [explanations in the script](../../02_scripts/pgs_04_functions_script.md#example-circle-pattern)), [kishimisu](./glsl/examples/kishimisu_commented_01.glsl)
 * Unreal Material Node Network
     * See the Unreal scene -> `M_pattern_circles_nodes`
 * Unreal Material Custom Node + HLSL
