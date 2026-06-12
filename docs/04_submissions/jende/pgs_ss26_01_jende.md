@@ -56,7 +56,25 @@ Maria Jende, 06/09/2026
 
 ### Task 01.03 - Designing Patterns - 3 Points
 
-XXXXX
+<img src="./img/pgs_01.03_jende_pattern.jpg" alt="Pattern with number 5" width="300"/>
+
+#### Code
+
+Here's a cleaned-up version that stays very close to your original wording while improving grammar and clarity:
+
+* Draw a row of at least three number "5"s, spaced evenly apart
+
+* Connect the top line of the second "5" to the top line of the following "5"
+
+* Take the curved part of the first "5" and connect it to the curved part of the next "5" using a flowing curve.
+
+* Place a circle inside the middle of the "belly" of the second "5"
+
+* Place a small dot in the upper-left inside corner of the first "5"
+
+* This is one cell - Repeat the cell as many times as desired across the row
+
+* Copy that row as many times as desired beneath the first row, alternating the horizontal offset of each new row by either +1 "5" or −1 "5".
 
 <br>
 
