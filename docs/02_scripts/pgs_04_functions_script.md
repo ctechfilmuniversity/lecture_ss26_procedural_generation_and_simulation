@@ -15,11 +15,12 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de \| Film University Babel
 * [Learning Objectives](#learning-objectives)
 * [Environment](#environment)
 * [2D Design](#2d-design)
-    * [Different Dimensions](#different-dimensions)
-* [Example](#example)
-    * [One Cell](#one-cell)
-    * [Mirroring in x and y](#mirroring-in-x-and-y)
-    * [Repetitive Cells](#repetitive-cells)
+    * [1D Examples](#1d-examples)
+* [Example Circle Pattern](#example-circle-pattern)
+    * [1. Radial Layout](#1-radial-layout)
+    * [2. Ridges](#2-ridges)
+    * [3. Repetitive Cells](#3-repetitive-cells)
+    * [4. Mirroring in x and y](#4-mirroring-in-x-and-y)
 * [Building Blocks](#building-blocks)
 * [Transitions](#transitions)
     * [Step Function](#step-function)
@@ -118,19 +119,23 @@ We will focus in this script on the generation of 2D graphics but please keep in
 
 ## Environment
 
-The examples in this section are written in GLSL (OpenGL Shading Language) and run as fragment shaders. A fragment shader is a small program that runs once per pixel and decides what colour that pixel should be. This means there is no explicit loop over pixels — the GPU runs the shader in parallel for all pixels at once, which makes it very efficient.
+The examples in this section are written in GLSL (OpenGL Shading Language) and run as fragment shaders. A fragment shader is a small program that runs once per pixel and decides what color that pixel should be. This means there is no explicit loop over pixels — the GPU runs the shader in parallel for all pixels at once, which makes it very efficient.
 
 To follow along in Visual Studio Code, you can use the [glsl-canvas Extension](https://marketplace.visualstudio.com/items?itemName=circledev.glsl-canvas), which lets you preview GLSL fragment shaders directly in the editor.
 
 A minimal starting point looks like this:
 
 ```glsl
+#ifdef GL_ES
+precision mediump float;
+#endif
+
 uniform vec2 u_resolution;
 
 void main() {
 
     // Normalisation of the incoming screen coordinate
-    vec2 coord = gl_FragCoord.xy/u_resolution;
+    vec2 coord = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
 
     // r, g, b channels from 0..1
     vec3 color = vec3(0.5, 0.0, 0.0);
@@ -140,15 +145,9 @@ void main() {
 }
 ```
 
-Here `gl_FragCoord.xy` gives the pixel position in screen space and dividing by `u_resolution` normalises it to the range 0..1. The final colour is written to `gl_FragColor` as a four-component vector (red, green, blue, alpha).
+Here `gl_FragCoord.xy` gives the pixel position in screen space and dividing by `u_resolution` normalises it to the range 0..1. The final color is written to `gl_FragColor` as a four-component vector (red, green, blue, alpha).
 
-In this example, I am walking you through the steps to re-create this subtle pattern. It is a fairly easy design but includes several of the most common approaches when putting functions together.
-
-![pattern_07](img/functions/pattern_07.png)  
-
-*What do you see? What could be the steps to recreate this pattern?*
-
-
+The `#ifdef` directive, which sets the precision of our float values at the top of the file is need by the glsl-canvas extension and we can ignore it.
 
 
 ## 2D Design
@@ -201,7 +200,7 @@ precision mediump float;
 uniform vec2 u_resolution;
 
 void main() {
-    vec2 pt = gl_FragCoord.xy/u_resolution;
+    vec2 pt = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
 
     // Increase frequency to fit more sin waves 
     // between 0..1
@@ -221,7 +220,7 @@ Code rendering:
 
 ![func_12](img/functions/func_12.png)  
 
-### Different Dimensions
+### 1D Examples
 
 You will often find examples and explanations in lower dimensions, meaning in 1D, as the graphs for these functions are easier to visualize:
 
@@ -238,15 +237,57 @@ How to interpret in these scenarios the needed second dimension depends on the c
 
 
 
-## Example
+## Example Circle Pattern
+
+Before we dive into the specific building blocks of procedural generation algorithms, let's look at an example.
+
+In this example, I am walking you through the steps to re-create this subtle pattern. It is a fairly easy design but practices several common approaches when putting functions together.
+
+![pattern_07](img/functions/circlepattern_04.png)  
+
+*What do you see? What could be the steps to recreate this pattern?*
+
+
+We start with the following code, which sets a fixed color to each pixel:
+
+```glsl
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+uniform vec2 u_resolution;
+
+void main() {
+
+    // Normalization of the incoming
+    // screen coordinate
+    vec2 coord = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
+
+
+    // r, g, b channels from 0..1
+    vec3 color = vec3(0.5, 0.0, 0.0);
+
+    // Set the final "pixel" color
+    gl_FragColor = vec4(color, 1.0);
+}
+```
 
 
 
-### One Cell
+### 1. Radial Layout
 
 When working on repetitive patterns, one usually starts with one cell and repeats that cell in a second step.  
 
-Let's start with creating a circle by plotting the distance of each coordinate to the center point `0.0`, `0.0`.
+
+
+Let's start with creating a circle...
+
+<img src="../02_scripts/img/functions/distance_01.png" alt="pattern_02a" style="width:80%;">
+
+How could we create this?
+
+
+...by plotting the distance of each coordinate to the center point `0.0`, `0.0`!
 
 * The [`distance()`](https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/distance.xhtml) function calculates the distance between two points.
 * The [`mix()`](https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml) function linearly interpolates between two values.
@@ -258,27 +299,37 @@ precision mediump float;
 #endif
 
 uniform vec2 u_resolution;
-uniform float u_time;
 
-float CELLSIZE = 0.2; //relative, hence 0..1
-vec2 OFFSET = vec2(0.8);
+void main() {
 
-void main()
-{
-
+    // Normalization of the incoming
+    // screen coordinate
     vec2 coord = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
 
-    // 1. One Cell, distance to center point
+    // 1. Radial Layout
     float d = distance(coord, vec2(0.0));
 
+    // 1a. Use d to interpolate between two colors
     vec3 color = mix(vec3(1.0, 1., 0.0), vec3(0.5, 0.0, 0.5), d);
+
+    // Set the final "pixel" color
     gl_FragColor = vec4(color, 1.0);
 }
 ```
 
-![pattern_02](img/functions/pattern_02.png)  
+![pattern_02](img/functions/circlepattern_01.png)  
 
-Next, let's create ridges with the [`floor`](https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floor.xhtml) function.
+
+### 2. Ridges
+
+Next, let's create ridges with the [`floor`](https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floor.xhtml) function. We do so by manipulating `d` before using it for the interpolation between colors.
+
+Multiplying `d` by 8 stretches the value range of the distance computation that currently runs from 0 (center point) to max. values around 1 to max. values around 8.
+
+*On a side note*: The actual maximum distance from center depends on the canvas aspect ratio, e.g., for a square canvas the corners are at distance sqrt(2) ≈ 1.41, for 16:9 the corners reach about 2. The visible ring count is then also not exactly 8 but closer to 8 times that max distance (for a squared canvas you get around 11 rings).
+
+Then subtracting `floor(d)` removes the integer part and keeps only the fractional remainder. The result is a value that resets to 0 every time the distance crosses a whole number, producing the concentric rings. This is equivalent to the built-in GLSL function `fract(d)`.
+
 
 ```glsl
 #ifdef GL_ES
@@ -286,51 +337,41 @@ precision mediump float;
 #endif
 
 uniform vec2 u_resolution;
-uniform float u_time;
 
-float CELLSIZE = 0.2; //relative, hence 0..1
-vec2 OFFSET = vec2(0.8);
+void main() {
 
-void main()
-{
-
+    // Normalization of the incoming
+    // screen coordinate
     vec2 coord = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
 
-    // 2. Ridges
+    // 1. Radial Layout
     float d = distance(coord, vec2(0.0));
+
+    // 2. Ridges
     d *= 8.0;
     d -= floor(d);
 
+    // 1a. Use d to interpolate between two colors
     vec3 color = mix(vec3(1.0, 1., 0.0), vec3(0.5, 0.0, 0.5), d);
+
+    // Set the final "pixel" color
     gl_FragColor = vec4(color, 1.0);
 }
 ```
 
-![pattern_03](img/functions/pattern_03.png)  
 
-### Mirroring in x and y
 
-By pushing the coordinate values into the negative range and then flipping them back into positive space with `abs`, we create a 4-fold mirroring effect in both x and y. The trick is to remap the 0..1 coordinate range to the -1..1 range and then apply the absolute value. This causes the pattern to be reflected across both axes, producing four symmetric copies within the same area.
+![pattern_03](img/functions/circlepattern_02.png)  
 
-```glsl
-// Modify value range from 0..1 to -1..1
-// and then taking the absolute
-vec2 coord_remap = abs((coord - 0.5) * 2.0);
 
-// Ridges
-float d = distance(coord_remap, OFFSET);
-d *= 8.0;
-d -= floor(d);
 
-vec3 color = mix(vec3(1.0, 1., 0.0), vec3(0.5, 0.0, 0.5), d);
-gl_FragColor = vec4(color, 1.0);
-```
+### 3. Repetitive Cells
 
-![pattern_03b](img/functions/pattern_03b.png)  
+Next, let's create the cells by dividing the coordinate by the cell size.
 
-### Repetitive Cells
+Dividing `coord` by `CELLSIZE` scales the coordinate range up, e.g., with `CELLSIZE = 0.2` the canvas is going to be split into five cells, with a range at this point from -5..5. Subtracting `floor(coord)` removes the integer part and keeps only the fractional remainder in the range 0..1. Every pixel on the canvas is now mapped into the same normalised cell space, making the pattern repeat automatically without any explicit loop.
 
-Next, let's create the cells by dividing the 0..1 original x,y coordinate by the cell size.
+So framing looks a bit different because after subtracting `floor`, each cell runs from 0 to 1, and not as before from -1..1. Hence the point we compute the distance to (vec2(0.)) under 1.) is now the bottom left corner of the cell. If you want to see the circle again, change the reference point of the distance computation from `float d = distance(coord, vec2(0.0));` to `float d = distance(coord, vec2(0.5));`
 
 ```glsl
 #ifdef GL_ES
@@ -338,154 +379,107 @@ precision mediump float;
 #endif
 
 uniform vec2 u_resolution;
-uniform float u_time;
 
-float CELLSIZE = 0.2; //relative, hence 0..1
-vec2 OFFSET = vec2(0.8);
+// 3. Size of the cells - relative, hence 0..1
+float CELLSIZE = 0.2;
 
-void main()
-{
 
+void main() {
+
+    // Normalization of the incoming
+    // screen coordinate
+    vec2 coord = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
+
+
+    // 3. Create Cells
+    coord /= CELLSIZE;
+    // Get into one cell
+    coord -= floor(coord);
+
+
+    // 1. Radial Layout
+    float d = distance(coord, vec2(0.0));
+
+    // 2. Ridges
+    d *= 8.0;
+    d -= floor(d);
+
+    // 1a. Use d to interpolate between two colors
+    vec3 color = mix(vec3(1.0, 1., 0.0), vec3(0.5, 0.0, 0.5), d);
+
+    // Set the final "pixel" color
+    gl_FragColor = vec4(color, 1.0);
+}
+```
+![pattern_03](img/functions/circlepattern_03.png)  
+
+
+
+### 4. Mirroring in x and y
+
+We want to add more details to the cell. Instead of having just one circle, we want to mirror the design within the cell.
+
+By pushing the coordinate values (before we do anything else with them) into the negative range and then flipping them back into positive space with `abs`, we create a 4-fold mirroring effect in both x and y. The trick is to remap the 0..1 coordinate range to the -1..1 range and then apply the absolute value. This causes the pattern to be reflected across both axes, producing four symmetric copies within the same area.
+
+The mirroring looks best if we add an offset to the center of the circle (to which we compute the distance to). We do this by introducing a new variable `vec2 OFFSET = vec2(0.3);` and using that as reference point in the distance computation under 1.).
+
+```glsl
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+uniform vec2 u_resolution;
+
+// 3. Size of the cells - relative, hence 0..1
+float CELLSIZE = 0.2;
+
+// 4. Point we compute the distance to
+vec2 OFFSET = vec2(0.3);
+
+
+void main() {
+
+    // Normalization of the incoming
+    // screen coordinate
     vec2 coord = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
 
     // 3. Create Cells
     coord /= CELLSIZE;
-
-    // Get into one cell
-    coord -= floor(coord);
-    
-    float d = distance(coord, vec2(0.5));
-    d *= 8.0;
-    d -= floor(d);
-
-    vec3 color = mix(vec3(1.0, 1., 0.0), vec3(0.5, 0.0, 0.5), d);
-    gl_FragColor = vec4(color, 1.0);
-}
-```
-
-![pattern_04](img/functions/pattern_04.png)  
-
-Now, we simply move the center point (the one that we are computing the distance to for the circles).
-
-```glsl
-#ifdef GL_ES
-precision mediump float;
-#endif
-
-uniform vec2 u_resolution;
-uniform float u_time;
-
-float CELLSIZE = 0.2; //relative, hence 0..1
-vec2 OFFSET = vec2(0.8);
-
-void main()
-{
-
-    vec2 coord = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
-
-    // 4. Move center point by OFFSET to compute distance to
-    coord /= CELLSIZE;
-
-    // Get into one cell
-    coord -= floor(coord);
-    
-    float d = distance(coord, OFFSET);
-    d *= 8.0;
-    d -= floor(d);
-
-    vec3 color = mix(vec3(1.0, 1., 0.0), vec3(0.5, 0.0, 0.5), d);
-    gl_FragColor = vec4(color, 1.0);
-}
-```
-
-![pattern_05](img/functions/pattern_05.png)  
-
-
-Lastly, we want to repeat the pattern within the cell as well and also flip it. For this we remap the original value range from 0..1 to -1..1 and take the absolute of those values.
-
-```glsl
-#ifdef GL_ES
-precision mediump float;
-#endif
-
-uniform vec2 u_resolution;
-uniform float u_time;
-
-float CELLSIZE = 0.2; //relative, hence 0..1
-vec2 OFFSET = vec2(0.8);
-
-void main()
-{
-
-    vec2 coord = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
-
-    // 5a. Remapping the range
-    coord /= CELLSIZE;
-
     // Get into one cell
     coord -= floor(coord);
 
-    // Modify value range from 0..1 to -1..1
-    vec2 coord_remap = (coord - 0.5) * 2.0;
-    
-    float d = distance(coord_remap, OFFSET);
-    d *= 8.0;
-    d -= floor(d);
 
-    vec3 color = mix(vec3(1.0, 1., 0.0), vec3(0.5, 0.0, 0.5), d);
-    gl_FragColor = vec4(color, 1.0);
-}
-```
-
-![pattern_06](img/functions/pattern_06.png)  
-
-... and taking the absolute of the new value range
-
-```glsl
-#ifdef GL_ES
-precision mediump float;
-#endif
-
-uniform vec2 u_resolution;
-uniform float u_time;
-
-float CELLSIZE = 0.2; //relative, hence 0..1
-vec2 OFFSET = vec2(0.8);
-
-
-void main()
-{
-
-    vec2 coord = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
-
-    // Create Cells
-    coord /= CELLSIZE;
-    
-    // Get into one cell
-    coord -= floor(coord);
-
-    // Modify value range from 0..1 to -1..1
-    // and then taking the absolute to flip
-    // all negative values to be positive again
+    // 4. Modify value range from 0..1 to -1..1
+    // and then taking the absolute to create
+    // a mirroring within the cell
     vec2 coord_remap = abs((coord - 0.5) * 2.0);
 
-    // Ridges
+
+    // 1. Radial Layout
     float d = distance(coord_remap, OFFSET);
+
+    // 2. Ridges
     d *= 8.0;
     d -= floor(d);
 
+    // 1a. Use d to interpolate between two colors
     vec3 color = mix(vec3(1.0, 1., 0.0), vec3(0.5, 0.0, 0.5), d);
+
+    // Set the final "pixel" color
     gl_FragColor = vec4(color, 1.0);
-    // gl_FragColor = vec4(vec3(d), 1.0);
 }
 ```
 
-![pattern_01](img/functions/pattern_01.png)  
+![circlepattern_04](img/functions/circlepattern_04.png)  
+
+
 
 I hope you didn't go blind by this example... sorry.
 
 
 ## Building Blocks
+
+In the following we will go through the most common building block of procedural generation algorithms, as, e.g., found on shadertoy.
 
 ## Transitions
 
@@ -513,7 +507,7 @@ uniform vec2 u_resolution;
 
 void main()
 {
-    vec2 pt = gl_FragCoord.xy/u_resolution;
+    vec2 pt = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
 
     // The following step function returns
     //  0.0 when x is smaller than 0.4 and
@@ -559,7 +553,7 @@ uniform vec2 u_resolution;
 
 void main()
 {
-    vec2 pt = gl_FragCoord.xy/u_resolution;
+    vec2 pt = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
 
     // Our "pattern":
     float verti = sin(8.0 * PI * pt.x);
@@ -606,7 +600,7 @@ uniform vec2 u_resolution;
 
 void main()
 {
-    vec2 pt = gl_FragCoord.xy/u_resolution;
+    vec2 pt = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
 
 
     vec3 color1 = vec3(1., 0. , 0.);
@@ -1183,11 +1177,10 @@ This example demonstrates how a handful of simple operations — division, floor
 
 Next we look into the deeper meanings of repetition:
 
-![tutorial_07_islamicpattern_01](img/functions/tutorial_07_islamicpattern_01.png)
-![tutorial_07_islamicpattern_02](img/functions/tutorial_07_islamicpattern_02.png)
-![tutorial_07_islamicpattern_03](img/functions/tutorial_07_islamicpattern_03.png)
-![tutorial_07_islamicpattern_05](img/functions/tutorial_07_islamicpattern_05.png)
-
+<img src="../02_scripts/img/functions/tutorial_07_islamicpattern_01.png" alt="tutorial_07_islamicpattern_01" style="width:20%;">
+<img src="../02_scripts/img/functions/tutorial_07_islamicpattern_02.png" alt="tutorial_07_islamicpattern_02" style="width:20%;">
+<img src="../02_scripts/img/functions/tutorial_07_islamicpattern_03.png" alt="tutorial_07_islamicpattern_03" style="width:20%;">
+<img src="../02_scripts/img/functions/tutorial_07_islamicpattern_05.png" alt="tutorial_07_islamicpattern_05" style="width:20%;">
 
 ---
 
