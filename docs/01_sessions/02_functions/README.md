@@ -53,7 +53,7 @@ Create a 2D pattern of your liking, e.g. the one you designed for the last homew
 
 Show different versions of the pattern by changing some parameters (sizing, colors, etc.), while maintaining the gist of the pattern.
   
-With this task, I want you to practice **understanding and building individual function designs**. You are free to choose any design and environment you want, as long as it includes the building of a somewhat complex function, which has a visual outcome. Choose one environment you are interested in and which fits your overall learning path best (also feel free to learn both environment 😊). You can use the given start scenes and examples as basis. 
+With this task, I want you to practice **understanding and building individual function designs**. You are free to choose any design and environment you want, as long as it includes the building of a somewhat complex function, which has a visual outcome. Choose one environment you are interested in and which fits your overall learning path best (also feel free to learn both environments 😊). You can use the given start scenes and examples as basis. 
 
 #### GLSL Fragment Shader
 
@@ -68,7 +68,7 @@ With this task, I want you to practice **understanding and building individual f
 
  
 
-*Submission:* At least three different image of your resulting pattern (screenshots are still fine), linked in your submission file. 
+*Submission:* At least three different images of your resulting pattern (screenshots are still fine), linked in your submission file. 
 
 
 
