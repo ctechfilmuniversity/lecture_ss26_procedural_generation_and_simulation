@@ -84,9 +84,28 @@ With this task, I want you to practice **understanding and building individual f
 
  
 
-*Submission:* 
+*Submission:* <table>
+  <tr>
+    <td align="center"><img src="img/pgs_02_FunctionDesign1.png" width="500"><br><b></b></td>
+    <td align="center"><img src="img/pgs_02_FunctionDesign2.png"   width="500"><br></td>
+    <td align="center"><img src="img/pgs_02_FunctionDesign3.png"   width="500"><br></td>
+    <td align="center"><img src="img/pgs_02_FunctionDesign4.png"   width="500"><br></td>
+  </tr>
+</table>
 
-asjföife
+[Click here for the videos.](https://owncloud.gwdg.de/index.php/s/5kPKuiC2P9vdN8o)
+This designs derive from the pattern_circle example. I turned it into a flower by adding a sine wave to the radius based on the angle. After that, for every other variation, I played with the following:
+
+- Cell size
+- Coordinate scaling
+- Remapping scale
+- Flower amplitude
+- Colors
+
+I also tried to mess with other parts of the code like:
+
+from: xy -= floor(xy);  
+To:      xy += floor(xy);
 
 
 
@@ -97,7 +116,13 @@ asjföife
 Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?
 
 *Submission*: 
-- I challenged myself with not directly starting to jump into the exersice but rather go through resources and ask AI for step by step introductions of different topics, trying to understand the different parts of the system und to remember terminology. I also found an image with general funcitons that I tried to implement and visualize the function as a curve but also as a fuction value as a gradient, to improve my understanding of the connection  
+
+
+I challenged myself not to jump straight into the exercise, but instead to explore resources and ask AI for step-by-step introductions to better understand the system and remember terminology. I also visualized a general function both as a curve and as a gradient to connect the concepts.
+
+I then tried to implement my own pattern, but it became a mess. I felt very limited in my skills when it came to building the a pattern, since some of the functionallity is new again. I tried to get help from AI in a way that would still allow me to learn instead of simply copying, but I ended up with incorrect code, almost no time left, and a lot of frustration because I no longer understood what I was doing. In the end, I decided to abandon my pattern for the moment and adapt one of the examples instead. I prioritized understanding that existing system over forcing my own one, and I actually had fun again.
+
+My main learning today is that a shape is like a region that I draw, while a distance field is a function that describes that shape by returning the distance to it. So a distance field is not a shape itself. 
 
 
 ---
