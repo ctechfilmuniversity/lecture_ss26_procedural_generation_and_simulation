@@ -7,19 +7,20 @@ has_children: false
 
 # Procedural Generation and Simulation
   
-Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de \  
+Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de   
   
 
 ## Scripts
 
 * [Chapter 01 - Introduction](pgs_01_intro_script.md)
 * [Chapter 02 - Unreal](pgs_02_unreal_script.md)
+* [Chapter 03 - Beauty in Maths](pgs_03_mathsbeauty_script.md)
+* [Chapter 04 - Function Design](pgs_04_functions_script.md)
 
 
 <!-- 
   
-* [Chapter 03 - Beauty in Maths](pgs_03_mathsbeauty_script.html)
-* [Chapter 04 - Function Design](pgs_04_functions_script.md)
+
 * [Chapter 05 - Tilings and The Universe](pgs_05_tilings_script.md)
 * [Chapter 06 - Noise](pgs_06_noise_script.md)
 * [Chapter 07 - Dynamics](pgs_07_dynamics_script.md)
