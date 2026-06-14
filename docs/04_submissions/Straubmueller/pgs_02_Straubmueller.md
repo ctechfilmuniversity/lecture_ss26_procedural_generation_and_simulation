@@ -84,7 +84,19 @@ With this task, I want you to practice **understanding and building individual f
 
  
 
-*Submission:* <table>
+*Submission:* 
+
+
+<table>
+  <tr>
+   <td align="center"><img src="img/pgs_02_FunctionDesign_Test.png" width="300"><br>Failed approach trying to make my pattern</b></td>
+  
+  </tr>
+</table>
+
+
+
+<table>
   <tr>
     <td align="center"><img src="img/pgs_02_FunctionDesign1.png" width="500"><br><b></b></td>
     <td align="center"><img src="img/pgs_02_FunctionDesign2.png"   width="500"><br></td>
