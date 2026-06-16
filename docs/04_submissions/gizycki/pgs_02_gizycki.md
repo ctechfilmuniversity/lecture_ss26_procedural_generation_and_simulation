@@ -89,7 +89,7 @@ Four approaches were explored:
 
 ### How I challenged myself:
 - Tried two completely different approaches instead of sticking with the first
-- Researched metaballs/marching cubes independently (grasshopper3d.com)
+- Researched metaballs/marching cubes independently (just found matching examples on grasshopper3d.com)
 - Used Claude as coding assistant but understood the steps and tuned parameters myself
 
 **Note:** After 6 hours the result still doesn't match my original drawing. Submitting current state.
