@@ -28,6 +28,8 @@ I worked in GLSL and used the circle pattern we worked with in class as a starti
 I studied [the chapter on shapes in The Book of Shaders](https://thebookofshaders.com/07/) and added two flower shapes based on sine curves.  
 In the end, I wanted to explore mouse attraction and how the pattern responds to the cursor.
 
+Review the code [here](./code/pgs_ss26_02.02_jende.glsl).
+
 | <img src="./img/02/pgs_02.02_jende_pattern_step1.png" width="300"> | <img src="./img/02/pgs_02.02_jende_pattern_step2.png" width="300"> | <img src="./img/02/pgs_02.02_jende_pattern_step3.png" width="300"> | <img src="./img/02/pgs_02.02_jende_pattern_step4.png" width="300"> |
 | ----- | ----- |  ----- |  ----- |
 
