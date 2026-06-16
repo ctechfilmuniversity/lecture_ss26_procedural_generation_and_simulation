@@ -77,6 +77,16 @@ Four approaches were explored:
 </table>
 </div>
 
+<div align="center">
+<table>
+  <tr>
+    <td align="center"><img src="img/voronoi_blobb.gif" width="380"></td>
+    <td align="center"><img src="img/voronoi_metaball.gif" width="380"></td>
+  </tr>
+</table>
+</div>
+
+
 ## Task 02.03 - 3 Points
 - Learned how Voronoi works in GLSL using minDist and secondDist for cell borders
 - Explored the metaball formula (1.0 - r*r)*(1.0 - r*r) for organic blob connections
