@@ -50,6 +50,7 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de \| Film University Babel
     * [Impulse](#impulse)
     * [Power Curve](#power-curve)
     * [Sinc Curve](#sinc-curve)
+* [Example Brick Pattern](#example-brick-pattern)
 * [Design Goals](#design-goals)
 * [Next](#next)
     * [Tilings](#tilings)
@@ -1023,45 +1024,23 @@ More functions
 
 [[7]](https://thebookofshaders.com/)  
 
-## Design Goals
-
-To understand the above described different components is hopefully with some brain power manageable. But putting components together can be quite daunting. Also, don't be scared away by cryptic examples you will find on the web. Function design code is notoriously difficult to read as it is often optimized for performance.
-
-The best site for finding shader inspirations is [Shadertoy](https://www.shadertoy.com/) run by Inigo Quilez. ShaderToy is packed with very good examples (but also some bad ones...) and code to steal. Unfortunately, ShaderToy is slightly its own world with different variables namings and core functions. We will come back to the awesomeness that is ShaderToy in the Shader Programming workshop.
-
-Whenever you find function designs that you would like to understand, you should try to find the overall *gist* of the design.
-
-*How to find the gist of a function design?*
-
-Divide and conquer:
-
-* Test different values for constants and defines
-* Separate functionalities, e.g. turn off animation, sound, interaction etc.
-* Go line by line and display the result of each line separately
-* Take out all scaling factors, offsets, etc.
-
-Here, only practice and patience help.  
-
-Then, at some point you will not only be as happy as this blobby creature but you might also be able to program this fully procedurally generated scene (including the renderer and such!), which is one of [the masterpieces of Inigo Quilez](https://www.shadertoy.com/view/3lsSzf).
-
-![happy_jumping](img/functions/happy_jumping.gif)  
-[[Happy Jumping by Iq]](https://www.shadertoy.com/view/3lsSzf)
-
-If you are interested in how Inigo built this scene, there is a 6 hours (!) recorded live stream, deconstructing the [Happy Jumping mathematical animation](https://www.youtube.com/watch?v=Cfe5UQ-1L9Q). I tried to watch the video several times but terribly failed each time. Inigo might be a shader mastermind, didactically he is not always.
 
 
 
-<!-- 
 
-### Brick Pattern
+## Example Brick Pattern
 
-The brick pattern is a classic example that brings together several of the building blocks covered in this chapter. It shows how to create a tiling with offset rows, mortar gaps, and smooth or sharp transitions — all without any explicit loop.
+The brick pattern is a classic example from the seminal work:  
+
+> David S. Ebert, F. Kenton Musgrave, Darwyn Peachey, Ken Perlin, and Steven Worley. 2002. [Texturing and Modeling: A Procedural Approach (3rd. ed.)](http://mutantstargoat.com/~nuclear/tmp/texturing_and_modelling_procedural_approach.pdf). Morgan Kaufmann Publishers Inc., San Francisco, CA, USA.
+
+The brick example (page 39) also combines several of the building blocks covered priviously in this chapter. It shows how to create a tiling with offset rows, mortar gaps, and smooth or sharp transitions — all without any explicit loop.
 
 ![bricks_01](img/functions/bricks_01.png)  
 
 The parameters that define the geometry of one brick tile are shown below.
 
-![tex_brick_params](img/functions/tex_brick_params.png)  
+![ebert_01](img/functions/ebert_01.png)  
 
 We start by defining our basic dimensions and normalising the fragment coordinate:
 
@@ -1073,7 +1052,7 @@ float MORTAR  = 0.02;
 vec2 coord = gl_FragCoord.xy/u_resolution.y;
 ```
 
-The variable `coord` is normalised so that it runs between 0..1 across the canvas. For example, if the window is 512 pixels wide and the current fragment is at x position 200, then `coord.x = 200 / 512 = 0.39`.
+This is a different noramlization technique for the incoming screen coordinates than we have used before (where we put 0,0 at the center of the screen). This normalization keeps 0,0 at the bottom left corner and the variable `coord` is normalised so that it runs between 0..1 across the canvas from left to right. What normalization approach to chose depends on the task and personal taste. If in doubt, do what Inigo does :D. 
 
 Next we compute the combined size of one brick plus its surrounding mortar:
 
@@ -1166,10 +1145,39 @@ gl_FragColor = vec4(color, 1.0);
 
 ![bricks_01](img/functions/bricks_01.png)  
 
-This example demonstrates how a handful of simple operations — division, floor, modulo, step, smoothstep, and bias — can be composed to produce a convincing procedural surface. 
+This example demonstrates how a handful of simple operations such as division, floor, modulo, step, smoothstep, and bias can be composed to produce a convincing procedural surface. 
 
 
--->
+
+
+## Design Goals
+
+To understand the above described different components is hopefully with some brain power manageable. But putting components together can be quite daunting. Also, don't be scared away by cryptic examples you will find on the web. Function design code is notoriously difficult to read as it is often optimized for performance.
+
+The best site for finding shader inspirations is [Shadertoy](https://www.shadertoy.com/) run by Inigo Quilez. ShaderToy is packed with very good examples (but also some bad ones...) and code to steal. Unfortunately, ShaderToy is slightly its own world with different variables namings and core functions. We will come back to the awesomeness that is ShaderToy in the Shader Programming workshop.
+
+Whenever you find function designs that you would like to understand, you should try to find the overall *gist* of the design.
+
+*How to find the gist of a function design?*
+
+Divide and conquer:
+
+* Test different values for constants and defines
+* Separate functionalities, e.g. turn off animation, sound, interaction etc.
+* Go line by line and display the result of each line separately
+* Take out all scaling factors, offsets, etc.
+
+Here, only practice and patience help.  
+
+Then, at some point you will not only be as happy as this blobby creature but you might also be able to program this fully procedurally generated scene (including the renderer and such!), which is one of [the masterpieces of Inigo Quilez](https://www.shadertoy.com/view/3lsSzf).
+
+![happy_jumping](img/functions/happy_jumping.gif)  
+[[Happy Jumping by Iq]](https://www.shadertoy.com/view/3lsSzf)
+
+If you are interested in how Inigo built this scene, there is a 6 hours (!) recorded live stream, deconstructing the [Happy Jumping mathematical animation](https://www.youtube.com/watch?v=Cfe5UQ-1L9Q). I tried to watch the video several times but terribly failed each time. Inigo might be a shader mastermind, didactically he is not always.
+
+
+
 
 ## Next
 
