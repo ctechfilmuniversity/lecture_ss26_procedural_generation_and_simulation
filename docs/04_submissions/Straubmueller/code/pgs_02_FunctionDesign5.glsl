@@ -5,33 +5,30 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_time;
 
-float CELLSIZE = 1.0;
+float CELLSIZE = 0.1;
 
 void main()
 {
     //Convert screen coordinates
-    vec2 coord = (3.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
+    vec2 coord = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.y;
 
     //create Grid
-    vec2 xy = coord * CELLSIZE;
+    vec2 xy = coord / CELLSIZE;
 
     //Keep only the local coordinates inside each cell
-    xy -= floor(xy) ;
+    //  I CHANGED THE - TO A + BELOW
+    
+    xy += floor(xy) ;
 
-    //Remap the coordinates 
-    vec2 xy_remap = abs((xy * 0.39) * 2.0);
+    //CHANGED REMAP COORDINATES
+    vec2 xy_remap = abs((xy * 0.08) * 1.0);
 
-    //Compute the distance field (Manhatten instead of circle)(from current pixel to point (0.8, 0.8))
-   //float d =
-   //abs(xy_remap.x - 0.9) +
-   //abs(xy_remap.y - 0.5);
-
+    //Flower shaped Distance field
     float angle = atan(xy_remap.y - 0.5,
                    xy_remap.x - 0.5);
 
     float radius = distance(xy_remap, vec2(0.5));
-
-    float d = radius + 0.1 * sin(angle * 5.0);  
+    float d = radius + 0.5 * sin(angle * 5.0);  
 
     //Repeat the distance Value
     d = d - floor(d);

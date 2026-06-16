@@ -45,23 +45,18 @@ Go to the [shadertoy](https://www.shadertoy.com/browse) site and browse the exam
 
 *Submission:* 
 
-Sunflower Fields 
-- https://www.shadertoy.com/view/NXlXD4
+Van Gogh Sunset
 
-Snail
-- https://www.shadertoy.com/view/ld3Gz2
+https://www.shadertoy.com/view/fXlXWN
 
-tm gyroid 2 
-- https://www.shadertoy.com/view/tXtyW8
+Undulating Urchin
 
-Trailing the Twinkling Tunnel .. 
-- https://www.shadertoy.com/view/WfcGWj
+https://www.shadertoy.com/view/332XWd
 
-Octagrams (reminds me a bit of my pattern)
-- https://www.shadertoy.com/view/tlVGDt
+Fractal pulse
 
-Escher-cat tiling 
-- https://www.shadertoy.com/view/NXlSz7
+https://www.shadertoy.com/view/MlsfR4
+
 
 ### Task 02.02 - Function Design - 13 Points
 
@@ -79,46 +74,15 @@ With this task, I want you to practice **understanding and building individual f
 #### Unreal Materials
 * If you are a beginner, see this [short introduction to Unreal's material editor](./unreal/pgs_tutorial_materialsintro/pgs_tutorial_materialsintro.md).
 * There are two example materials in the [Unreal Project `pgs_functiondesigns`](https://github.com/ctechfilmuniversity/lecture_ss26_procedural_generation_and_simulation/blob/main/docs/01_sessions/02_functions/unreal/pgs_functiondesigns.zip) (inside of the project in the `Content Browser` under `All/Content/pgs_functionsdesigns` -> level `LV_functiondesigns`)
-    1. Function design with nodes in `M_pattern_circles_nodes`
+    1. Function design with nodes in `M_pattern
+    
+    Failed approach trying to make my pattern
+    _circles_nodes`
     2. Function design with code (HLSL) in `M_pattern_circles_hlsl` .
 
  
 
 *Submission:* 
-
-
-<table>
-  <tr>
-   <td align="center"><img src="img/pgs_02_FunctionDesign_Test.png" width="300"><br>Failed approach trying to make my pattern</b></td>
-  
-  </tr>
-</table>
-
-
-
-<table>
-  <tr>
-    <td align="center"><img src="img/pgs_02_FunctionDesign1.png" width="500"><br><b></b></td>
-    <td align="center"><img src="img/pgs_02_FunctionDesign2.png"   width="500"><br></td>
-    <td align="center"><img src="img/pgs_02_FunctionDesign3.png"   width="500"><br></td>
-    <td align="center"><img src="img/pgs_02_FunctionDesign4.png"   width="500"><br></td>
-  </tr>
-</table>
-
-[Click here for the videos.](https://owncloud.gwdg.de/index.php/s/5kPKuiC2P9vdN8o)
-This designs derive from the pattern_circle example. I turned it into a flower by adding a sine wave to the radius based on the angle. After that, for every other variation, I played with the following:
-
-- Cell size
-- Coordinate scaling
-- Remapping scale
-- Flower amplitude
-- Colors
-
-I also tried to mess with other parts of the code like:
-
-from: xy -= floor(xy);  
-To:      xy += floor(xy);
-
 
 
 ## Learnings
@@ -128,14 +92,6 @@ To:      xy += floor(xy);
 Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?
 
 *Submission*: 
-
-
-I challenged myself not to jump straight into the exercise, but instead to explore resources and ask AI for step-by-step introductions to better understand the system and remember terminology. I also visualized a general function both as a curve and as a gradient to connect the concepts.
-
-I then tried to implement my own pattern, but it became a mess. I felt very limited in my skills when it came to building the a pattern, since some of the functionallity is new again. I tried to get help from AI in a way that would still allow me to learn instead of simply copying, but I ended up with incorrect code, almost no time left, and a lot of frustration because I no longer understood what I was doing. In the end, I decided to abandon my pattern for the moment and adapt one of the examples instead. I prioritized understanding that existing system over forcing my own one, and I actually had fun again.
-
-My main learning today is that a shape is like a region that I draw, while a distance field is a function that describes that shape by returning the distance to it. So a distance field is not a shape itself. 
-
 
 ---
 ## How To Submit
