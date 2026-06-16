@@ -87,7 +87,30 @@ Take at least one picture of a natural pattern and at least one of a man-made on
 Create a visual pattern yourself. The pattern must be repetitive - and hand-drawn! It can either be abstracted (CTech) or realism oriented (VFX) or both.
 Give pseudo code for its creation algorithm.
 
-*Submission*: Link at least one preview image and give your pseudo code in your submission file.  
+*Submission*: 
+
+
+![drawn Pattern](img/0103_analogPattern.jpeg)
+
+**pseudo code**
+
+  R = half cell size
+  r = R / 2
+
+draw a border rectangle
+
+for loop: for each row:
+  for each column:
+    draw circle dot
+    draw circle above,  radius r
+    draw circle right,  radius r
+    draw circle below,  radius r
+    draw circle left,   radius r
+    
+    draw circle above,  radius r * 2
+    draw circle right,  radius r * 2
+    draw circle below,  radius r * 2
+    draw circle left,   radius r * 2
 
 
 ### Task 01.04 - Seeing Faces - 1 Point
