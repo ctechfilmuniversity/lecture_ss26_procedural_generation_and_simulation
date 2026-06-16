@@ -38,25 +38,25 @@ Maria Jende, 06/09/2026
 
 #### Natural
 
-<img src="./img/pgs_01.02_jende_natural1.jpg" alt="Natural Pattern 1 - Watermelon " width="300"/>
+<img src="./img/01/pgs_01.02_jende_natural1.jpg" alt="Natural Pattern 1 - Watermelon " width="300"/>
 
-<img src="./img/pgs_01.02_jende_natural2.jpg" alt="Natural Pattern 2- Water " width="300"/>
+<img src="./img/01/pgs_01.02_jende_natural2.jpg" alt="Natural Pattern 2- Water " width="300"/>
 
 <br>
 
 #### Artificial
 
-<img src="./img/pgs_01.02_jende_artificial1.jpg" alt="Artificial Pattern 1 - Architecture Shadow " width="300"/>
+<img src="./img/01/pgs_01.02_jende_artificial1.jpg" alt="Artificial Pattern 1 - Architecture Shadow " width="300"/>
 
-<img src="./img/pgs_01.02_jende_artificial2.jpg" alt="Artificial Pattern 2 - Architecture Window Glass" width="300"/>
+<img src="./img/01/pgs_01.02_jende_artificial2.jpg" alt="Artificial Pattern 2 - Architecture Window Glass" width="300"/>
 
-<img src="./img/pgs_01.02_jende_artificial3.jpg" alt="Artificial Pattern 3 - Filmuni Library" width="300"/>
+<img src="./img/01/pgs_01.02_jende_artificial3.jpg" alt="Artificial Pattern 3 - Filmuni Library" width="300"/>
 
 <br>
 
 ### Task 01.03 - Designing Patterns - 3 Points
 
-<img src="./img/pgs_01.03_jende_pattern.jpg" alt="Pattern with number 5" width="300"/>
+<img src="./img/01/pgs_01.03_jende_pattern.jpg" alt="Pattern with number 5" width="300"/>
 
 #### Code
 
@@ -80,9 +80,9 @@ Here's a cleaned-up version that stays very close to your original wording while
 
 ### Task 01.04 - Seeing Faces - 1 Point
 
-<img src="./img/pgs_01.04_jende_face1.jpg" alt="Face 1 - Tree Bork" width="300"/>
+<img src="./img/01/pgs_01.04_jende_face1.jpg" alt="Face 1 - Tree Bork" width="300"/>
 
-<img src="./img/pgs_01.04_jende_face2.jpg" alt="Face 2 - Fence" width="300"/>
+<img src="./img/01/pgs_01.04_jende_face2.jpg" alt="Face 2 - Fence" width="300"/>
 
 <br>
 
@@ -104,7 +104,7 @@ In the motion-blurred, photographic-like images, it is not the depicted objects,
 
 ### Task 01.06 - Artistic Expression in CGI - 2 Points
 
-![](./img/pgs_1.06_jende_mortell.gif)
+![](./img/01/pgs_1.06_jende_mortell.gif)
 
 I really like this video by Joe Mortell because it visualizes a natural scene while looking very clean, polished, and artificial. This kind of aesthetic, with the water drop perfectly shaped, like a pearl, and the bouncy, velvety leaves endlessly repeating, has something both meditative and magical about it to me.
 
@@ -116,13 +116,13 @@ I really like this video by Joe Mortell because it visualizes a natural scene wh
 
 Unreal Documentation Entry I've done: https://dev.epicgames.com/documentation/unreal-engine/how-to-create-a-ribbon-effect-in-niagara-for-unreal-engine
 
-![](./img/pgs_01.07_jende_unreal1.gif)
+![](./img/01/pgs_01.07_jende_unreal1.gif)
 
 Process of implementing documention
 
 <br>
 
-![](./img/pgs_01.07_jende_unreal2.gif)
+![](./img/01/pgs_01.07_jende_unreal2.gif)
 
 Final Result
 
