@@ -20,7 +20,7 @@ class: center, middle, inverse
 ---
 layout: false
 
-## Today
+## Today (Maybe)
 
 --
 
@@ -35,7 +35,14 @@ layout: false
 --
 * Homework
 
+---
+## Procedural Generation by Hand
 
+<iframe width="710" height="400" src="https://www.youtube.com/embed/Is8N7B9b0GQ" title="He Won’t Stop Building a Map to an Imaginary Place" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+???
+
+https://www.youtube.com/watch?v=Is8N7B9b0GQ
 
 ---
 

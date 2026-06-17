@@ -1402,7 +1402,6 @@ Floor ignores fraction and creates with that a continuous step function.
 ```glsl
 // Ridges
 float d = distance(coord, vec2(0.)); // 0..1
-
 d *= 8.0; // 0..8
 d -= floor(d); // 8x 0..1, 0..1, ...
 ```
@@ -1412,10 +1411,17 @@ d -= floor(d); // 8x 0..1, 0..1, ...
 The same with modulo:
 
 ```glsl
-float d = distance(coord, vec2(0.)); // 0..1
-
 d *= 8.0; // 0..8
 d = d % 1.0; // 8x 0..1, 0..1, ...
+```
+
+--
+
+The same with `fract`:
+
+```glsl
+d *= 8.0; // 0..8
+d = fract(8.); // 8x 0..1, 0..1, ...
 ```
 
 
@@ -1656,7 +1662,10 @@ template:inverse
 
 ## Example Brick Pattern
 
-> David S. Ebert et al. 2002. [Texturing and Modeling: A Procedural Approach (3rd ed.)](http://mutantstargoat.com/~nuclear/tmp/texturing_and_modelling_procedural_approach.pdf). Morgan Kaufmann. (p. 39)
+> David S. Ebert et al. 2002. [Texturing and Modeling: A Procedural Approach (3rd ed.)](http://mutantstargoat.com/~nuclear/tmp/texturing_and_modelling_procedural_approach.pdf). Morgan Kaufmann.  
+  
+  
+(p. 39)
 
 ---
 
@@ -1683,7 +1692,6 @@ A tiled brick wall with offset rows and mortar gaps.
 * Spacing and Normalization
 * Create Tile Space (incl. mortar in tile space)
 * Stagger Every Other Row
-* Get Into One Cell
 * Sharp Brick Outline
 * Smooth Mortar Edge
 * Final Color
@@ -1864,6 +1872,8 @@ y -= y_index;
 // Simplified version
 float w = step(mortar_half_norm_w, x) - step(1.0 - mortar_half_norm_w, x);
 float h = step(mortar_half_norm_h, y) - step(1.0 - mortar_half_norm_h, y);
+
+vec3 color = vec3(w * h);
 ```
 
 ---
@@ -1985,8 +1995,48 @@ float w = step(mortar_half_norm_w, x) - step(1.0 - mortar_half_norm_w, x);
 // CREATING THE BRICK "OUTLINE"
 float w = step(mortar_half_norm_w, x) - step(1.0 - mortar_half_norm_w, x);
 float h = step(mortar_half_norm_h, y) - step(1.0 - mortar_half_norm_h, y);
+
+vec3 color = vec3(w * h);
 ```
 
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+
+`w * h`
+* Multiply = AND (intersection)
+* Both conditions must be true for the result to be non-zero.
+
+```glsl
+float w = ...; // 1 inside brick width, 0 in mortar
+float h = ...; // 1 inside brick height, 0 in mortar
+
+float brick = w * h; // 1 only where BOTH are 1 = inside the brick rectangle
+```
+
+???
+If either is 0, the product is 0. This is exactly why the brick shader uses w * h — a pixel belongs to the brick only if it passes the horizontal check AND the vertical check.
+
+Rule of thumb: multiply when you want overlap / intersection.
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+
+```glsl
+// Simplified version
+
+// CREATING THE BRICK "OUTLINE"
+float w = step(mortar_half_norm_w, x) - step(1.0 - mortar_half_norm_w, x);
+float h = step(mortar_half_norm_h, y) - step(1.0 - mortar_half_norm_h, y);
+
+vec3 color = vec3(w * h);
+```
 
 .center[<img src="../02_scripts/img/functions/bricks_08.png" alt="bricks_08" style="width:30%;">]
 
