@@ -91,7 +91,7 @@ layout:false
 ???
   
 
-* Almost all natural systems appear to combine structure with randomness even though they in fact follow complex creation rules on different scales. As proper simulations of the underlying rules are usually quite expensive to compute, a simple addition of noise is used fake natural systems.  
+* Almost all natural systems appear to combine structure with randomness even though they in fact follow complex creation rules on different scales. As proper simulations of the underlying rules are usually quite expensive to compute, a simple addition of noise is used to fake natural systems.  
 
 ---
 .header[Noise]
@@ -104,7 +104,7 @@ layout:false
 ???
   
  
-* The mushrooms appear to us to grow pretty random even though their growth is greatly controlled by factors such as light and foil properties.
+* The mushrooms appear to us to grow pretty randomly even though their growth is greatly controlled by factors such as light and soil properties.
 
 
 ---
@@ -153,7 +153,7 @@ template:inverse
 ???
   
 
-* The bombing of Guernica was the first areal bombing in Europe
+* The bombing of Guernica was the first aerial bombing in Europe
 * Most of the destruction of European cities was then caused by aerial bombings
 * What was hit was determined by randomness
 
@@ -223,7 +223,7 @@ Vedova expressed a political consciousness in his work for the first time during
 ???
   
 
-> The randomness of this painting it compared to a cosmic strucutre, the galaxy, seen as the larger home of humanity, our home in the universe, in a larger perspective that moves away from the devastation of nation-states at war.
+> The randomness of this painting it compared to a cosmic structure, the galaxy, seen as the larger home of humanity, our home in the universe, in a larger perspective that moves away from the devastation of nation-states at war.
 
 * [Janet Sobel: Forgotten Female Artist Who Influenced Jackson Pollock](https://www.dailyartmagazine.com/janet-sobel-forgotten-female-artist/)
 * Although almost entirely erased from the canon of Abstract Expressionist art, Janet Sobel (born Jennie Olechovsky) is now slowly gaining recognition as one of the original creators of the “drip painting” technique that many critics have previously associated with Jackson Pollock.
@@ -483,7 +483,7 @@ what statisticians call clumping theory.
   
 --
   
-Small differences are amplified by the dynamics of the system, making it effectively unpredicatable, even though the system itself remains fully deterministic.
+Small differences are amplified by the dynamics of the system, making it effectively unpredictable, even though the system itself remains fully deterministic.
 
 ---
 
@@ -727,7 +727,7 @@ How could a naive implementation look like?
 ???
   
 
-* Ken Perlin was commissioned to generate more realistic textures for the movie Tron in the early 1980s. He task was to break with the solid shaded look that have been used so far. The idea was to add to the solid colors a noise texture. For that he came up with an elegant noise algorithm, the *Perlin noise*. In 1997 he won the Academy Award for Technical Achievement from the Academy of Motion Picture Arts.
+* Ken Perlin was commissioned to generate more realistic textures for the movie Tron in the early 1980s. His task was to break with the solid shaded look that had been used so far. The idea was to add to the solid colors a noise texture. For that he came up with an elegant noise algorithm, the *Perlin noise*. In 1997 he won the Academy Award for Technical Achievement from the Academy of Motion Picture Arts.
 
 ---
 .header[Noise Function Designs]
@@ -828,7 +828,7 @@ This is an important property, especially when it comes to filtering the functio
 ???
   
 
-* The worst case in regard to a uneven frequency distribution happens when two successive lattice points have gradients that aim at opposite directions (one points up and the other points down). Then the noise function will have a "S" like shape between the two points.
+* The worst case in regard to an uneven frequency distribution happens when two successive lattice points have gradients that aim at opposite directions (one points up and the other points down). Then the noise function will have a "S" like shape between the two points.
 
 * This causes the curve to go up on one side of the lattice point and down on the other side of that same point such as
 
@@ -868,7 +868,7 @@ Through the use of random vectors, the distribution of frequencies in the Perlin
 
 ##  Simplex Noise
 
-Perlin was still not satisfied with his gradient noise and presented 2001 the *simplex noise*.  
+Perlin was still not satisfied with his gradient noise and presented in 2001 the *simplex noise*.  
 
 ---
 .header[Noise Function Designs]
@@ -1008,7 +1008,7 @@ To represent this, we can sum up multiple noise functions (so-called *octaves*) 
 ???
   
 
-* The represent this, we remember the insights we gained from Fourier transformations and that any function, or signal, can be decomposed into simple component signals at different frequencies.
+* To represent this, we remember the insights we gained from Fourier transformations and that any function, or signal, can be decomposed into simple component signals at different frequencies.
 
 ---
 ## Component Frequencies
@@ -1024,7 +1024,7 @@ There are several techniques for computing such multi-level noises and all follo
 
 --
 
-* Ususally, for each level *increase the frequency* and *decrease the amplitude*
+* Usually, for each level *increase the frequency* and *decrease the amplitude*
 
 ---
 ## Component Frequencies
@@ -1134,7 +1134,7 @@ for (int i = 0; i < octaves; i++) {
 
 * https://iquilezles.org/articles/fbm/
 * https://iquilezles.org/articles/morenoise/
-* For example, Inigo Quiles applied fbm noise to wrap the space of a fbm noise again with the following results:
+* For example, Inigo Quilez applied fbm noise to wrap the space of a fbm noise again with the following results:
 * If you want to understand this better, Inigo also wrote [an article](https://www.iquilezles.org/www/articles/warp/warp.htm) about it.
 
 
@@ -1145,7 +1145,7 @@ for (int i = 0; i < octaves; i++) {
 
 
 .left-even[
-* Amplitutude & Frequency
+* Amplitude & Frequency
 * Octaves
 * Persistence / Gain
 * Lacunarity
@@ -1166,7 +1166,7 @@ for (int i = 0; i < octaves; i++) {
 
 
 .left-even[
-* Amplitutude & Frequency
+* Amplitude & Frequency
 * Octaves: *Number of layers to be added*
 * Persistence / Gain: *Factor to scale the amplitude each octave*
 * Lacunarity: *Factor to scale the frequency each octave*
@@ -1181,7 +1181,7 @@ for (int i = 0; i < octaves; i++) {
 ???
   
 
- * Amplitutude: "Size" of waves
+ * Amplitude: "Size" of waves
 * Frequency: Period of noise / "repetition" of waves
 
 
@@ -1231,7 +1231,7 @@ Steven Worley. 1996. A cellular texture basis function. In Proceedings of the 2
 ???
   
 * Not every pixel needs to check the distance to every single point. 
-* Also, to avoid aberrations at the edges between cells we need to check for the distances to the points on the neighboring cells. That's the main brillant idea of Steven Worley's paper. At the end, each pixel needs to check only nine positions: their own cell's point and the points in the 8 cells around 
+* Also, to avoid aberrations at the edges between cells we need to check for the distances to the points on the neighboring cells. That's the main brilliant idea of Steven Worley's paper. At the end, each pixel needs to check only nine positions: their own cell's point and the points in the 8 cells around 
 
 
 * Recapping: we subdivide the space into tiles; each pixel will calculate the distance to the point in their own tile and the surrounding 8 tiles; store the closest distance. The result is a distance field that looks like the following example:
@@ -1247,7 +1247,7 @@ Steven Worley. 1996. A cellular texture basis function. In Proceedings of the 2
 ???
   
 * Not every pixel needs to check the distance to every single point. 
-* Also, to avoid aberrations at the edges between cells we need to check for the distances to the points on the neighboring cells. That's the main brillant idea of Steven Worley's paper. At the end, each pixel needs to check only nine positions: their own cell's point and the points in the 8 cells around 
+* Also, to avoid aberrations at the edges between cells we need to check for the distances to the points on the neighboring cells. That's the main brilliant idea of Steven Worley's paper. At the end, each pixel needs to check only nine positions: their own cell's point and the points in the 8 cells around 
 
 
 * Recapping: we subdivide the space into tiles; each pixel will calculate the distance to the point in their own tile and the surrounding 8 tiles; store the closest distance. The result is a distance field that looks like the following example:
@@ -1264,7 +1264,7 @@ Steven Worley. 1996. A cellular texture basis function. In Proceedings of the 2
 ???
   
 * Not every pixel needs to check the distance to every single point. 
-* Also, to avoid aberrations at the edges between cells we need to check for the distances to the points on the neighboring cells. That's the main brillant idea of Steven Worley's paper. At the end, each pixel needs to check only nine positions: their own cell's point and the points in the 8 cells around 
+* Also, to avoid aberrations at the edges between cells we need to check for the distances to the points on the neighboring cells. That's the main brilliant idea of Steven Worley's paper. At the end, each pixel needs to check only nine positions: their own cell's point and the points in the 8 cells around 
 
 
 * Recapping: we subdivide the space into tiles; each pixel will calculate the distance to the point in their own tile and the surrounding 8 tiles; store the closest distance. The result is a distance field that looks like the following example:
@@ -1283,7 +1283,7 @@ Steven Worley. 1996. A cellular texture basis function. In Proceedings of the 2
 ???
   
 * Not every pixel needs to check the distance to every single point. 
-* Also, to avoid aberrations at the edges between cells we need to check for the distances to the points on the neighboring cells. That's the main brillant idea of Steven Worley's paper. At the end, each pixel needs to check only nine positions: their own cell's point and the points in the 8 cells around 
+* Also, to avoid aberrations at the edges between cells we need to check for the distances to the points on the neighboring cells. That's the main brilliant idea of Steven Worley's paper. At the end, each pixel needs to check only nine positions: their own cell's point and the points in the 8 cells around 
 
 
 * Recapping: we subdivide the space into tiles; each pixel will calculate the distance to the point in their own tile and the surrounding 8 tiles; store the closest distance. The result is a distance field that looks like the following example:
@@ -1464,7 +1464,7 @@ Living forms: tension between an inner force to expand and grow, and limitations
 
 ## Distances
 
-We are free to define any kind of distance. So far we have used the most common one, the *Euclidian distance*.
+We are free to define any kind of distance. So far we have used the most common one, the *Euclidean distance*.
 
 
 ???
@@ -1645,7 +1645,7 @@ With height fields, we use for example, a noise function value as a displacement
 
 * Working with a displacement map will add actual new geometry based on the provided displacement map at render time. For this, the renderer subdivides the existing geometry and moves it according to the noise values.
 
-When working with a normal or bump map (different names for the same thing), only the appearance of additional surface detail is created by changing the surface's normals at render time, without actually creating additional geometry. This approach is much faster and use less memory.
+When working with a normal or bump map (different names for the same thing), only the appearance of additional surface detail is created by changing the surface's normals at render time, without actually creating additional geometry. This approach is much faster and uses less memory.
 
 
 
@@ -1655,7 +1655,7 @@ When working with a normal or bump map (different names for the same thing), onl
 
 ## Height Maps
 
-In Unreal you can also build landscapes with the help of heigh maps.
+In Unreal you can also build landscapes with the help of height maps.
 
 .center[<img src="../02_scripts/img/noise/heightmap_01.jpg" alt="heightmap_01" style="width:24%;">  <img src="../02_scripts/img/noise/heightmap_02.jpg" alt="heightmap_01" style="width:70%;"> .imgref[[[docs.unrealengine]](https://docs.unrealengine.com/5.2/en-US/landscape-technical-guide-in-unreal-engine/)]]
 

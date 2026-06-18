@@ -754,7 +754,7 @@ return(color);
 
 * `vec2/3/4` becomes `float2/3/4`
 * `mix()` becomes `lerp()`
-* `uniform` variables move come from input pins (usually)
+* `uniform` variables come from input pins (usually)
 * No `void main(){}`
 * Built-in input variables like `gl_FragCoord` and `gl_FragColor` are replaced by parameters and return values
 
@@ -945,7 +945,7 @@ A linear interpolation of two linear interpolations, hence
 a = c00 * (1 - tx) + c10 * tx; 
 b = c01 * (1 - tx) + c11 * tx; 
 
-c = a * (1) - ty) + b * ty; 
+c = a * (1 - ty) + b * ty; 
 ```
 
 
@@ -1531,7 +1531,7 @@ template:inverse
 ???
   
 
-* Often times we want to repeat certain visual features, which can be done in its simplest form e.g. with a `sin` function. However, there are several other design options. The following functions are also often called *wave functions*.
+* Oftentimes we want to repeat certain visual features, which can be done in its simplest form e.g. with a `sin` function. However, there are several other design options. The following functions are also often called *wave functions*.
 
 ---
 .header[Periodicity]
@@ -1720,7 +1720,7 @@ float MORTAR =  0.02;
 vec2 coord = gl_FragCoord.xy/u_resolution.y;
 ```
 
-* `coord` is the coordinate of the current fragement to shade
+* `coord` is the coordinate of the current fragment to shade
 * `coord` is normalized to run between 0..1, with 0,0 at the bottom left corner
 
 
@@ -1728,7 +1728,7 @@ vec2 coord = gl_FragCoord.xy/u_resolution.y;
   
 
 
-This is a different noramlization technique for the incoming screen coordinates than we have used before (where we put 0,0 at the center of the screen). This normalization keeps 0,0 at the bottom left corner and the variable `coord` is normalised so that it runs between 0..1 across the canvas from left to right. What normalization approach to chose depends on the task and personal taste. If in doubt, do what Inigo does :D. 
+This is a different normalization technique for the incoming screen coordinates than we have used before (where we put 0,0 at the center of the screen). This normalization keeps 0,0 at the bottom left corner and the variable `coord` is normalised so that it runs between 0..1 across the canvas from left to right. What normalization approach to chose depends on the task and personal taste. If in doubt, do what Inigo does :D. 
 
 Let's say our window has a width of 512 and `gl_FragCoord.x` is `200`:
 
@@ -2110,7 +2110,7 @@ float w = smoothstep(0.0, mortar_half_norm_w, x)
 ---
 .header[Function Design | Example Brick Pattern]
 
-## Fake Shawdow
+## Fake Shadow
 
 ```glsl
 float w = getBias(smoothstep(0.0, mortar_half_norm_w, x), 0.3) 
@@ -2120,7 +2120,7 @@ float w = getBias(smoothstep(0.0, mortar_half_norm_w, x), 0.3)
 ---
 .header[Function Design | Example Brick Pattern]
 
-## Fake Shawdow
+## Fake Shadow
 
 ```glsl
 float w = getBias(smoothstep(0.0, mortar_half_norm_w, x), 0.3)
@@ -2133,7 +2133,7 @@ float w = getBias(smoothstep(0.0, mortar_half_norm_w, x), 0.3)
 ---
 .header[Function Design | Example Brick Pattern]
 
-## Fake Shawdow
+## Fake Shadow
 
 ```glsl
 float w = getBias(smoothstep(0.0, mortar_half_norm_w, x), 0.3)
@@ -2146,7 +2146,7 @@ float w = getBias(smoothstep(0.0, mortar_half_norm_w, x), 0.3)
 ---
 .header[Function Design | Example Brick Pattern]
 
-## Fake Shawdow
+## Fake Shadow
 
 ```glsl
 // FAKE SHADOW

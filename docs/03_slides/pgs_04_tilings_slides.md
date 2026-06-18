@@ -194,7 +194,7 @@ he primary advantage of a hex map over a traditional square grid map is that the
 ???
   
 
-* Least amount of vax and most amount of storage space
+* Least amount of wax and most amount of storage space
 * https://www.youtube.com/watch?v=QEzlsjAqADA
 * [March is hexagonal awareness month](https://hexnet.org/content/hexagonal-awareness-month-2012)
 
@@ -309,7 +309,7 @@ vs.
 
 ## Tilings
 
-Tillings can have various properties and and various mathematical questions can be derived from them.
+Tilings can have various properties and various mathematical questions can be derived from them.
 
 
 ???
@@ -341,7 +341,7 @@ Tillings can have various properties and and various mathematical questions can 
   
 
 * What kind of tiling is this?
-* A non-repeating pattern, is call an *aperiodic* tiling. Hence, a set of polygons that tile the plane but never form a periodic tiling.
+* A non-repeating pattern, is called an *aperiodic* tiling. Hence, a set of polygons that tile the plane but never form a periodic tiling.
   
 * This means the pattern is not constructable by simple translations of potentially arbitrarily large periodic patches. Shifting an aperiodic tiling cannot produce the same tiling. 
 * It is not possible to create the tiling by taking some (potentially very large) section and repeating it over and over again. 
@@ -369,7 +369,7 @@ A tiling that does not repeat
 A tiling that does not repeat
 
 * Shifting an aperiodic tiling cannot produce the same tiling
-* Lokal patches can be identical
+* Local patches can be identical
 ]
 
 
@@ -384,7 +384,7 @@ A tiling that does not repeat
 A tiling that does not repeat
 
 * Shifting an aperiodic tiling cannot produce the same tiling
-* Lokal patches can be identical
+* Local patches can be identical
 
 > What is the smallest number of prototiles necessary to tile the plane aperiodically?
 
@@ -506,7 +506,7 @@ Covers a wide range of lands, periods, and genres.
 
 Began in the 8th century
 
-* Influences Roman and Persian cultures
+* Was influenced by Roman and Persian cultures
 * Islamic Golden age
     * 8th century to the 14th century
     * Fundamental advancements in science and mathematics
@@ -839,7 +839,7 @@ template:inverse
 ???
   
 
-* From the The Traveling Alchemists’ Outreach Society
+* From the Traveling Alchemists’ Outreach Society
 * The above image, depicts the *seed of life*, which is believed to be an ancient geometric universal symbol for all creation.
 
 

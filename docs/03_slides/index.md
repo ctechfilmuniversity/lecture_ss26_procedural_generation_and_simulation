@@ -22,4 +22,7 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de
     * [Unreal Project Studio](../01_sessions/02_functions/unreal/pgs_functiondesigns.zip)
     * [Notes 10 Print Pattern](./pgs_tutorial_blueprintsintro/pgs_tutorial_blueprintsintro.md)
     * [Unreal Project 10 Print Pattern](./pgs_pattern10print.zip)
+    * [GLSL Bricks Example](./brick_commented.frag)
+* Session 05
+    * [GLSL Scale Example](./brick_scales.frag)
 * [Slides 05 - Tilings and the Universe](./pgs_04_tilings_slides.html)
