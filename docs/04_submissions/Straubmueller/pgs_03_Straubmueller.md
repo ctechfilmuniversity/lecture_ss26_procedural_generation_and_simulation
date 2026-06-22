@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Session
+title: Homework
 nav_exclude: true
 ---
 
@@ -58,7 +58,13 @@ This time, you also have to create a rendering from the scene. For that you can 
 
 Try to make some changes to the result to make it your own. In the end, you must have a good looking result!
 
-*Submission:* At least one preview image and one animation, e.g. as gif, of your scene, linked in your markdown submission file.
+*Submission:* 
+
+![Cube in Scene](img/pgs_03_AlgorythmicSetUp-01.png)
+![Cube in Scene 2](img/pgs_03_AlgorythmicSetUp-02.png)
+![Cube in Scene 4](img/pgs_03_AlgorythmicSetUp-04.png)
+
+![Cube in Scene 3](gif/pgs_hw_03_cubespawn%20(1).gif)
 
 <span style="color: #ff00cc; font-weight: bold;">OR</span>
 
@@ -91,7 +97,14 @@ If you want to make another function design as GLSL fragment shader you can. How
 
 Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?
 
-*Submission*: Answer in your markdown submission file.  
+*Submission*:
+ 
+I learned how Unreal Engine works with recursion instead of actually slicing the cubes. It also became clear why defining generations is essential, so the recursion eventually stops and the engine does not crash. I also gained a better understanding of working with local and global transforms in the Blueprint system, which is conceptually similar to working with local and global coordinates in Blender.
+
+The general terminology and some Blueprint connections still feel a bit cryptic. In some ways I feel like I understand less than in Blender, but at the same time more, because terms such as vectors, loops, or ceil operations make much more sense now that I have learned some programming theory, which I really enjoy. Seeing object-oriented programming integrated into a game engine also deepened my understanding of it. Another thing I learned was how the Event Graph works. While it is different from the animation timelines I am used to, it was fairly intuitive thanks to my experience with animation and node-based systems.
+
+I challenged myself by modifying the cube material and experimenting with the nodes, especially thinking about how gradients could be combined with a sphere mask. Unfortunately, the hue shift stopped working afterwards. Since I ran out of time and liked the resulting star-like shape, I decided to leave it as it is.
+
 
 
 ---
