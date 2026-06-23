@@ -87,7 +87,30 @@ Take at least one picture of a natural pattern and at least one of a man-made on
 Create a visual pattern yourself. The pattern must be repetitive - and hand-drawn! It can either be abstracted (CTech) or realism oriented (VFX) or both.
 Give pseudo code for its creation algorithm.
 
-*Submission*: Link at least one preview image and give your pseudo code in your submission file.  
+*Submission*: 
+
+
+![drawn Pattern](img/0103_analogPattern.jpeg)
+
+**pseudo code**
+
+  R = half cell size
+  r = R / 2
+
+draw a border rectangle
+
+for loop: for each row:
+  for each column:
+    draw circle dot
+    draw circle above,  radius r
+    draw circle right,  radius r
+    draw circle below,  radius r
+    draw circle left,   radius r
+    
+    draw circle above,  radius r * 2
+    draw circle right,  radius r * 2
+    draw circle below,  radius r * 2
+    draw circle left,   radius r * 2
 
 
 ### Task 01.04 - Seeing Faces - 1 Point
@@ -133,6 +156,12 @@ Choose one CG image, which you like and of which you think that it has an artist
 Explain briefly what you like about the image and why you consider it to be artistic. 
 
 *Submission*: Answer in your submission file and link all images there.  
+
+As my CGI example I chose this abstract of the short film *Modul* by Maxim Zhestkov at this point. I skipped through the artists an this was the one that fascinated me a lot - even it is no image but I think the principle might also works on the screenshots. It bases on simple math algorithms and principles of a design language tranferred into a 3D space.
+
+![Maxim Zhestkov, Modul](img/0106_cgi-1.png)
+
+![Maxim Zhestkov, Modul](img/0106_cgi-2.png)
 
 
 ## Unreal Engine
@@ -191,7 +220,7 @@ My plan was to make this sphere audioreactive. I recreated the actor class, but 
 
 Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?
 
-*Submission*: Answer in your markdown submission file.  
+*Submission*:  
 
 **Unreal Enginge**
 

@@ -123,9 +123,9 @@ Key Light
 * Positioned 30–45° to the side and slightly above the object
 * It creates shadows and contrast
 * For example
-    * position = -650, -650, 650
-    * rotation = 0, -30, 45
-    * Intensity = 1000
+    * position = 650, 650, 650
+    * rotation = 0, -30, -120
+    * Intensity = 100
     * Attenuation Radius = 2000
     * Width = 1000
     * Height = 500
@@ -136,9 +136,9 @@ Fill Light
 * Positioned on the opposite side of the key light, with lower intensity
 * In the analog world, this is sometimes done with a reflector in 3D sometimes simply with an ambient light
 * For example
-    * position = 650, -650, 650
-    * rotation = 0, 30, 120
-    * Intensity = 200
+    * position = -650, 650, 650
+    * rotation = 0, -30, -60
+    * Intensity = 50
     * Attenuation Radius = 2000
     * Width = 1000
     * Height = 500
@@ -179,4 +179,12 @@ In order to render, we need to add a camera to our scene:
 * To create a camera frame, you can also right click the `CineCameraActor` in the Outliner and select `Pilot CineCameraActor`. Now what you see in your Level Viewport, is what the camera sees as well. This means, you can set up the camera view by moving around the viewport with the navigation tools you normally use. Once you have found a view of your object that you like, you can stop piloting by pressing the Stop button in the top left of your viewport. 
 
 
+To see a proper "rendering" through the camera upon play as global level setting:
 
+* Select the New Blueprint button above the viewport and choose `Open Level Blueprint`
+* Connect to the output of `BeginEvent` a `Set View Target with Blend` node
+* Connect a new `Get Player Controller` node's output to `Set View Target with Blend`'s `Target`
+* Drag your camera into the graph and connect it to `New View Target`
+* Make sure that `Blend Time` is 0
+
+Now if you hit the Play button, you get a game view of your camera.

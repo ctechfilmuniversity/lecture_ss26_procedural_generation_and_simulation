@@ -43,7 +43,11 @@ Go to the [shadertoy](https://www.shadertoy.com/browse) site and browse the exam
 
 *On a side note*: shadertoy code does not directly run within the glsl-canvas environment (see Task 2.2).
 
-*Submission:* Links in your submission file.
+*Submission:* 
+
+[ShaderToy: Warping - procedural 2 ](https://www.shadertoy.com/view/lsl3RH)
+
+[ShaderToy: Infinite spider web ](https://www.shadertoy.com/view/fdt3zj)
 
 
 
@@ -126,9 +130,17 @@ I created four cubes with four materials to see the steps from a basic growing c
 
 For my pattern I decided to switch to GLSL in VS Code, because I also wanted to learn GLSL anyways (for example to also integrate it for visuals in TouchDesigner). I got the feeling that it feels more intuitive for me to work directly with code in an editor without a 3D enviroment:
 
+**variation 1**
 
-![pattern 1](img/0202_pattern-2.png)
-![pattern 1](img/0202_pattern.png)
+![pattern 2](img/0202_pattern1.png)
+![pattern 4](img/0202_pattern4.png)
+![pattern 2](img/0202_pattern.png)
+
+**variation 2**
+
+![pattern 3](img/0202_pattern2.png)
+![pattern 5](img/0202_pattern5.png)
+
 
 ---
 
@@ -145,9 +157,11 @@ I started with the same logic from my Unreal Engine materials and converted the 
 
 Once I had my circles visible in GLSL in the editor, I repeated them in a grid. I alsp experimented with dynamic parameters, for instance, changing sine functions over time and implemented a responsive resizing of the circles based on my mouse input. 
 
-![circles code](img/0202_pattern_steps.png)
+![mouse input](img/0202_pattern-center.png)
 
-Next, I wanted to add a (slowly pulsating) circle to each grid element, so I searched ShaderToy for similar examples. I took a closer look at this code: [Spinning Circle Grid Shadertoy](https://www.shadertoy.com/view/lssyRH) I tried to implement the following code snippets for the center marker and the rotating light from the for-loop. Putting this together was a bit more timeconsuming than expected, because I initially tried, by mistake, to calculate the center of the diagram agin, just like in the ShaderToy code. However, this isn't necessary, because it can be solved using the existing grid with “tiledUV” (see code).
+![repetition](img/0202_pattern-repetition.png)
+
+In my next step I wanted to add some more elements to each grid element, so I browsed ShaderToy for similar examples. I took a closer look at this code: [Spinning Circle Grid Shadertoy](https://www.shadertoy.com/view/lssyRH) I tried to implement the following code snippets for the center marker and the rotating light from the for-loop. Putting this together was a bit more timeconsuming than expected, because I initially tried, by mistake, to calculate the center of the diagram agin, just like in the ShaderToy code. However, this isn't necessary, because it can be solved using the existing grid with “tiledUV” (see code).
 
         //SNIPPET SHADERTOY
         // compute the center of the diagram

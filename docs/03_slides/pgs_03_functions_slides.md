@@ -754,7 +754,7 @@ return(color);
 
 * `vec2/3/4` becomes `float2/3/4`
 * `mix()` becomes `lerp()`
-* `uniform` variables move come from input pins (usually)
+* `uniform` variables come from input pins (usually)
 * No `void main(){}`
 * Built-in input variables like `gl_FragCoord` and `gl_FragColor` are replaced by parameters and return values
 
@@ -945,7 +945,7 @@ A linear interpolation of two linear interpolations, hence
 a = c00 * (1 - tx) + c10 * tx; 
 b = c01 * (1 - tx) + c11 * tx; 
 
-c = a * (1) - ty) + b * ty; 
+c = a * (1 - ty) + b * ty; 
 ```
 
 
@@ -1402,7 +1402,6 @@ Floor ignores fraction and creates with that a continuous step function.
 ```glsl
 // Ridges
 float d = distance(coord, vec2(0.)); // 0..1
-
 d *= 8.0; // 0..8
 d -= floor(d); // 8x 0..1, 0..1, ...
 ```
@@ -1412,10 +1411,17 @@ d -= floor(d); // 8x 0..1, 0..1, ...
 The same with modulo:
 
 ```glsl
-float d = distance(coord, vec2(0.)); // 0..1
-
 d *= 8.0; // 0..8
 d = d % 1.0; // 8x 0..1, 0..1, ...
+```
+
+--
+
+The same with `fract`:
+
+```glsl
+d *= 8.0; // 0..8
+d = fract(8.); // 8x 0..1, 0..1, ...
 ```
 
 
@@ -1525,7 +1531,7 @@ template:inverse
 ???
   
 
-* Often times we want to repeat certain visual features, which can be done in its simplest form e.g. with a `sin` function. However, there are several other design options. The following functions are also often called *wave functions*.
+* Oftentimes we want to repeat certain visual features, which can be done in its simplest form e.g. with a `sin` function. However, there are several other design options. The following functions are also often called *wave functions*.
 
 ---
 .header[Periodicity]
@@ -1647,6 +1653,563 @@ float waveTriangle(float t, float frequency, float amplitude)
 
 There are various other [function shapes](http://www.iquilezles.org/www/articles/functions/functions.htm), which you could integrate into your design. 
 
+---
+template:inverse
+
+## Example Brick Pattern
+
+---
+
+## Example Brick Pattern
+
+> David S. Ebert et al. 2002. [Texturing and Modeling: A Procedural Approach (3rd ed.)](http://mutantstargoat.com/~nuclear/tmp/texturing_and_modelling_procedural_approach.pdf). Morgan Kaufmann.  
+  
+  
+(p. 39)
+
+---
+
+## Example Brick Pattern
+
+
+.left-even[<img src="../02_scripts/img/functions/bricks_01.png" alt="bricks_01" style="width:90%;">]  
+
+.right-even[
+A tiled brick wall with offset rows and mortar gaps.
+
+]
+
+???
+(and some fake shadowing)
+ — built from division, floor, modulo, and step. No loops.
+
+
+---
+
+## Example Brick Pattern
+
+
+* Spacing and Normalization
+* Create Tile Space (incl. mortar in tile space)
+* Stagger Every Other Row
+* Sharp Brick Outline
+* Smooth Mortar Edge
+* Final Color
+
+
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Brick Pattern
+
+.center[<img src="../02_scripts/img/functions/ebert_01.png"  style="width:85%;">]
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Spacing and Normalization
+
+```glsl
+float BRICK_W = 0.3;  
+float BRICK_H = 0.1; 
+float MORTAR =  0.02; 
+
+vec2 coord = gl_FragCoord.xy/u_resolution.y;
+```
+
+* `coord` is the coordinate of the current fragment to shade
+* `coord` is normalized to run between 0..1, with 0,0 at the bottom left corner
+
+
+???
+  
+
+
+This is a different normalization technique for the incoming screen coordinates than we have used before (where we put 0,0 at the center of the screen). This normalization keeps 0,0 at the bottom left corner and the variable `coord` is normalised so that it runs between 0..1 across the canvas from left to right. What normalization approach to chose depends on the task and personal taste. If in doubt, do what Inigo does :D. 
+
+Let's say our window has a width of 512 and `gl_FragCoord.x` is `200`:
+
+* `200 / 512 = 0,39`
+
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Create Tile Space
+
+Computing the size of one cell:
+
+```glsl
+float brick_mortar_w = BRICK_W + MORTAR;
+float brick_mortar_h = BRICK_H + MORTAR;
+```
+
+--
+
+.center[<img src="../02_scripts/img/functions/ebert_01.png" style="width:50%;">]
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Create Tile Space
+
+```glsl
+//...
+vec2 coord = gl_FragCoord.xy/u_resolution.y;
+
+float brick_mortar_w = BRICK_W + MORTAR;
+float brick_mortar_h = BRICK_H + MORTAR;
+
+// CREATE THE TILING
+// The value range is converted from 0..1.0 to 0.0..number_of_tiles, 
+// where one tile runs from n_tile..n_tile + 1
+float x = coord.x / brick_mortar_w;
+float y = coord.y / brick_mortar_h;
+
+// To be adjusted
+x -= floor(x);
+y -= floor(y);
+```
+
+
+???
+  
+
+* `brick_mortar_w = 0.32`, `coord.x = 0..1`
+
+  
+    * `0.1 / 0.32 = 0.312`
+    * `0.25 / 0.32 = 0.78`
+    * `0.5 / 0.32 = 1.56`
+    * `0.75 / 0.32 = 2.34`
+    * `1.0 / 0.32 = 3.125`
+
+
+Let's say our window has a width of 512 and `gl_FragCoord.x` is `200`:
+
+* `200 / 512 = 0,39`
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Create Tile Space
+
+```glsl
+//...
+float brick_mortar_w = BRICK_W + MORTAR;
+float brick_mortar_h = BRICK_H + MORTAR;
+
+// CREATE THE TILING
+// The value range is converted from 0..1.0
+// to 0.0..number_of_tiles, 
+// where one tile runs from n_tile..n_tile + 1
+float x = coord.x / brick_mortar_w;
+float y = coord.y / brick_mortar_h;
+
+float mortar_half_norm_w = (MORTAR * 0.5) / brick_mortar_w;
+float mortar_half_norm_h = (MORTAR * 0.5) / brick_mortar_h;
+```
+
+Applying the same (coordinate) transformation to the given mortar sizing.
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Stagger Every Other Row
+
+```glsl
+//...
+// SHIFTING EVERY OTHER ROW
+// Shift the brick x position in 
+// every other row
+float y_index = floor(y);
+if( mod(y_index, 2.0 ) == 0.0) {
+
+    x += 0.5;
+}
+
+// COORDINATE NORMALIZATION
+// x,y should run again between 0..1 on a single brick
+// (including one-half of the mortar around the brick)
+x -= floor(x);
+y -= y_index;
+```
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Stagger Every Other Row
+  
+* `y1 = 1.4`, `y1 = 2.6`
+
+--
+* `y_index1 = 1`, `y_index2 = 2`
+
+--
+* `mod(1.0, 2.0 ) == 0.0` => false
+* `mod(2.0, 2.0 ) == 0.0` => true
+    * `x1 += 0.5`
+
+--
+
+.center[<img src="../02_scripts/img/functions/bricks_02.png" alt="bricks_02" style="width:25%;">]
+
+
+
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+```glsl
+// Simplified version
+float w = step(mortar_half_norm_w, x) - step(1.0 - mortar_half_norm_w, x);
+float h = step(mortar_half_norm_h, y) - step(1.0 - mortar_half_norm_h, y);
+
+vec3 color = vec3(w * h);
+```
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+
+```glsl
+// Simplified version
+float w = step(mortar_half_norm_w, x) - step(1.0 - mortar_half_norm_w, x);
+```
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+
+```glsl
+float w = step(t, x);
+```
+
+.center[<img src="../02_scripts/img/functions/transition_03.png" alt="transition_03" style="width:100%;">]
+
+> 0.0 is returned if x < t, and 1.0 is returned otherwise. 
+
+
+???
+  
+
+* https://docs.gl/el3/step
+
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+
+```glsl
+float w = step(mortar_half_norm_w, x);
+```
+
+--
+
+.center[<img src="../02_scripts/img/functions/bricks_03.png" alt="bricks_03" style="width:60%;">]
+
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+
+```glsl
+// float w = step(mortar_half_norm_w, x) - step(1.0 - mortar_half_norm_w, x);
+float w = step(1.0 - mortar_half_norm_w, x);
+```
+
+--
+
+.center[<img src="../02_scripts/img/functions/bricks_04.png" alt="bricks_04" style="width:52%;">]
+
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+
+```glsl
+// float w = step(mortar_half_norm_w, x) - step(1.0 - mortar_half_norm_w, x);
+float w = step(1.0 - mortar_half_norm_w, x);
+```
+
+.center[<img src="../02_scripts/img/functions/bricks_05.png" alt="bricks_05" style="width:50%;">]
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+
+```glsl
+float w = step(mortar_half_norm_w, x) - step(1.0 - mortar_half_norm_w, x);
+```
+
+.center[<img src="../02_scripts/img/functions/bricks_06.png" alt="bricks_06" style="width:30%;">]
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+
+```glsl
+// CREATING THE BRICK "OUTLINE"
+float w = step(mortar_half_norm_w, x) - step(1.0 - mortar_half_norm_w, x);
+```
+
+.center[<img src="../02_scripts/img/functions/bricks_07.png" alt="bricks_07" style="width:55%;">]
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+
+```glsl
+// Simplified version
+
+// CREATING THE BRICK "OUTLINE"
+float w = step(mortar_half_norm_w, x) - step(1.0 - mortar_half_norm_w, x);
+float h = step(mortar_half_norm_h, y) - step(1.0 - mortar_half_norm_h, y);
+
+vec3 color = vec3(w * h);
+```
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+
+`w * h`
+* Multiply = AND (intersection)
+* Both conditions must be true for the result to be non-zero.
+
+```glsl
+float w = ...; // 1 inside brick width, 0 in mortar
+float h = ...; // 1 inside brick height, 0 in mortar
+
+float brick = w * h; // 1 only where BOTH are 1 = inside the brick rectangle
+```
+
+???
+If either is 0, the product is 0. This is exactly why the brick shader uses w * h — a pixel belongs to the brick only if it passes the horizontal check AND the vertical check.
+
+Rule of thumb: multiply when you want overlap / intersection.
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Sharp Brick Outline
+
+
+```glsl
+// Simplified version
+
+// CREATING THE BRICK "OUTLINE"
+float w = step(mortar_half_norm_w, x) - step(1.0 - mortar_half_norm_w, x);
+float h = step(mortar_half_norm_h, y) - step(1.0 - mortar_half_norm_h, y);
+
+vec3 color = vec3(w * h);
+```
+
+.center[<img src="../02_scripts/img/functions/bricks_08.png" alt="bricks_08" style="width:30%;">]
+
+---
+.header[Function Design | Example Brick Pattern]
+
+
+## Smooth Mortar Edge
+
+```glsl
+float w = smoothstep(0.0, mortar_half_norm_w, x) 
+           - smoothstep(1.0 - mortar_half_norm_w, 1.0, x);
+float h = smoothstep(0.0, mortar_half_norm_h, y) 
+           - smoothstep(1.0 - mortar_half_norm_h, 1.0, y);
+```
+
+---
+.header[Function Design | Example Brick Pattern]
+
+
+## Smooth Mortar Edge
+
+```glsl
+float w = smoothstep(0.0, mortar_half_norm_w, x);
+```
+--
+
+> smoothstep returns 0.0 if x ≤ edge0 and 1.0 if x ≥ edge1. 
+
+
+???
+  
+
+https://docs.gl/el3/smoothstep
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+
+## Smooth Mortar Edge
+
+```glsl
+float w = smoothstep(0.0, mortar_half_norm_w, x);
+```
+
+.center[<img src="../02_scripts/img/functions/bricks_09.png" alt="bricks_09" style="width:60%;">]
+
+
+???
+  
+
+https://docs.gl/el3/smoothstep
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Smooth Mortar Edge
+
+```glsl
+// CREATING THE BRICK "OUTLINE"
+float w = smoothstep(0.0, mortar_half_norm_w, x) 
+            - smoothstep(1.0 - mortar_half_norm_w, 1.0, x);
+```
+
+--
+
+.center[<img src="../02_scripts/img/functions/bricks_10.png" alt="bricks_10" style="width:50%;">]
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Fake Shadow
+
+```glsl
+float w = getBias(smoothstep(0.0, mortar_half_norm_w, x), 0.3) 
+             - getBias(smoothstep(1.0 - mortar_half_norm_w, 1.0, x), 0.7);
+```
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Fake Shadow
+
+```glsl
+float w = getBias(smoothstep(0.0, mortar_half_norm_w, x), 0.3)
+```
+
+--
+
+.center[<img src="../02_scripts/img/functions/bias_01.png" alt="bias_01" style="width:35%;">]
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Fake Shadow
+
+```glsl
+float w = getBias(smoothstep(0.0, mortar_half_norm_w, x), 0.3)
+```
+
+.center[<img src="../02_scripts/img/functions/bricks_11.png" alt="bricks_11" style="width:42%;">]
+
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Fake Shadow
+
+```glsl
+// FAKE SHADOW
+// Modify the curve with bias for a longer dark 
+// and a shorter white transition
+float w = getBias(smoothstep(0.0, mortar_half_norm_w, x), 0.3) 
+             - getBias(smoothstep(1.0 - mortar_half_norm_w, 1.0, x), 0.7);
+```
+
+.center[<img src="../02_scripts/img/functions/bricks_12.png" alt="bricks_12" style="width:42%;">]
+
+
+
+
+---
+.header[Function Design]
+
+## Example Brick Pattern
+
+
+.center[<img src="../02_scripts/img/functions/bricks_01.png" alt="bricks_01" style="width:42%;">]  
+
+
+
+---
+.header[Function Design | Example Brick Pattern]
+
+## Carla's Version
+
+
+.center[<img src="../02_scripts/img/functions/carlaspattern_01.png" alt="carlaspattern_01" style="width:42%;">]  
+
+
+
+
+???
+
+* Free scenes
+* ShaderToy examples
+* Unreal scene
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1717,25 +2280,8 @@ Here, only practice and patience help.
 
 
 
----
-template:inverse
-
-# Next
-
----
-.header[Next]
-
-## Tilings
-
-Next we are looking into the deeper meanings of repetition:
-
-.center[<img src="../02_scripts/img/functions/tutorial_07_islamicpattern_01.png" alt="tutorial_07_islamicpattern_01" style="width:25%;"><img src="../02_scripts/img/functions/tutorial_07_islamicpattern_02.png" alt="tutorial_07_islamicpattern_02" style="width:25%;"><img src="../02_scripts/img/functions/tutorial_07_islamicpattern_03.png" alt="tutorial_07_islamicpattern_03" style="width:25%;"><img src="../02_scripts/img/functions/tutorial_07_islamicpattern_05.png" alt="tutorial_07_islamicpattern_05" style="width:25%;">]
 
 
-???
-  
-
-* 23/code/glsl/pattern_islamic_hex/pattern_islamic_hex.frag
 
 ---
 template:inverse

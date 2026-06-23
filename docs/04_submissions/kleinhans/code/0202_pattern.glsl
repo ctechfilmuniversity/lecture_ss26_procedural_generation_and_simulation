@@ -50,10 +50,10 @@ void main() {
 
          // ridges
         float d = length(tiledUV);
-        d *= 4.0;
-        d -= floor(d); // oder: d = fract(d * 4.0);
+        d *= 12.0;
+        d -= floor(d); 
 
-        result += d *0.2;
+        result += d *0.1;
 
         //circles
         for (int i = 0; i < nSides; i++) {
