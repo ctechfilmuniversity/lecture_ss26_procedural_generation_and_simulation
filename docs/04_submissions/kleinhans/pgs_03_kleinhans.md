@@ -53,29 +53,28 @@ Complete [Tutorial *Fancy Cubes*](./tutorial_dancing_cubes/pgs_tutorial_dancing_
 
 This time, you also have to create a rendering from the scene. For that you can use the [Tutorial Rendering](./tutorial_rendering/tutorial_rendering_rendering.md) (the section about Postprocessing Effects is optional for additional stylization, see Task 03.02).
 
-*Submission:*
+*Submission:* **Tutorial**
 
-![Tutorial Fancy Cubes](img/0203_fancyCubes_tutorial-3.png)
+watch my rendering here: [link to video](https://owncloud.gwdg.de/index.php/s/wONK6DxMdQ6XHXu)
 
-![Tutorial Fancy Cubes](img/0203_fancyCubes_tutorial-2.png)
+![Tutorial Fancy Cubes](img/0203_fancyCubes_tutorial-1.png)
 
-link to video:
+![Tutorial Fancy Cubes](img/0203_fancyCubes_tutorial-2.jpeg)
+
 
 ### Task 03.02.02 Option A - Your Fancy Cubes - 5 Points
 
 Try to make some changes to the result to make it your own. In the end, you must have a good looking result!
 
-*Submission:* At least one preview image and one animation, e.g. as gif, of your scene, linked in your markdown submission file.
+*Submission:*  **Scene**
 
-<span style="color: #ff00cc; font-weight: bold;">OR</span>
+watch my rendering here: [link to video](https://owncloud.gwdg.de/index.php/s/wONK6DxMdQ6XHXu)
 
-*Submission:*
+![Tutorial Fancy Cubes](img/0302_fancyCubes-1.jpeg)
 
-![Tutorial Fancy Cubes](img/0203_fancyCubes_scene-1.png)
+![Tutorial Fancy Cubes](img/0302_fancyCubes-2.jpeg)
 
-![Tutorial Fancy Cubes](img/0203_fancyCubes_scene-2.png)
 
-link to video:
 
 
 ## Learnings
@@ -86,8 +85,15 @@ Summarize your learnings in whole sentences. What was challenging for you in thi
 
 *Submission*: 
 
-While rebuilding the tutorial scene, I finally had a proper workflow with Blueprints for the first time. I learned how to build the node tree with different event actions (eventBeginPlay, Event Tick and Custom events), how to create and execute custom functions, and implemented external components, like assigned material and particle systems. On of the most interesting parts of this was creating the for-loop. Even if I had worked with node based feedbackloops in touchdesigner before this gave me a new hands on experience how loops are created in node enviroments. Especially in the seconds part of the task I experimented with different parameters in that loop to change size, rotation and location of specific instances individually.
-Besides this I stepped deeper into Unreals Lightening possibilities and Render Settings and erxperimented a lot with the interaction of enviroment lightening and material attributes.
+While rebuilding the tutorial scene, I finally had a proper workflow with Blueprints for the first time. I learned how to build the node tree with different event actions (EventBeginPlay, EventTick, and Custom events), how to create and execute custom functions, and how to implement external components, like assigned materials and particle systems.
+
+One of the most interesting parts for me was creating the for-loop. Even though I had worked with node-based feedback loops in TouchDesigner before, this gave me a more conscious experience of how loops (known from code environments) are translated into node environments (now I see that my "feedback-loops" in TouchDesigner are actually for-loops!). Especially in the second part of the task, I experimented with different parameters in that loop to change the size, rotation, and location of specific instances individually.
+
+Besides this, I stepped deeper into Unreal's lighting possibilities and render settings and experimented a lot with the interaction of environment lighting and material attributes.
+
+I challenged myself through my trial-and-error process, exploring different parameters and ideas in the second part when customizing my scene. I did a lot of experimentation here. I could have challenged myself a bit more by creating a new custom event/function, but within the scope of the task, I used this opportunity to get a better overview of parameters and nodes and to play around with these. 
+Next time, I could experiment with creating new functionality snippets, e.g., constructing new events or implementing new loops into the node tree.
+
 
 
 
