@@ -6,7 +6,7 @@ nav_exclude: true
 
 **Procedural Generation and Simulation**  
 
-Maria Jende, 06/16/2026
+Maria Jende, 06/24/2026
 
 <br>
 
