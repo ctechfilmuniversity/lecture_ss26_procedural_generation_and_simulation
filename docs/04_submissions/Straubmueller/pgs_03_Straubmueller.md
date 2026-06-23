@@ -103,7 +103,7 @@ I learned how Unreal Engine works with recursion instead of actually slicing the
 
 The general terminology and some Blueprint connections still feel a bit cryptic. In some ways I feel like I understand less than in Blender, but at the same time more, because terms such as vectors, loops, or ceil operations make much more sense now that I have learned some programming theory, which I really enjoy. Seeing object-oriented programming integrated into a game engine also deepened my understanding of it. Another thing I learned was how the Event Graph works. While it is different from the animation timelines I am used to, it was fairly intuitive thanks to my experience with animation and node-based systems.
 
-I challenged myself by modifying the cube material and experimenting with the nodes, especially thinking about how gradients could be combined with a sphere mask. Unfortunately, the hue shift stopped working afterwards. Since I ran out of time and liked the resulting star-like shape, I decided to leave it as it is.
+I challenged myself by modifying the cube material and experimenting with the nodes, especially thinking about how to achieve gradients with a mask and other calculations. Unfortunately, the hue shift stopped working afterwards. Since I ran out of time and liked the resulting star-like shape, I decided to leave it as it is.
 
 
 
