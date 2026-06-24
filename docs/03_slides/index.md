@@ -25,4 +25,5 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de
     * [GLSL Bricks Example](./brick_commented.frag)
     * [GLSL Bricks to Scale Example](./brick_scales.frag)
     * [GLSL Kishimisu Example](./glsl_kishimisu.zip)
-* [Slides 05 - Tilings and the Universe](./pgs_04_tilings_slides.html)
+* [Slides 04 - Tilings and the Universe](./pgs_04_tilings_slides.html)
+* [Slides 05 - Noise](./pgs_05_noise_slides.html)

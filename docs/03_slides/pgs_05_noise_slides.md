@@ -223,7 +223,7 @@ Vedova expressed a political consciousness in his work for the first time during
 ???
   
 
-> The randomness of this painting it compared to a cosmic structure, the galaxy, seen as the larger home of humanity, our home in the universe, in a larger perspective that moves away from the devastation of nation-states at war.
+> The randomness of this painting is compared to a cosmic structure, the galaxy, seen as the larger home of humanity, our home in the universe, in a larger perspective that moves away from the devastation of nation-states at war.
 
 * [Janet Sobel: Forgotten Female Artist Who Influenced Jackson Pollock](https://www.dailyartmagazine.com/janet-sobel-forgotten-female-artist/)
 * Although almost entirely erased from the canon of Abstract Expressionist art, Janet Sobel (born Jennie Olechovsky) is now slowly gaining recognition as one of the original creators of the “drip painting” technique that many critics have previously associated with Jackson Pollock.
@@ -383,7 +383,7 @@ bution, hypergeometric distribution,...
 * Uniform randomness does not exhibit any correlation pattern between position of points
 * Entropy = Disorder; Information = Order, Entropy as a measure of Disorder
     * High Entropy states are disordered; while Low Entropy states (like crystals) have highly ordered structures
-* Entropy and Thermodynamics: Entropy measures how much energy degrades towards less and less “usable” forms... no perpetual motion machine can ever exis
+* Entropy and Thermodynamics: Entropy measures how much energy degrades towards less and less “usable” forms... no perpetual motion machine can ever exist
     * Thermodynamics developed out of the need to understand the efficiency of machines turning energy into work: Entropy limits the efficiency of mechanical machines
 
 
@@ -424,8 +424,8 @@ intuitively. Moreover, the emergence of “patterns” from what is essentially
 “noise” is so powerful, that people may reject the statistical analysis, even
 when it is available, in favor of the intuitive feeling. The perception,
 whether visual or conceptual, is so compelling as to withstand analysis.
-Much as the famous Miiller-Lyer illusion is not dispelled by measurement
-(see Fig. 11,the perceived “clumping” of random events is not dispelled by
+Much as the famous Müller-Lyer illusion is not dispelled by measurement
+(see Fig. 11, the perceived “clumping” of random events is not dispelled by
 statistical analysis (see Fig. 2). Indeed, it has led to the development of
 what statisticians call clumping theory.
 
@@ -438,7 +438,7 @@ what statisticians call clumping theory.
 
 * We perceive irregular clusters that form in a random arrangement as "pattern"
 
-.footnote[Marcolli, M. 2020. Lumen naturae: Visions of the abstract in art and mathematics. The MIT Press, Cambridge, MA., Bar-Hill, M., Wagenaar, W. 1991. The perception of randomness. Elsevier.]
+.footnote[Marcolli, M. 2020. Lumen naturae: Visions of the abstract in art and mathematics. The MIT Press, Cambridge, MA., Bar-Hillel, M., Wagenaar, W. 1991. The perception of randomness. Elsevier.]
 
 
 --
@@ -498,6 +498,72 @@ Small differences are amplified by the dynamics of the system, making it effecti
 * An animation of a double-rod pendulum at an intermediate energy showing chaotic behavior. Starting the pendulum from a slightly different initial condition would result in a vastly different trajectory. The double-rod pendulum is one of the simplest dynamical systems with chaotic solutions.
 
 
+
+---
+
+## Randomness vs. Chaos
+
+<img src="../02_scripts/img/noise/lavarand_01.jpg" alt="lavarand_01" style="width:27%;"> <img src="../02_scripts/img/noise/lavarand_02.png" alt="lavarand_02" style="width:58%;">
+
+.footnote[[Walmsley, Alexander. 2026. Live Stream.][Images: [By HaeB - Own work, CC BY-SA 4.0](https://commons.wikimedia.org/w/index.php?curid=116926170), [Martin J. Levy](https://blog.cloudflare.com/randomness-101-lavarand-in-production/)]]
+
+
+???
+A simple translation with surprising stakes. This is the "hello world" of third spaces, bringing something from the real world into computation.
+
+* Context: the generation of random numbers
+* Relevant for the generation of secure cryptographic keys to the random initialising of weights during the training of an AI network.
+* Computers cannot produce true randomness.
+    * They simulate it using deterministic algorithms — pseudo-random number generator (PRNG) — and that simulation is structurally different from the thing it mimics
+    * PRNGs have period lengths, statistical biases, seeds.
+    * deterministic: determined solely by the input and initial conditions, thereby always returning the same results
+* Increasingly true random number generators (TRNG), make use of chaotic physical processes in the real world, 
+    * like atmospheric noise (https://www.random.org/) or radioactive decay (https://www.fourmilab.ch/hotbits/)
+    * practically impossible to predict using an algorithm
+
+---
+
+## Randomness vs. Chaos
+
+<img src="../02_scripts/img/noise/lavarand_01.jpg" alt="lavarand_01" style="width:27%;"> <img src="../02_scripts/img/noise/lavarand_02.png" alt="lavarand_02" style="width:58%;">
+
+.footnote[[Walmsley, Alexander. 2026. Live Stream.][Images: [By HaeB - Own work, CC BY-SA 4.0](https://commons.wikimedia.org/w/index.php?curid=116926170), [Martin J. Levy](https://blog.cloudflare.com/randomness-101-lavarand-in-production/)]]
+
+
+???
+
+* And that is what we are seeing here
+* In the San Francisco offices of the internet security firm CloudFlare there is a wall of lava lamps filmed 24 hours a day in order to provide cryptographic keys for some 20% of the world’s internet traffic.
+* Known as the Lavarand, whenever a key is required, the CloudFlare systems translate a frame from the live feed into a numeric value that is then fed as a seed into a PRNG, generating the key.
+* Due to the highly chaotic movement of the liquid in the lamps, as well as the atmospheric and lighting conditions that eventually become rendered as pixels in the image, the seeds are extremely difficult to predict. 
+
+Despite the use of brightly coloured objects made for human entertainment, the translation is purely operational for the computational process of pseudo-random number generation.
+
+------
+
+
+In such cases, a PRNG is often initialised with a truly random seed in order to quickly and efficiently produce a random key. In the San Francisco offices of the internet security firm CloudFlare there is a wall of lava lamps filmed 24 hours a day in order to provide cryptographic keys for some 20% of the world’s internet traffic (Fig. 1). Known as the Lavarand, the idea is based on an original patent by the US company Silicon Graphics in 1996 (Noll *et al.,* 1996). Whenever a key is required, the CloudFlare systems translate a frame from the live feed into a numeric value that is then fed as a seed into a PRNG, generating the key (Leebow-Fieser, 2017). Due to the highly chaotic movement of the liquid in the lamps, as well as the atmospheric and lighting conditions that eventually become rendered as pixels in the image, the seeds are extremely difficult to predict. The images, despite their use of brightly coloured objects made for human entertainment, are made to be purely operational for the computational process of pseudo-random number generation.
+
+Random numbers play a key role in computational processes ranging from the generation of secure cryptographic keys to the random initialization of weights during AI network training. Yet computers cannot produce true randomness. They simulate it using deterministic algorithms — PRNGs — and that simulation is structurally different from the thing it mimics. It has period lengths, statistical biases, seeds. In other words, the move from real-world phenomenon to computational representation is not a neutral transfer. Something changes in the crossing.
+* One response to this problem is to extract seeds from highly complex physical processes. True random number generators (TRNGs) draw on the latent entropy in chaotic physical phenomena: atmospheric noise, radioactive decay, or — perhaps most evocatively — lava lamps. In the San Francisco offices of the internet security firm Cloudflare, a wall of lava lamps is filmed around the clock, providing cryptographic keys for roughly 20% of the world's internet traffic. Known as Lavarand, the system translates frames from the live feed into numeric seeds for a PRNG. The lamps' chaotic fluid motion, combined with atmospheric and lighting conditions, makes the seeds practically impossible to predict algorithmically. Objects designed purely for human visual pleasure become, in this context, operational instruments for computation.
+
+
+
+
+
+* https://blog.cloudflare.com/randomness-101-lavarand-in-production/
+  
+
+
+This distinction is particularly salient in the area of cryptography, which is involved in the study of securing communication across networks (Rivest, 1990). The security of the world’s internet traffic relies to a large extent on the ability to generate cryptographic keys with a degree of unpredictability high enough to make them difficult if not practically impossible to guess. In such cases, a PRNG is often initialised with a truly random seed in order to quickly and efficiently produce a random key. In the San Francisco offices of the internet security firm CloudFlare there is a wall of lava lamps filmed 24 hours a day in order to provide cryptographic keys for some 20% of the world’s internet traffic (Fig. 1). Known as the Lavarand, the idea is based on an original patent by the US company Silicon Graphics in 1996 (Noll *et al.,* 1996). Whenever a key is required, the CloudFlare systems translate a frame from the live feed into a numeric value that is then fed as a seed into a PRNG, generating the key (Leebow-Fieser, 2017). Due to the highly chaotic movement of the liquid in the lamps, as well as the atmospheric and lighting conditions that eventually become rendered as pixels in the image, the seeds are extremely difficult to predict. The images, despite their use of brightly coloured objects made for human entertainment, are made to be purely operational for the computational process of pseudo-random number generation.
+
+
+
+
+
+
+
+
 ---
 .header[Procedural Noise]
 
@@ -507,7 +573,7 @@ Small differences are amplified by the dynamics of the system, making it effecti
 
 <img src="../02_scripts/img/noise/randomness_01.png" alt="randomness_01" style="width:100%;"> 
 
->What to engineer for randomness in visual arts?
+> What to engineer for randomness in visual arts?
 
 
 
@@ -622,7 +688,7 @@ For good noise functions there are overall the following requirements.
 ???
   
 
-* The noise should look the same every time we compute is, e.g. in every frame we render unless we explicitly want a change e.g. for an animation.
+* The noise should look the same every time we compute it, e.g. in every frame we render unless we explicitly want a change e.g. for an animation.
 
 ---
 template:inverse
@@ -742,8 +808,14 @@ So what did Perlin invent?
 ## Perlin Noise
 
 .left-even[
-Instead of values, Perlin uses random normalized *gradients* on a grid for each sample point. 
+Instead of values, Perlin uses random normalized *gradients* on a grid for each lattice vertex. 
 ]
+
+???
+lattice = grid  
+  
+The gradient at each grid point is a random unit vector, meaning a 2D vector of length 1 pointing in a random direction. 
+
 
 --
 
@@ -784,13 +856,9 @@ Instead of values, Perlin uses random normalized *gradients* on a grid for each 
 ???
   
 
-* The benefit of perlin noise is the overall distribution of frequencies. Since value noise uses simple values that are interpolated, there is a higher chance, that a row of several values only differs a little. The consequence is, that some regions of your picture may contain little changes and some regions a lot of changes.
-
-By using gradients you are reducing this effect because the interpolation is not done by value but instead calculated between tangents. Now it's more difficult to have a flat curve (both tangents must be collinear).
-
-*  In the case of value noise, we generate random values at integer positions along the "line" and interpolate these values between these integer positions (as shown in Figures 5 and 6). Though note that we choose these values randomly, several successive values may be very similar (as illustrated in Figure 6). This is not great because some parts of the noise will vary quickly (when consecutive values are very different from each other), and some parts will change slowly (when successive values along the x-axis are similar: for example, have the same sign). Parts of the noise function where values change slowly are said to have a low frequency compared to parts of the noise where the values change quickly, which are said to have a higher frequency. This generally means that value noise (when you check the frequencies the noise is made of) is composed of high and low frequencies. A good noise is a noise that looks random and changes smoothly locally but also generally presents a pretty homogeneous look. In other words, the features the noise is made of should generally have a similar size (a similar frequency). 
+*  In the case of value noise, we generate random values at integer positions along the "line" and interpolate these values between these integer positions. Though note that we choose these values randomly, several successive values may be very similar. This is not great because some parts of the noise will vary quickly (when consecutive values are very different from each other), and some parts will change slowly (when successive values along the x-axis are similar: for example, have the same sign). Parts of the noise function where values change slowly are said to have a low frequency compared to parts of the noise where the values change quickly, which are said to have a higher frequency. This generally means that value noise (when you check the frequencies the noise is made of) is composed of high and low frequencies. A good noise is a noise that looks random and changes smoothly locally but also generally presents a pretty homogeneous look. In other words, the features the noise is made of should generally have a similar size (a similar frequency). 
 *  https://www.scratchapixel.com/lessons/procedural-generation-virtual-worlds/perlin-noise-part-2/perlin-noise.html
-*  
+
 
 ---
 .header[Noise Function Designs]
@@ -806,11 +874,10 @@ By using gradients you are reducing this effect because the interpolation is not
 ???
   
 
-* The Perlin noise technique is very similar to the value noise algorithm though rather than selecting random values at integer positions along the line, we choose "gradients". Gradients can be seen as "tangents" to the 1D noise function at the lattice points. As you can see in Figures 7 and 8, it doesn't matter in which direction the gradient points because if **it causes the curve to go up on one side of the lattice point** (say on the right of a lattice point as shown in Figure 8), **it causes the curve to go down on the other side of that same point **(say on the left of that point). In the worse case, if two successive lattice points have gradients that aim at radically opposite directions (one points up and the other points down), then the noise function will have an "S" like shape between the two points (as shown in Figure 8a). In the other case, the curve will either go up or down (Figure 8b and 8c). **But one can easily see that because of this construction, all features have more or less the same size**. **It's either a bump or a dent or an "S" like shape between two consecutive lattice points.** As a result, **the distribution of frequencies in the Perlin noise is more regular** than the value noise's frequency spectrum (in particular, it removes the low frequencies you can find in the latter). As Perlin notes in his paper:
+* The Perlin noise technique is very similar to the value noise algorithm though rather than selecting random values at integer positions along the line, we choose "gradients". Gradients can be seen as "tangents" to the 1D noise function at the lattice points. It doesn't matter in which direction the gradient points because if **it causes the curve to go up on one side of the lattice point**, **it causes the curve to go down on the other side of that same point** (say on the left of that point). In the worse case, if two successive lattice points have gradients that aim at radically opposite directions (one points up and the other points down), then the noise function will have an "S" like shape between the two points. In the other case, the curve will either go up or down. **But one can easily see that because of this construction, all features have more or less the same size**. **It's either a bump or a dent or an "S" like shape between two consecutive lattice points.** As a result, **the distribution of frequencies in the Perlin noise is more regular** than the value noise's frequency spectrum (in particular, it removes the low frequencies you can find in the latter). As Perlin notes in his paper:
 
-    The above texture has a band-limited character; there is no detail outside a certain size range.
+With that, Perlin noise has a band-limited character; there is no detail outside a certain size range.
 
-This is an important property, especially when it comes to filtering the function (check the lesson on filtering).
 
 
 
@@ -820,7 +887,7 @@ This is an important property, especially when it comes to filtering the functio
 ## Worst Case
 
 * The first gradient points up and the successive one points down
-* Then the noise function will have a "S" like shape between the two points
+* Then the noise function will have an "S" like shape between the two points
 
 
 .center[<img src="../02_scripts/img/noise/perlin_05.png" alt="perlin_05" style="width:72%;"> .imgref[[[scratchapixel]](https://www.scratchapixel.com/lessons/procedural-generation-virtual-worlds/perlin-noise-part-2)]]
@@ -828,7 +895,7 @@ This is an important property, especially when it comes to filtering the functio
 ???
   
 
-* The worst case in regard to an uneven frequency distribution happens when two successive lattice points have gradients that aim at opposite directions (one points up and the other points down). Then the noise function will have a "S" like shape between the two points.
+* The worst case in regard to an uneven frequency distribution happens when two successive lattice points have gradients that aim at opposite directions (one points up and the other points down). Then the noise function will have an "S" like shape between the two points.
 
 * This causes the curve to go up on one side of the lattice point and down on the other side of that same point such as
 
@@ -890,7 +957,7 @@ Perlin was still not satisfied with his gradient noise and presented in 2001 the
   
 
 * Perlin correctly argues that a square has more corners than necessary. The simplest and most compact shape that can be repeated to fill a space is an equilateral triangle. For more details about the simplex noise, please refer to [this detailed explanation](https://muugumuugu.github.io/bOOkshelF/generative%20art/simplexnoise.pdf).
-* OpenSimplex Noise (Kurt Spencer, 2011), Designed as a patent-free alternative to Simplex Noise.
+* OpenSimplex Noise (Kurt Spencer, 2011), designed as a patent-free alternative to Simplex Noise.
 
 ---
 .header[Noise Function Designs | Perlin Noise]
@@ -936,7 +1003,7 @@ noise(x, y, z);
 
 ???
 
-For full control over your results, check which algorithm the `noise()` function is based and whether the noise creates the distribution you want. If not you can always go back to defining your own noise function. 
+For full control over your results, check which algorithm the `noise()` function is based on and whether the noise creates the distribution you want. If not you can always go back to defining your own noise function. 
 
 
 
@@ -1117,6 +1184,10 @@ for (int i = 0; i < octaves; i++) {
 
 ???
   
+* lacunarity controls how much the frequency multiplies each octave. At 2.0, each layer is twice as fine as the previous one.
+* gain controls how much the amplitude shrinks each octave. At 0.5, each layer contributes half as much as the previous one.
+* Together, these two values determine the fractal character of the result. With lacunarity 2.0 and gain 0.5, each octave doubles in detail but halves in influence, which is the standard fBm configuration.
+
 
 * https://www.shadertoy.com/view/4dS3Wd
 
@@ -1310,7 +1381,7 @@ Steven Worley. 1996. A cellular texture basis function. In Proceedings of the 2
 ???
   
 
-* A Voronoi diagram is a slight variation from the Worley noise in the sense that is doesn't save the closest distance for each pixel to a feature point, but it saves for each pixel the feature point itself, e.g. by assigning the color of the closest point, disregarding the actual distance. 
+* A Voronoi diagram is a slight variation from the Worley noise in the sense that it doesn't save the closest distance for each pixel to a feature point, but it saves for each pixel the feature point itself, e.g. by assigning the color of the closest point, disregarding the actual distance. 
 
 --
 
