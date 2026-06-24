@@ -27,3 +27,4 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de
     * [GLSL Kishimisu Example](./glsl_kishimisu.zip)
 * [Slides 04 - Tilings and the Universe](./pgs_04_tilings_slides.html)
 * [Slides 05 - Noise](./pgs_05_noise_slides.html)
+* [Slides 06 - Dynamics](./pgs_06_dynamics_slides.html)

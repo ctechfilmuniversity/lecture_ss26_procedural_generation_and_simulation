@@ -15,10 +15,10 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de
 * [Session 01 - Introduction](./01_introduction/README.md)
 * [Session 02 - Function Design](./02_functions/README.md)
 * [Session 03 - Algorithmic Setups](./03_algorithmicsetups/README.md)
-
+* [Session 04 - Noise & Randomness](./04_noise_dynamics/README.md)
 
 <!-- 
 
-* [Session 04 - Noise & Dynamics](./04_noise_dynamics/README.md)
+
 * [Session 05 - Feedback & Final Project](./05_final/README.md) 
  -->
