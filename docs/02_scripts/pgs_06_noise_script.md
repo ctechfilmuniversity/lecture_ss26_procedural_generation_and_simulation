@@ -22,6 +22,11 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de \| Film University Babel
         * [Animation](#animation)
         * [Dynamics](#dynamics)
         * [Faking Complex Systems](#faking-complex-systems)
+    * [Randomness, Noise, Chaos](#randomness-noise-chaos)
+        * [Randomness in Art and Culture](#randomness-in-art-and-culture)
+        * [What Kind of Randomness?](#what-kind-of-randomness)
+        * [Intuition of Randomness](#intuition-of-randomness)
+        * [Randomness vs. Chaos](#randomness-vs-chaos)
     * [Procedural Noise](#procedural-noise)
         * [Naive Smooth Randomness](#naive-smooth-randomness)
         * [Requirements For Procedural Noise](#requirements-for-procedural-noise)
@@ -38,12 +43,14 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de \| Film University Babel
         * [Component Frequencies](#component-frequencies)
         * [Turbulence Noise](#turbulence-noise)
         * [Multi-Octave Noise](#multi-octave-noise)
+        * [Noise Terminology](#noise-terminology)
     * [Cellular Noise](#cellular-noise)
         * [Worley Noise](#worley-noise)
         * [Voronoi Algorithm](#voronoi-algorithm)
     * [Delaunay Triangulation](#delaunay-triangulation)
         * [Distances](#distances)
         * [Dual Graph](#dual-graph)
+    * [Curl Noise](#curl-noise)
     * [Noise in Houdini](#noise-in-houdini)
     * [Noise in Unreal](#noise-in-unreal)
     * [References](#references)
@@ -173,6 +180,70 @@ Noise adds variation for designed systems to look natural and for an aesthetic a
 ![mush](img/noise/mush.gif)  
 [[thisiscolossal]](https://www.thisiscolossal.com/wp-content/uploads/2016/11/mush-1.gif) *The mushrooms appear to us to grow pretty randomly even though their growth is greatly controlled by factors such as light and soil properties.*
 
+
+## Randomness, Noise, Chaos
+
+### Randomness in Art and Culture
+
+> There is no other concept that was more influential in the history of contemporary art of the post-World War II era than "randomness". [...] It profoundly altered its main modes of expression in both the arts and the sciences.
+
+—Matilde Marcolli
+
+The bombing of Guernica in 1937 was one of the first aerial bombings in Europe, as depicted in Pablo Picasso's *Guernica* (1937). What was destroyed and who survived was determined largely by chance. The widespread aerial bombardments that followed throughout World War II confronted people with a reality in which blind chance determined the course of events.
+
+World War II marked the end of religious certainty for a large part of the European intelligentsia.
+
+> Only his nonexistence can excuse God.
+
+— Allegedly Einstein
+
+A broader sense of the predictability of life had come to an end.
+
+> Meditating upon the ruins of Europe at the end of World War II, people saw the deterministic view of the Enlightenment crumble, replaced by a new understanding of the dominant force of nature: mindless, blind chance.
+
+—Matilde Marcolli
+
+Artists responded directly to this shift. Georges Mathieu painted *Évanescence* in 1945. Emilio Vedova created *Image of Time (Barrier)* in 1951, expressing political and moral horror through feverish, violent abstract canvases. Janet Sobel, whose drip painting technique preceded and influenced Jackson Pollock, connected the randomness of her paintings to the image of the galaxy as humanity's larger cosmic home. Although she is now largely forgotten, she is considered one of the original creators of the drip painting technique.
+
+As Jackson Pollock wrote:
+
+> New needs need new techniques, and the modern artists have found new ways and new means of making their statements: the modern painter cannot express this age, the airplane, the atom bomb, the radio, in the old forms of the Renaissance or any other past culture.
+
+### What Kind of Randomness?
+
+Sol Lewitt's instructions for his wall drawings bring the question into sharp focus:
+
+> Lines not short, not straight, crossing and touching, drawn at random, using four colors, **uniformly dispersed with maximum density**, covering the entire surface of the wall.
+
+— Sol Lewitt
+
+What does "at random, uniformly dispersed with maximum density" actually mean? There are many types of random distributions. Continuous distributions include the normal distribution, the uniform distribution, and the triangular distribution. Discrete distributions include the Bernoulli distribution, the Poisson distribution, and the hypergeometric distribution. Different distributions produce very different visual results, and choosing the right one matters enormously.
+
+### Intuition of Randomness
+
+Consider three scatter plots, each containing 250 points placed in a square. In one of them each point is sampled independently with equal probability from the entire square, which is the definition of a true uniform random sample. Which plot do you think it is?
+
+Most people choose the most evenly spread plot as the "most random." In fact, the truly uniform random sample is the one that contains irregular clumps. True randomness is not the same as homogeneity. When something looks too evenly spread, it is showing correlations rather than independence.
+
+> Humans are very good at detecting patterns, but rather poor at detecting randomness.
+
+> More visual regularity usually means more correlations.
+
+We tend to perceive irregular clusters that form in a random arrangement as a "pattern." A familiar example is the public perception of cancer clusters near mobile phone masts. When randomness is at work, some clusters will appear by chance alone. Careful statistical analysis is needed to distinguish a genuinely non-random pattern from one that simply arises from randomness.
+
+### Randomness vs. Chaos
+
+Chaos does not mean randomness. In most cases chaos is deterministic.
+
+> Chaos means sensitive dependence on the initial conditions.
+
+Small differences in initial conditions are amplified by the dynamics of the system, making it effectively unpredictable even though the system itself remains fully deterministic. The double-rod pendulum is a classic example. Starting the pendulum from a position only very slightly different from the original leads to a completely different trajectory over time.
+
+This distinction matters for computation. Computers cannot produce true randomness. They simulate it using deterministic algorithms called pseudo-random number generators (PRNGs). A PRNG takes a seed value as input and produces a sequence of numbers that appears random but is entirely determined by that seed. PRNGs have period lengths, statistical biases, and repeating patterns.
+
+To obtain more genuinely unpredictable seeds, true random number generators (TRNGs) draw on chaotic physical phenomena such as atmospheric noise or radioactive decay. One striking example is the Lavarand system of the internet security company Cloudflare. In their San Francisco offices a wall of lava lamps is filmed around the clock. Whenever a cryptographic key is needed, the system translates a frame from the live feed into a numeric value that serves as a seed for a PRNG. The chaotic fluid motion of the lamps, combined with atmospheric and lighting conditions, makes the resulting seeds practically impossible to predict algorithmically. This system provides cryptographic keys for roughly 20% of the world's internet traffic.
+
+---
 
 ## Procedural Noise
 
@@ -329,7 +400,7 @@ For good noise functions there are overall the following requirements.
 
 5. Reproducibility
 
-    The noise should look the same every time we compute is, e.g. in every frame we render unless we explicitly want a change e.g. for an animation.
+    The noise should look the same every time we compute it, e.g. in every frame we render unless we explicitly want a change, e.g. for an animation.
 
 6. Band Limited Frequency Content
 
@@ -339,10 +410,10 @@ For good noise functions there are overall the following requirements.
 
 7. Continuity and Differentiability
 
-    Often the derivates of noise functions are needed.
+    Often the derivatives of noise functions are needed.
 
     ![noise_28](img/noise/noise_28.png)  
-    *Non-differential or non-continues function examples.*
+    *Non-differentiable or discontinuous function examples.*
 
 ### Noise Function Designs
 
@@ -672,6 +743,41 @@ function MultiOctaveNoise2D(float x, float y)
 end function
 ```
 
+A more typical real implementation uses explicit lacunarity and gain parameters:
+
+```c#
+// Properties
+const int octaves = 6;
+float lacunarity = 2.0;
+float gain = 0.5;
+
+// Initial values
+float amplitude = 0.5;
+float frequency = 1.;
+
+// Loop of octaves
+for (int i = 0; i < octaves; i++) {
+
+    y += amplitude * noise(frequency*x);
+
+    frequency *= lacunarity;
+    amplitude *= gain;
+}
+```
+
+Here, *lacunarity* controls how much the frequency multiplies each octave. At a value of 2.0, each layer is twice as fine as the previous one. *Gain* (also called persistence) controls how much the amplitude shrinks each octave. At a value of 0.5, each layer contributes half as much as the previous one. Together these two values determine the fractal character of the result. With lacunarity 2.0 and gain 0.5, each octave doubles in detail but halves in influence, which is the standard fBM configuration.
+
+### Noise Terminology
+
+When working with noise in any software environment you will encounter a standard set of parameters. Here is a summary of what they mean:
+
+* **Amplitude** — controls the maximum range of noise output values (the "size" of the waves)
+* **Frequency** — controls how dense or "bumpy" the noise appears (the period of the noise)
+* **Octaves** — the number of noise layers to add together
+* **Persistence / Gain** — a multiplier that scales the amplitude for each successive octave
+* **Lacunarity** — a multiplier that scales the frequency for each successive octave
+* **Point spacing** — the size of the underlying lattice grid
+
 
 <!-- ### Voronoi
 Save for each pixel the closest point
@@ -786,6 +892,8 @@ This concept can be extended to higher dimensions.
 ![voronoi_10](img/noise/voronoi_10.png)  
 [[thebookofshaders]](https://thebookofshaders.com/12/) *Cloud Cities - Tomás Saraceno (2011)*
 
+The Argentine artist Tomás Saraceno has worked extensively with Voronoi-like structures across a body of work spanning installation, sculpture, and performance. His *Cloud Cities* (2011), *Algo-r(h)i(y)thms* (2018), and *Sundial for Spatial Echoes* (2019) all draw on the cellular geometry of Voronoi diagrams to explore themes of interconnection, ecology, and collective living. The tension between an inner force to expand and outer constraints that shapes Voronoi cells mirrors the biological and social forces Saraceno investigates.
+
 ![voronoi_11](img/noise/voronoi_11.png)  
 [[thebookofshaders]](https://thebookofshaders.com/12/) *Accretion Disc Series - Clint Fulkerson*
 
@@ -809,7 +917,7 @@ Delaunay Triangulation is a triangulation such that no point is inside the cir
 ![delaunay_03](img/noise/delaunay_03.png)  
 [[samuelp]](http://www.geom.uiuc.edu/~samuelp/del_project.html)
 
-If you are interested in the computation of the delaunay trinagulation, refer e.g. to [this explanation](http://www.geom.uiuc.edu/~samuelp/del_project.html).
+If you are interested in the computation of the Delaunay triangulation, refer e.g. to [this explanation](http://www.geom.uiuc.edu/~samuelp/del_project.html).
 
 Delaunay triangulation is related with Voronoi diagrams in that the circumcircle centers of the triangulation are Voronoi cell corner points!
 
@@ -865,6 +973,17 @@ A variation to Voronoi diagrams is the *dual graph*. For the dual graph imagine 
 [[jakerice]](https://medium.com/@jakerice_7202/computing-the-dual-ff2a93077e2e)
 
 
+## Curl Noise
+
+Curl noise is a type of noise used primarily for simulating fluid-like motion such as smoke, fire, and flowing water.
+
+The core idea is to compute the *curl* of a noise function. In vector calculus, the curl is a mathematical operation that takes a vector field and returns a new vector field describing the rotation of the original. A field computed by taking the curl is automatically *divergence-free*, meaning it has no sources or sinks. Vectors do not bunch up or spread apart, which is exactly the behavior you want for a convincing fluid simulation.
+
+In practice, curl noise takes a scalar or vector noise function as input and computes its curl to produce a smooth, swirling velocity field. Particles placed in this field follow smooth, curving paths without converging to a single point or spreading out uniformly. This makes curl noise well suited for organic, fluid-like motion in particle systems.
+
+![curl_noise_01](img/noise/curl_noise_01.png)  
+
+
 ## Noise in Houdini
 
 There are several different generation approaches in Houdini.
@@ -887,7 +1006,17 @@ In VEX you have
 
 ## Noise in Unreal
 
-Well, ...
+Unreal Engine provides noise functionality across several systems.
+
+In the Material Editor you can use built-in noise nodes to drive material properties such as color, roughness, or displacement. These include value noise options configurable with parameters like frequency, octaves, and quality level.
+
+In Niagara (Unreal's visual effects and particle system) you have access to several noise types including NoiseField, Vector Noise (Perlin-like), and Curl Noise. These can be used to animate particle positions, velocities, and other properties for effects such as fire, smoke, and fluid motion.
+
+Unreal also supports landscape generation using height maps. A height map is a grayscale image where each pixel encodes the terrain elevation at that point. Noise-generated height maps can be imported or generated procedurally to create landscapes. Unreal includes a dedicated Landscape Noise tool for this purpose.
+
+Pre-baked noise volume textures are also available, for example through the Unreal Engine Marketplace. These are three-dimensional textures containing pre-computed noise values that can be sampled efficiently in materials and shaders without the cost of computing noise at runtime.
+
+![noise_textures_01](img/noise/noise_textures_01.png)
 
 ---
 
