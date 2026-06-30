@@ -7,6 +7,7 @@ nav_exclude: true
 # Task 03.02.01 Option A - A Tutorial Fancy Cubes - 12 Points
 ## Task 03.02.02 Option A - Your Fancy Cubes - 5 Points
 
+I made the following changes to make the result my own: changed the particle color, particle velocity and gravity, and the emission glow color. Also I added a bloom via a post process volume.
 ![preview picture](img/task03_img.jpeg)
 ![Animation](img/task03.gif)
 
