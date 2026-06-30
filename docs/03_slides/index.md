@@ -29,3 +29,5 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de
 * [Slides 05 - Noise](./pgs_05_noise_slides.html)
 * [Slides 06 - Dynamics](./pgs_06_dynamics_slides.html)
     * [Unreal - Project Noise Material](./pgs_noise_material.zip)
+    * [Notes - Niagara Intro & Curl Noise](./pgs_notes_niagara_intro.md)
+    * [Unreal - Studio Start Scene](./pgs_studio.zip)
