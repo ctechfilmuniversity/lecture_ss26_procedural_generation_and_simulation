@@ -41,6 +41,14 @@ This assignment should take <= 6h. As this assignment is open-ended, it is up to
 *Submission:* 
 ## Natural Noise
 
+<table>
+  <tr>
+    <td align="center"><img src="img/pgs_04-1_Natural-01.png" width="500"><br><b></b></td>
+    <td align="center"><img src="img/pgs_04-1_Natural-02.png"   width="500"><br></td>
+    <td align="center"><img src="img/pgs_04-1_Natural-03.png"   width="500"><br></td>
+  </tr>
+</table>
+
 ## Artistic Noise
 
 #### Stephan Dybus
@@ -52,13 +60,13 @@ https://de.pinterest.com/pin/767723067778618844/
 
 #### Nucor | Made for Good Campaign
 
-In this image, they probably used noise for both coloring and animation. The campaign includes many different examples of how noise textures can be used.
+In the following images, they probably used noise for both coloring and animation. The campaign includes many different examples of how noise textures can be used.
 
 https://www.behance.net/gallery/184204957/Nucor-Made-for-Good-Campaign
 
 ![Artistic Noise Clay](img/pgs_04-1_ArtisticNoise-03.jpg)
-![Artistic Noise Clay](img/pgs_04-1_Artistic-03-3.png)
-![Artistic Noise Clay](gif/pgs_hw_04-01_ArtisticNoise.gif)
+![Artistic Noise](img/pgs_04-1_Artistic-03-3.png)
+![Artistic Noise](gif/pgs_hw_04-01_ArtisticNoise.gif)
 
 
 ## Task 04.02 - Randomness or Noise as Design Element - 14 Points
