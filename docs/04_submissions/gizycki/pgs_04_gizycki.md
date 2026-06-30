@@ -36,7 +36,7 @@ nav_exclude: true
 </table>
 </div>
 
-![gif](img/4.3.gif)
+![gif](img/4.3.1_small.gif)
 
 ## Task 04.03 - Learnings - 3 Points
 
