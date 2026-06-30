@@ -32,7 +32,6 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de
         * [Components](#components)
     * [Material Editor](#material-editor)
     * [Blueprints](#blueprints)
-        * [ChatGPT 4.o "In Unreal Engine \>5, what is a blueprint?":](#chatgpt-4o-in-unreal-engine-5-what-is-a-blueprint)
     * [The Procedural Generation Plugin](#the-procedural-generation-plugin)
         * [Tutorials](#tutorials)
         * [Procedural Workflows](#procedural-workflows)
@@ -304,11 +303,6 @@ This system is extremely flexible and powerful as it provides the ability for de
 * [Unreal Engine Blueprints Tutorials – Complete Guide](https://gamedevacademy.org/unreal-blueprints-tutorial/)
 * [Blueprint Variables: What you need to know](https://www.unrealdirective.com/articles/blueprint-variables-what-you-need-to-know)
 * [10 Tips for Blueprint Organization in Unreal Engine](https://www.techarthub.com/10-tips-for-blueprint-organization-in-unreal-engine/)
-
-#### ChatGPT 4.o "In Unreal Engine >5, what is a blueprint?":
-
-
-
 
 
 

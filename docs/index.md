@@ -115,15 +115,15 @@ Unless stated otherwise:
 
 ## Final Project
 
-* The last project is mandatory to pass the class.
-* For the final project there are approximately **40h** allocated, meaning five days of work.
-* The project must refer to one of the lecture topics. You must come up with your own task.
+* The final project is mandatory to pass the class.
+* For the final project there are approximately **40h** allocated, meaning five days of work (including conceptualization).
+* You must come up with your own task and the project must refer to one of the lecture topics. 
 * You can also base your project on a tutorial from the internet. The result of the tutorial will not be enough though, you have to develop the project somehow further and make it your own. 
 * The result must be polished.
-* The (hard) deadline for the final project is **July 31st**.
-* The official work period for the final session is June 1st - July 31st. 
-    * The deadline for the final project is strict and for a late submission, I reduce **15% of the total points**.
-    * If you are sick within the official work period, you can get a deadline extension based on a doctor's note ("Attest").
+* The (hard) deadline for the final project is going to be **mid/end of October** (to be announced soon). The deadline for the final project is strict and for a late submission, I reduce **15% of the total points**.
+* As submission you must hand in your project's documentation via Github/Owncloud AND do an in-class presentation of your work. You can but do not have to use slides for the presentation. The presentation will not count towards the grade.
+    * CTechies get additional 0.5 SWS and ECTS for CTech II/Freies Studium for the final presentation.
+* The official work period for the final session is 4 weeks before the deadline. If you are sick within the official work period, you can get a deadline extension based on a doctor's note ("Attest").
 
 
 ## Evaluation
