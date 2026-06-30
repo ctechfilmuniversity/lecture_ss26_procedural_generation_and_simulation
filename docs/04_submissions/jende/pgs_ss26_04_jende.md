@@ -40,8 +40,6 @@ Maria Jende, 06/24/2026
 
 ## Task 04.02 - Randomness or Noise as Design Element - 14 Points
 
-Review the code [here](./code/pgs_ss26_04.02_jende.glsl).
-
 <img src="./img/04/pgs_04.02_jende_randomness.png" alt="Randomness" width="300"/>
 
 Mouse-reactive randomness done with The Book of Shaders
@@ -60,11 +58,11 @@ Final Result
 
 Acess the video [here](https://owncloud.gwdg.de/index.php/s/QOMAB83DF3D9grp).
 
+Review the code [here](./code/pgs_ss26_04.02_jende.glsl).
+
 ## Learnings
 
 ### Task 03.03 - 3 Points
-
-Here's the same text with your Markdown links preserved:
 
 For this task, I wanted to work with GLSL again. I worked with a combination of [a tutorial](https://www.youtube.com/watch?v=jkYIOu8HddA&t=360s), [The Book of Shaders](https://thebookofshaders.com/10/)[ chapter on randomness](https://thebookofshaders.com/10/), and Claude.
 
