@@ -24,7 +24,7 @@ This document accompanies live exploration and is not a self-contained tutorial.
 * [Forces](#forces)
 * [Colors \& Materials](#colors--materials)
 * [Curl Scene](#curl-scene)
-    * [Letter Setup](#letter-setup)
+    * [Letter Setup (Optional - Skipped in Class)](#letter-setup-optional---skipped-in-class)
     * [Converting the Letter to a Static Mesh](#converting-the-letter-to-a-static-mesh)
     * [The Particle System](#the-particle-system)
     * [Spawn on the Letter](#spawn-on-the-letter)
@@ -131,7 +131,7 @@ To color particles by speed, in the material:
 
 Open the studio scene as a background. The goal is a Niagara system that spawns particles across the surface of a 3D letter and drives them with curl noise.
 
-### Letter Setup
+### Letter Setup (Optional - Skipped in Class)
 
 The **Motion Design** plugin creates parametric text geometry. Install it if not yet active.
 
