@@ -1633,7 +1633,7 @@ Acceleration measures the rate of change in velocity over a certain time.
 ## Acceleration
 
   
-Acceleration measures the change in velocity over a certain time.  
+Acceleration measures the rate of change in velocity over a certain time.  
 
   
   

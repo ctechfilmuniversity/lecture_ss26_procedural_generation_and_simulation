@@ -33,7 +33,11 @@ This document accompanies live exploration and is not a self-contained tutorial.
     * [Glow Pass](#glow-pass)
     * [Shadows](#shadows)
 
+---
 
+> The Unreal Documentation, Unreal's AI Assistant, Claude and Claude Code assisted with the setup and text generation of this text. All concepts, structures, and content decisions were made solely by me. Generated material was reviewed and thoroughly adjusted. However, documentation and tools should be considered reference material throughout.
+
+---
 
 ## The Niagara System
 
