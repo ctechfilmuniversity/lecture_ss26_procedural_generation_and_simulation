@@ -134,6 +134,8 @@ To color particles by speed, in the material:
 
 Open the studio scene as a background. The goal is a Niagara system that spawns particles across the surface of a 3D letter and drives them with curl noise.
 
+This scene is inspired by a chapter of the [Niagara Motion](https://redefinefx.com/motion/) course by RedefineFX.
+
 ### Source Mesh Setup 
 
 We want to use a static mesh as source for the particles, so we create one in **Modeling Mode** rather than placing a basic shape via **Quick Add**. Quick Add's ready made shapes reference one of the engine's existing meshes directly. They are not saved as a new asset and cannot be reshaped afterward. Creating the mesh in Modeling Mode instead bakes a new Static Mesh asset from the parameters you set, which is saved to the Content Browser and can be reshaped further with other Modeling Mode tools, such as **Remesh** used below for the letter mesh.
