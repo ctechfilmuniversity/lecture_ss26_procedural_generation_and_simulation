@@ -24,14 +24,15 @@ This document accompanies live exploration and is not a self-contained tutorial.
 * [Forces](#forces)
 * [Colors \& Materials](#colors--materials)
 * [Curl Scene](#curl-scene)
-    * [Letter Setup (Optional - Skipped in Class)](#letter-setup-optional---skipped-in-class)
-    * [Converting the Letter to a Static Mesh](#converting-the-letter-to-a-static-mesh)
+    * [Source Mesh Setup](#source-mesh-setup)
+        * [*OR* Using a Letter as Source](#or-using-a-letter-as-source)
     * [The Particle System](#the-particle-system)
-    * [Spawn on the Letter](#spawn-on-the-letter)
-    * [Scene Setup](#scene-setup)
+    * [Spawn on a Mesh](#spawn-on-a-mesh)
+        * [Adding the Source Mesh to the Scene](#adding-the-source-mesh-to-the-scene)
     * [Curl Noise](#curl-noise)
-    * [Glow Pass](#glow-pass)
+    * [Coloring](#coloring)
     * [Shadows](#shadows)
+    * [Glow Pass](#glow-pass)
 
 ---
 
@@ -129,9 +130,26 @@ To color particles by speed, in the material:
 
 ## Curl Scene
 
+![unreal_curl](./img/unreal_curl.png)
+
 Open the studio scene as a background. The goal is a Niagara system that spawns particles across the surface of a 3D letter and drives them with curl noise.
 
-### Letter Setup (Optional - Skipped in Class)
+### Source Mesh Setup 
+
+We want to use a static mesh as source for the particles, so we create one in **Modeling Mode** rather than placing a basic shape via **Quick Add**. Quick Add's ready made shapes reference one of the engine's existing meshes directly. They are not saved as a new asset and cannot be reshaped afterward. Creating the mesh in Modeling Mode instead bakes a new Static Mesh asset from the parameters you set, which is saved to the Content Browser and can be reshaped further with other Modeling Mode tools, such as **Remesh** used below for the letter mesh.
+
+In the viewport mode dropdown, select **Modeling Mode**:
+
+* **Create**
+    * `Radius` e.g. `60`, `Target Position` Origin, `Pivot` Centered
+    * Hit **Accept**
+
+Name the mesh `SM_source` in the **Content Browser** (use **Ctrl+B** to locate it). Return to **Selection Mode**. We will later use this mesh as source but first let's create the particle system itself.
+
+
+#### *OR* Using a Letter as Source
+
+*(Optional - Skipped in Class)*
 
 The **Motion Design** plugin creates parametric text geometry. Install it if not yet active.
 
@@ -143,9 +161,7 @@ In the viewport mode dropdown, select **Motion Design**:
 
 Exit Motion Design by clicking **Motion Design** in the viewport dropdown again. Compare the letter's scale to a unit cube and resize to match.
 
-### Converting the Letter to a Static Mesh
-
-The **Static Mesh Location** particle module requires a static mesh as its spawn surface, so the Motion Design text actor must be converted.
+The **Static Mesh Location** particle module that we are going to use requires a static mesh as its spawn surface, so the Motion Design text actor must be converted.
 
 In the viewport mode dropdown, select **Modeling Mode**:
 
@@ -160,9 +176,9 @@ Name the mesh `SM_letter` in the **Content Browser** (use **Ctrl+B** to locate i
 
 ### The Particle System
 
-Create a new empty Niagara System `FX_curl` with a new empty emitter.
+* Create a new empty Niagara System `FX_curl` with a new minimal emitter.
 
-With thousands of particles, GPU simulation is far more efficient than CPU. Switch in **Emitter Properties**:
+We are planning with thousands of particles, hence a GPU simulation is far more efficient than CPU. Switch in **Emitter Properties**:
 
 * Set `Sim Target` to *GPU Sim*
 * Enable **Fixed Bounds** and set a bounding box large enough to contain the full effect
@@ -172,48 +188,55 @@ Fixed Bounds are required for GPU simulation because particle positions are comp
 In **Emitter Spawn**:
 
 * Click **+**, add **Spawn Rate**
-    * `SpawnRate` 1000
+    * `SpawnRate` 1000 *(go lower if your computer is slow)*
 
-In **Initialize Particle**:
 
-* Set `Sprite Size Mode` to *Uniform*, size `1`
-* Set `Color Mode` to *Direct Set*, choose a base color
-* Set `Mesh Scale Mode` to *Uniform*, value `1`
+In **Particle Spawn** (this is a temporary step, we will change this eventually):
+* Add **Add Velocity** 
+* Click `Fix Issue` to add the **Solve Forces and Velocity** module automatically.
+* In the Add Velocity module, click the down arrow on the velocity parameter, select **Random Vector** and set **Vector Scale** to `50`.
+
+You should see your particles moving now. Place  `FX_curl` in the scene, e.g. at `0, 0, 100`.
+
 
 In **Render**:
 
 * Add **Mesh Renderer**, set mesh to `S-1_Unit_Sphere`
-    * Enable **Material Override**, add a new material slot, assign a new material `M_curl`
+    * Enable **Material Override**, add a new material slot, assign a new material `M_curl` (which you have to create first 😉)
+
+In **Initialize Particle**:
+* Set `Mesh Scale Mode` to *Uniform*, value `1`
+
 
 In **Particle Update**:
 
 * Click **+**, add **Scale Mesh Size**
     * Click the down arrow on the size parameter, select **Make Dynamic Input > Vector from Float**
     * Click the down arrow on that float, select **Float from Curve**
-    * Shape the curve: start at `0`, rise to `1`, then slowly decrease — particles grow in and shrink as they age
+    * Shape the curve how you want their scale to behave over their lifespan, e.g., start at `0`, rise to `1`, then slowly decrease. This means that particles first grow and then shrink again as they age.
+    * Use **Scale Curve** to scale the particles overall to your liking.
 
-### Spawn on the Letter
+### Spawn on a Mesh
 
 In **Particle Spawn**:
 
+* Disable **Add Velocity**
 * Click **+**, add **Static Mesh Location**
-    * Set `Preview Mesh` and `Default Mesh` to `SM_letter`
+    * Set `Preview Mesh` and `Default Mesh` to the Static Mesh you previously created, `SM_Source`
     * Click **Fix Now** to resolve the dependency error
 
-### Scene Setup
+#### Adding the Source Mesh to the Scene
 
-* Place `FX_curl` in the scene
+If your want the mesh to be visible in the scene, we can add it to the scene an make it a parent to the Niagara system.
+
 * In the **Outliner**, drag `FX_curl` onto the letter actor to parent it — particles now follow the letter's transform
 
 To prevent particles from spawning inside the geometry:
 
-* In **Static Mesh Location**, enable `Offset Position Along Sample Geometry` to push spawn points outward to the surface
+* In **Static Mesh Location**, enable `Offset Position Along Sample Geometry` to push spawn points outward to the surface.
 
-In **Particle Update**:
 
-* Click **+**, add **Color**
-    * Click the down arrow on `Color`, select **Color from Curve**
-    * Set opacity to `1` across the full curve
+
 
 ### Curl Noise
 
@@ -224,8 +247,30 @@ In **Particle Update**:
 * Click **+**, add **Curl Noise Force**
     * Click **Fix Issue**
 * Click the down arrow on `Noise Strength`, select **Random Range Float**
-    * Min `2`, max `4`
+    * Min `2`, max `4` or up to your liking
 * Set `Noise Pan` X to `0.2` to slowly shift the noise field over time, producing continuously changing flow patterns
+
+In the **M_curl** material:
+* Create node **ParticleColor** and use that as **Base Color**
+* Adjust the other material settings up to your liking.
+
+
+### Coloring
+
+We want to set the base color in particle system and still use the shading from the material.
+
+In **Particle Update**:
+
+* Click **+**, add **Color**
+    * Click the down arrow on `Color`, select **Color from Curve**
+    * Set opacity to `1` across the full curve
+    * Create a color ramp (based on the particle's age) up to your liking.
+
+Adjust the lighting of your scene, e.g., make it darker and give the lights coloring for dramatic effect.
+
+### Shadows
+
+* In the scene, select `FX_curl`, enable **Cast Shadows**
 
 ### Glow Pass
 
@@ -234,8 +279,5 @@ A second emitter with an emissive material gives a subset of particles a glowing
 * Duplicate `M_curl` as `M_curl_emissive`
     * In the material, connect **Particle Color** to both **Base Color** and **Emissive Color**
 * Duplicate the emitter, assign `M_curl_emissive`, reduce `SpawnRate`
-    * In the **Color** module, click the down arrow on the color value and set `Color Scale` to `50` — this amplifies the color intensity, producing a bright glow through the emissive channel
+    * If you want even more glow, in the **Color** module, click the down arrow on the color value and set `Color Scale` to `10` — this amplifies the color intensity, producing a bright glow through the emissive channel
 
-### Shadows
-
-* In the scene, select `FX_curl`, enable **Cast Shadows**
