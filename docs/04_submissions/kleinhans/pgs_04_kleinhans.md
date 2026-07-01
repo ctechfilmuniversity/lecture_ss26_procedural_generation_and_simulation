@@ -81,5 +81,11 @@ Summarize your learnings in whole sentences. What was challenging for you in thi
 *Submission*:
 
 
+In this task, I challenged myself by switching back to Unreal Engine and exploring materials without following a fixed concept. As a starting point, I watched this tutorial [UE4 Flowing Noise Material tutorial](https://www.youtube.com/watch?v=ut80qnOtNRw) to get a feeling for how noise behaves within materials. Building on that foundation, I experimented with combining different noise and gradient maps (subtracting, adding, multiplying), and influenced parameters with sine functions over time to create a more dynamic and evolving result.
+Along the way, I discovered how to use global texture coordinates to keep textures independent of perspective.
+
+For my final project, I'd like to dive deeper into the topic of noise using GLSL code, since this submission teased my curiosity to explore the potential of randomness, particularly in combination with other elements in a context of plain code.
+
+
 
 
