@@ -40,6 +40,18 @@ This assignment should take <= 6h. As this assignment is open-ended, it is up to
 
 *Submission:* Link all images in your submission file.
 
+*natrual*
+
+![Natural Noise](img/0401_naturalNoise-1.jpg)
+![Natural Noise](img/0401_naturalNoise-2.jpg)
+![Natural Noise](img/0401_naturalNoise-3.jpg)
+
+*artificial*
+
+![Artificial Noise](img/0401_artificialNoise-1.jpg)
+![Artificial Noise](img/0401_artificialNoise-2.jpg)
+![Artificial Noise](img/0401_artificialNoise-3.jpg)
+
 
 
 ## Task 04.02 - Randomness or Noise as Design Element - 14 Points
