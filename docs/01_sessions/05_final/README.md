@@ -71,14 +71,22 @@ Please answer the following questions briefly so that I can further improve the 
 * How would you rate the difficulty of this lecture from 1 (far too easy) to 5 (far too difficult)?
 * How would you rate the amount of work you had to put into this lecture so far from 1 (no work at all) to 5 (far too much work)?
 * How well did the given time estimates for each session match the time you needed to complete the session?
-* What do you think about Unreal as tool to learn for a CTecht student? Is it valuable?
-* What do you think about Unreal as a tool for this class? I am fully aware that the Unreal exercises do not yet fully connect to the theoretical topics, try to answer this question also regarding whether you could imagine that Unreal exercises could potentially fit well to the theory.
+* What do you think about Unreal as tool to learn for a CTecht & VFX student? Is it valuable?
+* What do you think about Unreal as a tool for this class? 
 * Do you have any other ideas reading which tools and software packages to use for this class?
 * Do you have any useful hints to pass on to future students, e.g. utility tools, or further resources?
-* What is your opinion regarding practical exercises in class? Do you think it would be helpful to substitute some of the theory parts with doing e.g. an Unreal exercise in class (there can be no additional time for the class though, it is "either...or")?
+* What is your opinion regarding practical exercises in class? Did they fit? Did you enjoy working o
+* How did the practical exercises fit the theoretical topics of the class? 
+* Did you enjoy working on the practical exercises? If not, why not? 
+* Do you think the practical exercises where beneficial for your learning?
 * Which one was your favorite chapter, and which one was your least favorite?
 * Was there a topic missing and if so which one?
+* Are there any other artists that would fit to the class content and that would be worthwhile to discuss in class?
 * Please feel free to add any feedback you want to give!
+
+For VFX only:
+* How suitable do you rate this class overall for VFX students?
+* What can be changed or improved to make the class fit to VFX students' needs?
 
 *Submission*: Answer in your submission file.  
 
