@@ -80,7 +80,7 @@ In the end, you must have a good looking result!
 
 If you want to make another function design as GLSL fragment shader you can. However, this task must be completely detached from last week's submission and be something novel. Also, it must be animated.
 
-*Submission:* At least one preview image and one animation, e.g. as gif, of your scene, linked in your markdown submission file.
+*Submission:* At least one preview image and one animation, e.g. as gif, of your scene, linked in your submission file.
 
 
 
@@ -91,7 +91,7 @@ If you want to make another function design as GLSL fragment shader you can. How
 
 Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?
 
-*Submission*: Answer in your markdown submission file.  
+*Submission*: Answer in your submission file.  
 
 
 ---

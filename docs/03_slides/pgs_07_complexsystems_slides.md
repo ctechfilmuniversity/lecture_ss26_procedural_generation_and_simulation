@@ -20,6 +20,34 @@ template:inverse
 
 # Particle Systems
 
+
+---
+layout:false
+
+## Refik Anadol
+
+When talk about particle systems, now a days one has to mention Refik Anadol:
+
+<img src="../02_scripts/img/particles/anadol_01.png" alt="anadol_01" style="width:70%;"> .imgref[[[Refik Anadol]](https://refikanadolstudio.com/news/)]
+
+[Refik Anadol Studios ↗︎](https://refikanadolstudio.com/)
+
+
+---
+## Refik Anadol
+
+<iframe width="792" height="445" src="https://www.youtube.com/embed/iz7diOuaTos" title="How AI Art Could Enhance Humanity’s Collective Memory | Refik Anadol | TED" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+.header[Dataland]
+
+.center[
+ <video width="600" controls muted>
+  <source src="../02_scripts/img/particles/dataland.mp4" type="video/mp4">
+</video> 
+.imgref[[[Machine Dreams: Rainforest, Dataland ↗︎]](https://dataland.art/exhibitions/machine-dreams-rainforest)]
+]
+
 ---
 layout: false
 ## Particle Systems
