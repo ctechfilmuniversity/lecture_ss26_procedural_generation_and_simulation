@@ -16,6 +16,25 @@ All images submitted for the homework tasks across [Session 01](../01_introducti
 
 Hover over an image to see the author and the exercise/task it belongs to.
 
+## By Student
+
+* [Dietze](students/dietze.md)
+* [Gizycki](students/gizycki.md)
+* [Haag](students/haag.md)
+* [Jende](students/jende.md)
+* [Kaepplinger](students/kaepplinger.md)
+* [Kleinhans](students/kleinhans.md)
+* [Kolevatov](students/kolevatov_maksim.md)
+* [Lauer](students/lauer_bente.md)
+* [Meyer](students/meyer_celine.md)
+* [Meyer](students/meyer_siri.md)
+* [Seemann](students/seemann_carla.md)
+* [Straubmueller](students/straubmueller.md)
+* [Weber](students/weber.md)
+* [Zander](students/zander_federico.md)
+
+## All Submissions
+
 <style>
 .pgs-gallery {
   column-width: 260px;
