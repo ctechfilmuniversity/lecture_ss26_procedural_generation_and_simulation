@@ -59,7 +59,7 @@ This tasks is as much about working with noise, as it is about creating a concep
 
 Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?
 
-*Submission*: Answer in your markdown submission file.  
+*Submission*: Answer in your submission file.  
 
 
 ---

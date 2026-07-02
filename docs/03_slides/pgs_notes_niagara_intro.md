@@ -117,7 +117,7 @@ In **Particle Update**:
 
 ## Colors & Materials
 
-The look of particles is defined as much by their material as by emitter settings - also material and particle settings might overwrite each other at times.
+The look of particles is defined as much by their material as by emitter settings - also material and particle settings might override each other at times.
 
 * Create material `M_basics`, assign a base color
 * In **Render > Sprite Renderer**, set `Material` to `M_basics`
@@ -138,7 +138,7 @@ This scene is inspired by a chapter of the [Niagara Motion](https://redefinefx.c
 
 ### Source Mesh Setup 
 
-We want to use a static mesh as source for the particles, so we create one in **Modeling Mode** rather than placing a basic shape via **Quick Add**. Quick Add's ready made shapes reference one of the engine's existing meshes directly. They are not saved as a new asset and cannot be reshaped afterward. Creating the mesh in Modeling Mode instead bakes a new Static Mesh asset from the parameters you set, which is saved to the Content Browser and can be reshaped further with other Modeling Mode tools, such as **Remesh** used below for the letter mesh.
+We want to use a static mesh as a source for the particles, so we create one in **Modeling Mode** rather than placing a basic shape via **Quick Add**. Quick Add's ready-made shapes reference one of the engine's existing meshes directly. They are not saved as a new asset and cannot be reshaped afterward. Creating the mesh in Modeling Mode instead bakes a new Static Mesh asset from the parameters you set, which is saved to the Content Browser and can be reshaped further with other Modeling Mode tools, such as **Remesh** used below for the letter mesh.
 
 In the viewport mode dropdown, select **Modeling Mode**:
 
@@ -198,7 +198,7 @@ In **Particle Spawn** (this is a temporary step, we will change this eventually)
 * Click `Fix Issue` to add the **Solve Forces and Velocity** module automatically.
 * In the Add Velocity module, click the down arrow on the velocity parameter, select **Random Vector** and set **Vector Scale** to `50`.
 
-You should see your particles moving now. Place  `FX_curl` in the scene, e.g. at `0, 0, 100`.
+You should see your particles moving now. Place `FX_curl` in the scene, e.g. at `0, 0, 100`.
 
 
 In **Render**:
@@ -215,7 +215,7 @@ In **Particle Update**:
 * Click **+**, add **Scale Mesh Size**
     * Click the down arrow on the size parameter, select **Make Dynamic Input > Vector from Float**
     * Click the down arrow on that float, select **Float from Curve**
-    * Shape the curve how you want their scale to behave over their lifespan, e.g., start at `0`, rise to `1`, then slowly decrease. This means that particles first grow and then shrink again as they age.
+    * Shape the curve however you want their scale to behave over their lifespan, e.g., start at `0`, rise to `1`, then slowly decrease. This means that particles first grow and then shrink again as they age.
     * Use **Scale Curve** to scale the particles overall to your liking.
 
 ### Spawn on a Mesh
@@ -224,12 +224,12 @@ In **Particle Spawn**:
 
 * Disable **Add Velocity**
 * Click **+**, add **Static Mesh Location**
-    * Set `Preview Mesh` and `Default Mesh` to the Static Mesh you previously created, `SM_Source`
+    * Set `Preview Mesh` and `Default Mesh` to the Static Mesh you previously created, `SM_source`
     * Click **Fix Now** to resolve the dependency error
 
 #### Adding the Source Mesh to the Scene
 
-If your want the mesh to be visible in the scene, we can add it to the scene an make it a parent to the Niagara system.
+If you want the mesh to be visible in the scene, we can add it to the scene and make it a parent to the Niagara system.
 
 * In the **Outliner**, drag `FX_curl` onto the letter actor to parent it — particles now follow the letter's transform
 
@@ -259,7 +259,7 @@ In the **M_curl** material:
 
 ### Coloring
 
-We want to set the base color in particle system and still use the shading from the material.
+We want to set the base color in the particle system and still use the shading from the material.
 
 In **Particle Update**:
 
