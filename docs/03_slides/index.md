@@ -32,3 +32,6 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de
     * [Notes - Niagara Intro & Curl Noise](./pgs_notes_niagara_intro.md)
     * [Unreal - Studio  Scene](./pgs_studio.zip)
     * [Unreal - Niagara Curl Start Scene](./pgs_curl.zip)
+* [Slides 07 - Complex Systems](./pgs_07_complexsystems_slides.html)
+* [Slides 08 - Fluids](./pgs_08_fluids_slides.html)
+* [Slides 09 - Wrap-Up](./pgs_09_wrapup_slides.html)
