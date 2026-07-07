@@ -58,21 +58,28 @@ nav_exclude: true
 
 ## Task 04.02 - Randomness or Noise as Design Element - 14 Points
 
-You can create any scene you like, with the only requirement that it features noise or some form of randomness. This can be a material, scattering, a dynamic solver, a particle system, or... You are allowed to follow a tutorial but you must modify the result to make it your own. Also, in the end, you must have a good looking result but it doesn't have to be a whole scene, it can be just a material or an actor etc.!
+<div align="center">
+  <img src="imgs/Unreal/Unreal_Testing_01.gif" width="500"><br>
+  <b>Motion Design Course</b><br>
+</div>
+<br>
+For this Video I followed a Tutorial Series by Jesse Pitela and made my own Version of it. It utilised a lot of the Motion Design Tools in Unreal 5.8.
 
-This tasks is as much about working with noise, as it is about creating a concept or finding a tutorial to follow and managing your time. Think small rather than big. Be creative about having limitations 😎.
-
-*Submission:* Still working on it.
+<div align="center">
+  <img src="imgs/Unreal/Unreal_Testing_02.gif" width="500"><br>
+  <b>Niagara Fluids Scene Test</b><br>
+</div>
+<br>
+For this Video I also followed a Tutorial on Niagara Fluid Effects and made this small scene.
 
 
 ## Learnings
 
 ### Task 03.03 - 3 Points
 
-Summarize your learnings in whole sentences. What was challenging for you in this session? How did you challenge yourself?
+I learned how to set a Niagara simulation to local space so the effect stays anchored to its emitter and moves with the actor instead of the world origin. I shaped the smoke using noise forces, mainly turbulence and curl noise, to give it natural swirling detail, and I drove the sim by spawning points on a mesh and using them as the emitter source. On my own I also worked out how to cache Niagara effects in the Sequencer at higher quality for better results, and I explored the new accumulate depth of field, though I chose not to use it in the final render because it would have doubled or tripled the render time.
 
-*Submission*: Answer in your submission file.  
-
+In the separate Motion Design Crash Course that I did first, I learned how to combine different cloners to create effects that a single cloner could not produce.
 
 ---
 ### AI Notice: 
