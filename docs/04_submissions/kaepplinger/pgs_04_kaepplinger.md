@@ -64,10 +64,14 @@ nav_exclude: true
 </div>
 <br>
 For this Video I followed a Tutorial Series by Jesse Pitela and made my own Version of it. It utilised a lot of the Motion Design Tools in Unreal 5.8.
-
+<br><br>
 <div align="center">
   <img src="imgs/Unreal/Unreal_Testing_02.gif" width="500"><br>
   <b>Niagara Fluids Scene Test</b><br>
+</div>
+<br><div align="center">
+  <img src="imgs/Unreal/Unreal_Testing_03.png" width="500"><br>
+  <b>Unreal Scene Screenshot</b><br>
 </div>
 <br>
 For this Video I also followed a Tutorial on Niagara Fluid Effects and made this small scene.
