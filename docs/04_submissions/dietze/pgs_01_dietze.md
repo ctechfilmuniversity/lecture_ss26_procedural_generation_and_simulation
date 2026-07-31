@@ -22,21 +22,21 @@ I don’t know if it’s fitting to the class yet but I think Blender might be s
 
 Natural Patterns:
 
-![Image](img/stones.jpg)
+![Image](img/pgs_01/stones.jpg)
 
-![Image](img/Ice.jpeg)
+![Image](img/pgs_01/Ice.jpeg)
 
 Man Made Pattern:
 
-![Image](img/Wall.JPG)
+![Image](img/pgs_01/Wall.JPG)
 
 Man made structures creating interesting pattern:
 
-![Image](img/Lamp.jpeg)
+![Image](img/pgs_01/Lamp.jpeg)
 
 ## Task 01.03 - Designing Patterns
 
-![Image](img/MyPatter.JPG)
+![Image](img/pgs_01/MyPatter.JPG)
 
 
 Pseudo Code:
@@ -50,19 +50,19 @@ Pseudo Code:
 - mirror image horizontally to the top
 - Repeat as needed
 
-![Image](img/MyPatternPro.JPG)
+![Image](img/pgs_01/MyPatternPro.JPG)
 
 ## Task 01.04 - Seeing Faces
 
-![Image](img/Soup.JPG)
+![Image](img/pgs_01/Soup.JPG)
 
 
-![Image](img/Door.jpeg)
+![Image](img/pgs_01/Door.jpeg)
 
 
 ## Task 01.05 Painting 
 
-![Image](img/RYB.jpg)
+![Image](img/pgs_01/RYB.jpg)
 
 Who’s Afraid of Red, Yellow and Blue by Barnett Newman are a series of paintings. Approximately the size of an entire wall. The paintings themselves never really interested me until I heard about their history and meaning. Who’s Afraid of Red, Yellow and Blue is about what art can be. Barnett Newman is a jewish painter who directly challenged that “Entartete Kunst” didn’t go away as a concept with Nazi Germany. People still demonstrated against his artwork. Who’s Afraid of Red, Yellow and Blue had people threatening museums and the artist. They had been vandalized, and interestingly to the criticism that they were so easy to paint. They weren't able to be restored, because the way Newman created the painting with colors he mixed and processes of layering the colors. So in their vandalism against the piece people destroyed their argument that everyone could have done it and they answered the question by saying they are so afraid, they had to destroy it. 
 (many oversimplifications even in this long paragraph)
@@ -71,7 +71,7 @@ Ever since I learned about that history the series of paintings fascinates me.
 
 ## Task 01.06 - Artistic Expression in CGI 
 
-![Image](img/Alien.jpg)
+![Image](img/pgs_01/Alien.jpg)
 
 For my CGI example I choose something based on what I've seen in the movie Alien Romulus. It’s a movie I’ve seen in the Cinema and the scene in which the space station is slowly ground down in the (ice) asteroid belt was one of the most memorable parts for me. 
 The color contrast, the black and white, the sparks flying, the sense of tension and the immense scale portrayed really took me in. 
@@ -88,5 +88,5 @@ I have a bit of experience in Unity and in a funny way this helps me to understa
 
 I am still slightly overwhelmed by everything in Unreal but the templates are a big help to play around in and understand some of the aspects. 
 
-![Image](img/Unreal.png)
+![Image](img/pgs_01/Unreal.png)
 
