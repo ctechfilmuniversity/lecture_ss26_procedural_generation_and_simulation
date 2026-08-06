@@ -62,6 +62,8 @@ Submit all source files (if too large link to external storage, e.g., OwnCloud),
 
 Submit your final project as assignment folder `05`.
 
+DEADLINE: The final project is due Oct. 19, both as online submission as well as informal in person presentation in class.
+
 ## Wrap-Up - 3 Points
 
 ### Task 05.02 - Feedback
