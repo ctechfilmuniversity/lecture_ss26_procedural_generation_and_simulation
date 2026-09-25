@@ -1,4 +1,8 @@
+---
+layout: default
+title: Session
 nav_exclude: true
+---
 
 # Final Project & Course Wrap-Up - Assignment 05
 
