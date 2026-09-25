@@ -35,7 +35,7 @@ Goal: Build a polished sequence by expanding on course concepts, while solving c
 ### Results
 A finished 120-frame cinematic sequence exported as a high-quality PNG sequence and finalized in DaVinci Resolve. The output shows advanced procedural particle behavior with accurate simulation timing and clean refraction.
 
-*(Add links to rendered PNG sequence, MP4 video, and project source files here!)*
+*(Will hier noch "links to rendered PNG sequence, MP4 video, and project source files" hier einfügen!)*
 
 ### Project Reflection & Discussion
 A major technical challenge during the project was setting up mesh-based particle spawning, specifically getting particles to spawn on precise, predefined areas of the character's body.
