@@ -205,7 +205,6 @@ Throughout the project, several critical technical issues arose during the real-
    * **Issue:** A known engine bug combined with long folder paths prevented MetaHuman Assembly from generating required texture graphs (`T_Head_LOD5to7_Scatter_VT`), while unexpected physics/collision spheres appeared inside the render. 
    * **Solution:** Shortened the project directory path, manually generated the missing texture dependencies in the Content Browser, and toggled visibility parameters on the blueprint components.
 
-![Hand Problems](img/final/Hand-Probleme-animation.png)
 
 <div align="center">
 <table>
@@ -215,7 +214,7 @@ Throughout the project, several critical technical issues arose during the real-
   </tr>
   <tr>
     <td align="center">Face Features</td>
-    <td align="center">MetaHuman Customization</td>
+    <td align="center">MetaHuman Customization (I tried out some fun things here, like Make-Up and beards)</td>
   </tr>
 </table>
 </div>
