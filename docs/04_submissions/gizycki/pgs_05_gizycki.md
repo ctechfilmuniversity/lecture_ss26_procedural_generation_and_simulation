@@ -18,7 +18,7 @@ nav_exclude: true
 ### Summary
 For the final project I created a 5-second, 24 fps vertical (1080x1920) cinematic render in Unreal Engine 5. The project focuses on procedural generation and real-time simulation. It features a character called Eora who goes through a procedural particle disintegration from a Grass field inspired by the Windows XP Background (by Charles O'Rear) to a clean digital environment. The goal was to take the Niagara simulation concepts from the lecture, push them further, and make sure the real-time viewport and the final Movie Render Queue output looked exactly the same.
 
-Also submitted to the Gauntlet of Gods 3D Community Challenge by @pwnisher.
+Also submitted to the Gauntlet of Gods 3D Community Challenge by @pwnisher. The challenge provided a concrete, deadline-driven framework to apply and test Niagara particle systems and MetaHuman workflows in a real production context. The tech specs (120 frames, 24 fps, vertical 1080x1920) were used directly as the project format.
 
 #### The Video Including my Sounddesign: [Final Video](https://www.instagram.com/reel/Dc8RcC-R2f9/)
 
