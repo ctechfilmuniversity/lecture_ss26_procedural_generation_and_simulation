@@ -45,6 +45,8 @@ Also submitted to the Gauntlet of Gods 3D Community Challenge by @pwnisher. The 
 ### Concept
 The concept is a stylized digital story: Eora is an "error girly" (her name is basically inspired by the word Error) breaking out of a desktop world into a new empty white system. It's like breaking out into the "blank paper" not fearing but longing it.
 
+The project is structured around the Gauntlet of Gods card game format: Eora is designed as a playable champion card with the ability "Afflict" – a damage-over-time effect that fits her digital disintegration aesthetic. The card art and composite were created alongside the animation using the official card creator tool.
+
 Visuals and Simulation: A procedural disintegration effect paired with dynamic glass-shattering simulations and vibrant reflection fields.
 
 Format: Vertical format made for modern short-form video and cinematic reels.
