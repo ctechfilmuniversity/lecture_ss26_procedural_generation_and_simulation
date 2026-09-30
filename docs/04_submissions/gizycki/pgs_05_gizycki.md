@@ -21,6 +21,7 @@ For the final project I created a 5-second, 24 fps vertical (1080x1920) cinemati
 Also submitted to the Gauntlet of Gods 3D Community Challenge by @pwnisher. The challenge provided a concrete, deadline-driven framework to apply and test Niagara particle systems and MetaHuman workflows in a real production context. The tech specs (120 frames, 24 fps, vertical 1080x1920) were used directly as the project format.
 
 #### The Video Including my Sounddesign: [Final Video](https://www.instagram.com/reel/Dc8RcC-R2f9/)
+##### [You can also see it on my website](https://boni-core.onrender.com/projects/eora/)
 
 #### OwnCloud/Google Drive Link: [Click here for the source file](https://owncloud.gwdg.de/index.php/s/csBscry46p3RbgF)
 
