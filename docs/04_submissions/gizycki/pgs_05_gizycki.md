@@ -160,7 +160,6 @@ Exported as a 2160x3840 PNG sequence, then scaled to 1080x1920. Fixed viewport-t
 
 A finished 120-frame cinematic sequence exported as a high-quality PNG sequence and finalized in DaVinci Resolve. The output shows advanced procedural particle behavior with accurate simulation timing and clean refraction.
 
-## **Video with sound:** [Click here to watch the result](https://www.instagram.com/reels/Dc8RcC-R2f9/)
 
 <div align="center">
 <table>
