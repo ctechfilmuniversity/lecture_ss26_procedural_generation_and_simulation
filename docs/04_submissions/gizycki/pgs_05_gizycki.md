@@ -241,19 +241,19 @@ Workload: 3/5. Each session took time, especially the GLSL shader sessions and t
 
 Time Estimates: The estimates were often too optimistic. I mostly needed longer for the homework, but it was also motivating to streamline my workflow, make faster decisions, and account for potential bugs during the planning stage to avoid getting trapped in debugging spirals.
 
-Unreal for CTech: It is valuable to know, but the learning curve is steep, especially on Mac with Apple Silicon. There were many engine-specific bugs like the MetaHuman Assembly crash that had nothing to do with the actual learning goals and cost a lot of time. But I had fun and I will definitely use Unreal in the future.
+Unreal for CTech: It is valuable to know, the learning curve is steep, especially on Mac with Apple Silicon. There were some engine-specific bugs like the MetaHuman Assembly crash that had nothing to do with the actual learning goals and cost a lot of time. But I had fun and I will definitely use Unreal in the future.
 
 Unreal in Class: It works well for showing real-time simulation and procedural generation.
 
-Other Tools: TouchDesigner would be a great addition, especially for audio-reactive and real-time generative visuals. GLSL in VS Code was actually a very accessible starting point and I enjoyed it a lot.
+Other Tools: If possible TouchDesigner would be a great addition, especially for audio-reactive and real-time generative visuals. But we were free to use any program so I was actually fine with how it went. GLSL in VS Code was actually a very accessible starting point and I enjoyed it a lot.
 
-Hints for Future Students: Use GLSL Canvas early to understand shaders before jumping into Unreal materials. On Mac, check the Known Issues page before using experimental features like MetaHuman Creator. Use AI tools for debugging but make sure you understand each step yourself.
+Hints for Future Students: Use GLSL Canvas early to understand shaders before jumping into Unreal materials. On Mac, check the Known Issues page before using experimental features like MetaHuman Creator. Use AI tools for debugging but make sure you understand each step yourself. Also if using AI cross check bugs with some internet reseachings on forums, sometimes you find better answers there. Also, the AIs vary in how well they handle different tasks. For GLSL questions, I found Claude to be good, but Gemini was better for anything related to debugging in Unreal Engine.
 
 Practical Exercises: They fit the theory well. Seeing procedural concepts actually work in code or in Unreal was more motivating than just reading about them. The GLSL shader exercises were my favorites because the feedback was immediate and visual.
 
-Favorite Chapter: My favorite chapter was Noise and Randomness, because it directly connected math to visual art in a way I had never experienced before. My least favorite was the initial Unreal setup, mostly because of technical issues on Mac.
+Favorite Chapter: My favorite chapter was Noise and Randomness, because it directly connected math to visual art. I can't think of a least favorite.
 
-Missing Topics: TouchDesigner for audio-reactive visuals would have fit perfectly into the course content given the intersection with music and generative art.
+Missing Topics: Some audio-reactive visuals would have fit perfectly into the course content given the intersection with music and generative art.
 
 Other Artists: Ezequiel Pini for 3D plant growing simulations, Sage Jenson for organic generative art.
 
@@ -265,7 +265,7 @@ Additional Feedback: I would love to see more sessions that connect procedural g
 
 ### Task 05.03.01 - Course Learnings
 
-During this course I learned how procedural generation works both mathematically and visually. Starting with the Mandelbrot set and complex numbers helped me understand how simple rules can create infinitely complex results. The GLSL sessions taught me how to write fragment shaders from scratch, build Voronoi patterns, and use noise functions to create organic, animated visuals. The biggest challenge was translating visual ideas into mathematical functions. I often knew what I wanted to see but struggled to find the right formula. I challenged myself by not just following tutorials but experimenting with parameters and combining techniques like metaballs and Voronoi. For the final project I combined everything into a real production pipeline in Unreal, which meant solving problems I had never encountered before, like getting MetaHuman to assemble on a buggy engine version and making Niagara simulations render identically in the viewport and in Movie Render Queue.
+During this course I learned how procedural generation works both mathematically and visually. Starting with the Mandelbrot set and complex numbers helped me understand how simple rules can create infinitely complex results. The GLSL sessions taught me how to write fragment shaders from scratch, build Voronoi patterns in GLSL, and use noise functions to create organic, animated visuals. The biggest challenge was translating visual ideas into mathematical functions. I often knew what I wanted to see but struggled to find the right formula. I challenged myself by not just following tutorials but experimenting with parameters and combining techniques like metaballs and Voronoi. For the final project I combined some things I've learned into a real production pipeline in Unreal, which meant solving problems I had never encountered before, like getting MetaHuman to assemble on a buggy engine version and making Niagara simulations render identically in the viewport and in Movie Render Queue.
 
 ### Task 05.03.02 - Skillset Reflection & Next Steps
 
