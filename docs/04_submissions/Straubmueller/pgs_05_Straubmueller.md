@@ -32,23 +32,18 @@ I connected TouchDesigner to Unreal Engine via OSC so that audio analysis values
 
 **Problems**
 
-* Unreal Engine 5 received no OSC signals from TouchDesigner; REC learn test returned `None`.
-
-**Causes**
-
-1. Signal blocked by `127.0.0.1` (Localhost) & incorrect OSC Data Format (`Time Slice` instead of `Sample`).
-2. All three TouchDesigner channels were internally named `low`, sending identical `/low` addresses.
+* Unreal Engine 5 received no OSC signals from TouchDesigner; the REC learn test returned `None`.
 
 **Solution**
 
-* Switched IP to IPv4 (`192.168.178.131`), port to `9000`, and Data Format to `Sample`.
-* Renamed channels in TouchDesigner to `low`, `high`, and `kick` to generate distinct OSC paths (`/low`, `/high`, `/kick`).
+1. The signal was blocked on `127.0.0.1` (localhost), and the OSC Data Format was set to `Time Slice` instead of `Sample`. Switched the IP to the IPv4 address (`192.168.178.131`), the port to `9000` and the Data Format to `Sample`.
+2. All three TouchDesigner channels were internally named `low`, so they sent identical `/low` addresses. Renamed the channels to `low`, `high` and `kick` to generate distinct OSC paths (`/low`, `/high`, `/kick`).
 
 ![OSC Connection](img/Doc_impl_OSC-Connection.png)
 
 <hr style="height:1px; border:none; color:currentColor; background-color:currentColor; opacity:0.2;">
 
-### *2. Concept refinement & Unreal Engine bridge for material parameters – 4h*
+### *2. Concept refinement & Unreal Engine bridge for material parameters – 6h*
 
 I refined my concept after seeing some mood images of abstract organic macro surfaces on pinterest, inspired by microscopic tissue. Its shape is defined by a mathematical function, Voronoi veins run through it, and every kick acts as a heartbeat that sends a pulse of light through the veins.
 
@@ -71,9 +66,9 @@ On the technical side, I built the bridge between my existing OSC setup and the 
 
 <hr style="height:1px; border:none; color:currentColor; background-color:currentColor; opacity:0.2;">
 
-### *3. Material Functions & live control of the function parameters – 4h*
+### *3. Material Functions & live control of the function parameters – 5h*
 
-I built the mathematical core of the scene as reusable Material Functions in Unreal Engine. `MF_Field` calculates the height of the organic surface from three blended functions (crossed sine waves, a five-petal polar "flower" and ring waves), including domain warping and a soft fade towards the edges. `MF_FieldNormal` derives the surface normals from the field, so the lighting follows the deformation. `MF_Mask` creates a soft circular region mask that later limits where the veins appear.
+Next was building the mathematical core of the scene as reusable Material Functions in Unreal Engine. `MF_Field` calculates the height of the organic surface from three blended functions (crossed sine waves, a five-petal polar "flower" and ring waves), including domain warping and a soft fade towards the edges. `MF_FieldNormal` derives the surface normals from the field, so the lighting follows the deformation. `MF_Mask` creates a soft circular region mask that later limits where the veins appear.
 
 I also added a shared clock (`Now`), which the Blueprint writes into the Material Parameter Collection every frame, so that materials and particles stay in sync with the heartbeat. Finally, I set up live control: a Constant CHOP in TouchDesigner sends the function parameters (`freq`, `amp`, `warp`, `funcblend`) via OSC, Remote Control maps them from 0–1 to their actual ranges, and `BP_Organism` passes them on to `MPC_Organism`.
 
@@ -85,25 +80,19 @@ I also added a shared clock (`Now`), which the Blueprint writes into the Materia
 
 <hr style="height:1px; border:none; color:currentColor; background-color:currentColor; opacity:0.2;">
 
-### *4. Organic surface with live deformation – 2h*
+### *4. Organic surface with live deformation – 3h*
 
 I created a subdivided plane (2000 × 2000 units, 256 × 256 subdivisions) in Unreal's Modeling Mode and built the material `M_Surface` for it. The material uses the Subsurface shading model for a soft, skin-like look. It deforms the plane with World Position Offset based on `MF_Field` and gets its lighting from the normals of `MF_FieldNormal`. The surface now moves in real time and can be reshaped live with the sliders in TouchDesigner (frequency, amplitude, warp and blending between the three functions).
 
-
 **Problems**
 
-* The valleys of the surface appeared black with flickering, hard edges.
-* In Play mode the surface was completely flat, although it was deformed in the editor.
-
-**Causes**
-
-1. Everything below the original height of the plane was darkened: first the default level floor cut through the valleys, then Lumen still treated the area below the original flat plane as "inside" the mesh (Lumen's software ray tracing does not support World Position Offset).
-2. The range mapping in Remote Control (0–1 → 0–100) did not convert the values, so `Amp` arrived as 0.4 instead of 40.
+1. The valleys of the surface appeared black with flickering, hard edges.
+2. In Play mode the surface was completely flat, although it was deformed in the editor.
 
 **Solution**
 
-* Deleted the default `Floor` and lifted the whole surface by `Amp` (`MF_Field` + `Amp`), so the valleys never sink below the original height.
-* Removed the Remote Control ranges and scaled the values in `BP_Organism` with Multiply nodes instead (`Freq` × 5, `Amp` × 100, `Warp` × 2, `FuncBlend` × 2).
+1. Everything below the original height of the plane was darkened: first the default level floor cut through the valleys, then Lumen still treated the area below the flat plane as "inside" the mesh, because its software ray tracing does not support World Position Offset. Deleted the default `Floor` and lifted the whole surface by `Amp` (`MF_Field` + `Amp`), so the valleys never sink below the original height.
+2. The range mapping in Remote Control (0–1 → 0–100) did not convert the values, so `Amp` arrived as 0.4 instead of 40. Removed the Remote Control ranges and scaled the values in `BP_Organism` with Multiply nodes instead (`Freq` × 5, `Amp` × 100, `Warp` × 2, `FuncBlend` × 2).
 
 ![M_Surface](img/Doc_impl_M_Surface.png)
 
@@ -111,7 +100,93 @@ I created a subdivided plane (2000 × 2000 units, 256 × 256 subdivisions) in Un
 
 ![Surface Lumen Error](img/Doc_impl_Step4_finished.png)
 
----
+
+### *5. Voronoi veins with growth and heartbeat pulse – 9h*
+
+I generated an organic vein network directly in the surface material using a Voronoi algorithm in a Custom HLSL node (`MF_Voronoi`). The cell edges form the veins, a finer second Voronoi layer adds capillaries, and domain warping makes the cells look grown rather than geometric. The veins are colored, slightly raised from the skin, and limited to a circular zone by `MF_Mask`.
+
+The heart of the step is `MF_Pulse`: on every kick, the Blueprint stores the current time as `PulseStart`, and the material sends a ring of light from the heart outwards through the network, cell by cell, fading over time. A `Growth` parameter lets the network grow outwards from the heart. Two hearts alternate on every kick (`UseA` toggle in `BP_Organism`), so the waves overlap and the rhythm feels more alive. To make the veins look truly raised, I added a bump-mapping Custom node (`VeinBump`) that bends the surface normals along the veins, so they catch light and cast shading.
+
+
+**Problems**
+
+1. After reopening the project, `Amp` could no longer be controlled from TouchDesigner, although all other sliders still worked.
+2. The veins looked flat, even with a higher `VeinHeight`.
+
+**Solution**
+
+1. The Remote Control preset contained two OSC bindings for `Amp` that blocked each other. Deleted the duplicate binding and saved the preset separately.
+2. The lighting only used the normals of the large field, and the mesh (256 × 256 subdivisions) was too coarse to displace such thin lines geometrically. Added the vein height to the normals with a bump-mapping Custom node (screen-space derivatives of the vein height), so the veins get their own highlights and shadows.
+
+![M_Surface](img/Doc_impl_VoronoiSkin.png)
+
+![Surface Lumen Error](img/Doc_impl_MF_Voronoi.png)
+
+![Surface Lumen Error](img/Doc_impl_M_Surface_Voronoi.png)
+
+<hr style="height:1px; border:none; color:currentColor; background-color:currentColor; opacity:0.2;">
+
+### *6. Pearls in Niagara with forces and heartbeat push – 5h*
+
+I created a GPU particle system (`NS_Pearls`) that places around 3,000 pearl-like spheres on the organic surface. Each pearl remembers its starting position (`RestPos`) when it spawns. All movement happens in a single Scratch Pad module with a Custom HLSL node written by Claude: it evaluates the same field function as the surface material, so every pearl sits exactly on the moving skin. A spring pulls the pearls back to their rest position, drag calms the motion, and pearls are only visible in the valleys of the surface. On every kick, the heartbeat wave pushes the pearls away from the heart and makes them swell briefly, perfectly in sync with the light pulse in the veins. The values come from the shared `MPC_Organism` via a Niagara Parameter Collection (`NPC_Organism`). The pearls use a clear-coat material with a Fresnel-based shimmer from pink to green, similar to mother-of-pearl, and cast shadows onto the skin.
+
+![M_Surface](img/Doc_impl_NS_Pearls.png)
+
+![Surface Lumen Error](img/Doc_impl_NS_Pearls_ScratchModule.png)
+
+![Surface Lumen Error](img/Doc_impl_NS_Pearls_CustomHLSL.png)
+
+![Surface Lumen Error](img/Doc_impl_Pearls.png)
+
+<hr style="height:1px; border:none; color:currentColor; background-color:currentColor; opacity:0.2;">
+
+### *7. Organic Voronoi and Two Material Zones – Xh*
+
+The vein net now reacts to the function's height. Dense small cells sit in the valleys and merge into a few large cells on the hills, so a large cell borders many small ones. This is done with two Voronoi networks (fine + coarse) in one Custom HLSL node. Each fine cell merges based on the height at its centre, and its walls fade out once both neighbours have merged. The coarse network only shows where cells have merged. The material was split into dark red valleys and light blue hills, joined by a long, soft gradient with a red halo along the large veins. The pearls are now pushed by both hearts. I then let the ~140-node material graph rebuilt by claude as copy-paste text (Unreal's T3D format), grouped into labelled comment boxes with adjustable Constants and colour pickers. This kept the graph readable and made it much faster to try out different visual options.
+
+**Problems**
+1. Blending three Voronoi layers, and later a weighted single Voronoi, produced broken veins, straight seams, sliver cells and hectic motion.
+2. Fading veins by height created a visible straight boundary between red and light, with dangling vein ends.
+3. Shader compile errors ("DerivCoarseX not valid in shader model vs_6_6", "return float2 p = …").
+4. Patchy colours and jagged edges in the red–blue gradient.
+
+**Solution**
+1. and 2. Separate layers can't connect, distance weights let far-away cells leak into pixels, and fading only hid veins instead of changing the network. Replaced all of this with two plain, unweighted Voronoi networks and a per-cell merge value: walls thin out and fade, so every visible wall stays closed.
+3. `ddx`/`ddy` don't exist in the vertex shader that computes World Position Offset, and quotation marks in a code comment cut off the pasted code. Removed both.
+4. Per-cell values jumped at invisible walls and red→blue blending passed through purple. Switched to a single light blue, averaged cell states smoothly, limited the halo to large veins, and used a three-stop gradient (red → light warm tone → light blue).
+
+![M_Surface Claude Rebuild](img/Doc_impl_M_Surface_Rebuild.png)
+
+![M_Surface Errors](img/Doc_impl_M_Surface_Errors.png)
+
+![Surface Lumen Error](img/Doc_impl_Step_07.png)
+
+<hr style="height:1px; border:none; color:currentColor; background-color:currentColor; opacity:0.2;">
+
+### *8. Hairs on the Hills – 4h*
+
+To give the hills a soft, furry texture, I added a second Niagara system (NS_Hair), derived from the pearl system. Thin cone meshes grow only on the hills, gathering in tufts with a few single hairs in between. At rest they curve in a slowly shifting direction like combed fur; high frequencies from TouchDesigner make them straighten up and tremble. A Custom HLSL module in the scratch pad calculates each hair's position, length, orientation and bend, while the material M_Hair performs the curvature via World Position Offset: each ring of the cone rotates slightly further along an arc, preserving the hair's length so the tips can droop. A first attempt that only shifted vertices sideways stretched the hairs instead, so I replaced it with this approach. Finally, a subtle emissive gradient, increasing towards the tip and strongest in the core, gives the hairs depth rather than a flat glow.
+
+**Problems**
+1. The bend values calculated in Niagara could not be passed directly to the material.
+2. The arc bend requires each hair's actual length, which varies per hair and was not available in the material.
+
+**Solution**
+1. As the material's Dynamic Parameter cannot be written to in the Map Set node, I stored the values in custom particle attributes (Particles.BendX, Particles.BendY) and forwarded them with the "Dynamic Material Parameters" module.
+2. The material determines the length itself by transforming the cone axis (0, 0, 100) from local to world space and taking the vector's length, which already includes the particle and Mesh Renderer scale.
+
+
+![Hair](img/Doc_impl_Hair.png)
+
+![M_Hair](img/Doc_impl_M_Surface_M_Hair.png)
+
+![Hair Niagra System Scratch Pad](img/Doc_impl_NS_Hair_ScratchPad.png)
+ 
+![Hair Niagra System Scratch Pad](img/Doc_impl_NS_Hair_ScratchPad_Code.png)
+
+
+<hr style="height:1px; border:none; color:currentColor; background-color:currentColor; opacity:0.2;">
+
 
 ### Resources:
 
@@ -149,6 +224,32 @@ I created a subdivided plane (2000 × 2000 units, 256 × 256 subdivisions) in Un
 - [Unreal Engine Docs – Subsurface Shading Model](https://dev.epicgames.com/documentation/en-us/unreal-engine/subsurface-shading-model-in-unreal-engine)
 - [Unreal Engine Docs – Lumen Technical Details](https://dev.epicgames.com/documentation/en-us/unreal-engine/lumen-technical-details-in-unreal-engine)
 - [Bug fixing and guiding with Claude](https://claude.ai/new)
+
+#### Step 5
+- [The Book of Shaders – Cellular Noise (Voronoi)](https://thebookofshaders.com/12/)
+- [Bug fixing and guiding with Claude](https://claude.ai/new)
+- [Unreal Engine Docs – Custom Material Expressions (HLSL)](https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine)
+- [Unreal Engine Docs – Organizing a Material Graph (Named Reroutes)](https://dev.epicgames.com/documentation/en-us/unreal-engine/organizing-a-material-graph-in-unreal-engine)
+- [Morten S. Mikkelsen – Bump Mapping Unparametrized Surfaces on the GPU](https://hgpu.org/?p=3263)
+
+#### Step 6
+
+- [Unreal Engine Docs – Niagara Scratch Pad Modules](https://dev.epicgames.com/documentation/en-us/unreal-engine/niagara-scratch-pad-modules-in-unreal-engine)
+- [Unreal Engine Docs – Render Module Reference for Niagara (Mesh Renderer)](https://dev.epicgames.com/documentation/en-us/unreal-engine/render-module-reference-for-niagara-effects-in-unreal-engine)
+- [Unreal Engine API – Niagara Parameter Collection](https://dev.epicgames.com/documentation/unreal-engine/API/Plugins/Niagara/UNiagaraParameterCollection)
+
+
+#### Step 7
+- [Bug fixing, guiding and rebuilt of node network with Claude](https://claude.ai/new)
+- [Custom Material Expressions in Unreal Engine (Epic Games)](https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine)
+- [Material Attributes Expressions (Epic Games)](https://dev.epicgames.com/documentation/en-us/unreal-engine/material-attributes-expressions-in-unreal-engine)
+- [Inigo Quilez – Voronoi Edges](https://iquilezles.org/articles/voronoilines/)
+
+#### Step 7
+- [Bug fixing and guiding with Claude](https://claude.ai/new)
+
+
+
 
 ### Results
 ### Project Reflection & Discussion
