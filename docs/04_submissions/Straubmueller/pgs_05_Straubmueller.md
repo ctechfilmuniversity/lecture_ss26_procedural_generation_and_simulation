@@ -187,6 +187,44 @@ To give the hills a soft, furry texture, I added a second Niagara system (NS_Hai
 
 <hr style="height:1px; border:none; color:currentColor; background-color:currentColor; opacity:0.2;">
 
+### *9. Hiding the Edges – 1,5h*
+
+So far, the surface ended in a visible straight edge, which broke the illusion of an endless organism. To hide it, I enlarged the plane to 4000 × 4000 units and added an edge mask to M_Surface: starting at a set distance from the centre (FadeStart 1300, FadeEnd 1900), the surface gradually flattens and fades to black, as do its colour, specular, subsurface and emission. Beneath it, a black ground plane continues the darkness, so the organism appears to dissolve into the void. The vein area and growth radius in the Material Parameter Collection were extended to match the new size.
+
+**Problems**
+1. The larger surface noticeably increased the rendering cost, even in areas that end up completely black.
+2. The pearls and hairs ignored the fading edge: pearls floated above the sunken surface, and hairs kept growing in the black area.
+
+**Solution**
+1. Hiding the edge with fog would not have reduced the cost, as everything behind it is still calculated. Instead, the Voronoi calculation stops early outside the edge mask, and I kept the plane's resolution moderate (512 subdivisions).
+2. I added the same mask with identical values to both Niagara modules, so the pearls sink together with the surface and the hairs shrink to nothing towards the edge.
+
+![Hair Niagra System Scratch Pad](img/Doc_impl_HidingEdge.png)
+
+<hr style="height:1px; border:none; color:currentColor; background-color:currentColor; opacity:0.2;">
+
+### *10. Lighting, Look and Camera – 7h*
+
+In the final step, I refined the overall atmosphere of the scene. The valleys now appear wet and slimy through very low roughness, high specular and a stronger red subsurface scattering with reduced opacity, while the bright shells received a slightly rougher, waxy finish. The pearls were corrected so that they rest on the surface instead of floating above it. For the lighting, I combined Rect Lights with an exponential height fog to create depth, and used bloom to make the pulsing veins glow beyond their edges. Beyond the planned changes, the hairs now also light up in response to high frequencies. Instead of an animated camera, I built a free-flying camera that keeps the cinematic depth of field, allowing me to move through the organism live.
+
+**Problems**
+1. The Sky Light made the edges of the black ground visible, and it cannot be restricted to individual objects.
+2. In the fog, the light sources appeared as bright, clearly visible spots.
+3. The default play camera offered neither depth of field nor the ability to look around freely with a cinematic lens.
+4. The high-frequency value had to reach the hair material per particle, but the dynamic parameters were already in use and unreliable.
+
+**Solution**
+1. I made the ground material unlit, so it ignores all light, and turned off the Sky Light entirely. To keep the studio reflections on the pearls, I sample the HDRI directly in their material using the reflection vector and a Fresnel mask.
+2. Each light's Volumetric Scattering Intensity was set to zero, which removes its presence in the fog without changing how it illuminates the surface.
+3. I created a custom pawn based on the DefaultPawn with an attached CineCamera and set it as the default pawn via a game mode. Enabling "Use Pawn Control Rotation" lets the camera follow the mouse in all directions.
+4. The value is written into the particle colour in Niagara, which the material reliably reads through the Particle Color node and uses to scale the existing emissive gradient.
+
+![Hair Niagra System Scratch Pad](img/Doc_impl_FinalResult-04.png)
+
+![Hair Niagra System Scratch Pad](img/Doc_impl_FinalResult-05.png)
+
+![Hair Niagra System Scratch Pad](img/Doc_impl_FinalResult-03.png)
+
 
 ### Resources:
 
@@ -246,6 +284,12 @@ To give the hills a soft, furry texture, I added a second Niagara system (NS_Hai
 - [Inigo Quilez – Voronoi Edges](https://iquilezles.org/articles/voronoilines/)
 
 #### Step 7
+- [Bug fixing and guiding with Claude](https://claude.ai/new)
+
+#### Step 8
+- [Bug fixing and guiding with Claude](https://claude.ai/new)
+
+#### Step 9
 - [Bug fixing and guiding with Claude](https://claude.ai/new)
 
 
