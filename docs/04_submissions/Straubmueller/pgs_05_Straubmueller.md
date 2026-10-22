@@ -360,15 +360,15 @@ Furthermore, I reshaped the tufts themselves from square patches into round, sli
 
 ### [>> Link to the final Demo Video (っᵔ◡ᵔ)っ](https://owncloud.gwdg.de/index.php/s/cEn2Tans2hgCURr) 
 
-![Final result](img/Doc_Resu_FinalResault-01.png)
+![Final result](img/Doc_Resu_FinalResult-01.png)
 
-![Final result](img/Doc_Resu_FinalResault-03.png)
+![Final result](img/Doc_Resu_FinalResult-03.png)
 
 
-![Final result](img/Doc_Resu_FinalResault-02.png)
-![Final result](img/Doc_Resu_FinalResault-04.png)
-![Final result](img/Doc_Resu_FinalResault-05.png)
-![Final result](img/Doc_Resu_FinalResault-06.png)
+![Final result](img/Doc_Resu_FinalResult-02.png)
+![Final result](img/Doc_Resu_FinalResult-04.png)
+![Final result](img/Doc_Resu_FinalResult-05.png)
+![Final result](img/Doc_Resu_FinalResult-06.png)
 
 ![Final result animation](img/Doc_Resu_FinalGif.gif)
 
