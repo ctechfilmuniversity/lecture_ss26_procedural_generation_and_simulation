@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="345" viewBox="0 0 620 345" role="img" aria-labelledby="title desc">
+  <title id="title">Audio value controls the angle between seeds</title>
+  <desc id="desc">The normalized audio value from 0 to 1 controls the angular step between 135 and 137.508 degrees. The two orange boundary rays mark the possible directions of the next seed.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1L6 4L1 7" fill="none" stroke="#397b80" stroke-width="1.5"/></marker>
+    <style>text{font-family:Arial,Helvetica,sans-serif;fill:#18383d}.label{font-size:16px}</style>
+  </defs>
+  <rect width="620" height="345" rx="16" fill="#f5f8f6"/>
+  <text x="310" y="39" text-anchor="middle" font-size="21" font-weight="700">Audio value: 0–1</text>
+  <circle cx="310" cy="208" r="112" fill="none" stroke="#bfd3cf" stroke-width="2"/>
+  <path d="M310 208L395.8 136" stroke="#819c9d" stroke-width="2"/>
+  <circle cx="395.8" cy="136" r="6" fill="#819c9d"/>
+  <text x="410" y="133" class="label">Previous seed</text>
+  <path d="M310 208L198.43 198.24A112 112 0 0 0 198.11 203.13Z" fill="#b56747" fill-opacity="0.25"/>
+  <path d="M198.43 198.24L310 208L198.11 203.13" fill="none" stroke="#b56747" stroke-width="1.5"/>
+  <text x="181" y="194" text-anchor="end" class="label" style="fill:#a3573a">Next seed range</text>
+  <circle cx="310" cy="208" r="4" fill="#18383d"/>
+  <path d="M366.7 160.4A74 74 0 0 0 236.2 203.2" fill="none" stroke="#397b80" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="285" y="112" text-anchor="middle" font-size="19" font-weight="700" fill="#397b80">135°–137.508°</text>
+</svg>
