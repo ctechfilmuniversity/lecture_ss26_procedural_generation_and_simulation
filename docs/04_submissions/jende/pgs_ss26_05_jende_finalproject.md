@@ -12,7 +12,7 @@ Maria Jende, 10/25/2026
 
 # Final Project - *Liquid Sunflowers*
 
-<img src="./img/05/pgs_05_jende_final.gif" alt="Final Animation" width="300"/>
+<img src="./img/05/pgs_05_jende_final.gif" alt="Final Animation" width="600"/>
 
 <br>
 
@@ -55,11 +55,11 @@ I tested the version without the 3D flowers for audio-reactive animation in Touc
 
 <br>
 
-<img src="./img/05/pgs_05_jende_final.gif" alt="Final Animation" width="500"/>
+<img src="./img/05/pgs_05_jende_final.gif" alt="Final Animation" width="600"/>
 
 <br>
 
-<img src="./img/05/pgs_05_jende_final_0.png" alt="Final 1" width="500"/>
+<img src="./img/05/pgs_05_jende_final_0.png" alt="Final 1" width="600"/>
 
 <img src="./img/05/pgs_05_jende_final_1.png" alt="Final 2" width="400"/>
 
