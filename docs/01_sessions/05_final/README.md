@@ -15,17 +15,18 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de
 
 
 
-* [Homework](#homework)
-* [Final Project - 80 Points](#final-project---80-points)
-    * [Task 05.01 - Free](#task-0501---free)
-* [Wrap-Up - 3 Points](#wrap-up---3-points)
-    * [Task 05.02 - Feedback](#task-0502---feedback)
-* [Learnings - 10 Points](#learnings---10-points)
-    * [Task 05.03.01](#task-050301)
-    * [Task 05.03.02](#task-050302)
-* [How To Submit](#how-to-submit)
-    * [CTech](#ctech)
-    * [VFX](#vfx)
+- [Session 05](#session-05)
+  - [Homework](#homework)
+  - [Final Project - 80 Points](#final-project---80-points)
+    - [Task 05.01 - Free](#task-0501---free)
+  - [Wrap-Up - 3 Points](#wrap-up---3-points)
+    - [Task 05.02 - Feedback](#task-0502---feedback)
+  - [Learnings - 10 Points](#learnings---10-points)
+    - [Task 05.03.01](#task-050301)
+    - [Task 05.03.02](#task-050302)
+  - [How To Submit](#how-to-submit)
+    - [CTech](#ctech)
+    - [VFX](#vfx)
 
 
 ## Homework
@@ -61,8 +62,6 @@ Submit all source files (if too large link to external storage, e.g., OwnCloud),
 * Lessons Learned
 
 Submit your final project as assignment folder `05`.
-
-DEADLINE: The final project is due Oct. 19, both as online submission as well as informal in person presentation in class.
 
 ## Wrap-Up - 3 Points
 
