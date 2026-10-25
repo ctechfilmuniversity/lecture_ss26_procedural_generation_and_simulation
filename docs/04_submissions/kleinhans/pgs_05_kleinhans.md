@@ -18,10 +18,6 @@ Prof. Dr. Lena Gieseke \| l.gieseke@filmuniversitaet.de
 
 # Final Project - Phonotaxis
 
-Git Repo: [Phonotaxis Files](https://github.com/kathapult/PGS_05_Phonotaxis.git)
-
-(website link will follow!)
-
 ## 1. Summary 🏵️ 
  
 ![phonotaxis](img/05_phonotaxis_teaser.png)
@@ -30,7 +26,12 @@ Git Repo: [Phonotaxis Files](https://github.com/kathapult/PGS_05_Phonotaxis.git)
 
 The system runs in a browser via a local server and uses HTML, CSS, JavaScript, and GLSL shaders. Users can upload audio files and select which audio feature controls the arrangement of the seeds. 
 
-Happy exploring! :)
+Happy exploring! :) 
+
+**Link to website**: [Phonotaxis](https://kathapult.github.io/PGS_05_Phonotaxis/)
+
+**Git Repo**: [Phonotaxis Files](https://github.com/kathapult/PGS_05_Phonotaxis.git)
+
 
 ---
 
