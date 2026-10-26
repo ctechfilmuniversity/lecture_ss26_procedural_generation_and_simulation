@@ -26,7 +26,7 @@ The overall goal was to procedurally create trees / a forest in order to reduce 
 
 
 #### Procedural Vegetation Editor
-The PVE graph with different Zwischenstand images
+The PVE graph with different preliminary images
 
 ![pve_graph](./graph.png)
 
