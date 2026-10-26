@@ -40,27 +40,104 @@ Complete and optimize all homework assignments by July 31th. Submissions after t
 
 ### Task 05.01 - Free 
 
-The final project of this lecture is due mid/end of October (*I will announce the date soon*). For the final project, there are approximately **40h** allocated, meaning five days of work. The project must refer to one of the lecture topics. It doesn't need to be done in Unreal. Do what you want. You can also base your project on a tutorial from the internet. The result of the tutorial will not be enough however, you have to develop the project somehow further and make it your own. 
-  
-**The final result must be a completed project and polished**  
-Plan accordingly!
 
-*Hints:*
 
-* Do not underestimate the time it takes to conceptualize and/or to find a good tutorial. Count this time as work time.
-* If you want to base your work on a tutorial, before you commit to it check the comments to see what kind of feedback the tutorial received.
-* Double-check what the tutorial results in (e.g. by watching the last minute first). Oftentimes the preview image of a tutorial will be super nice but the tutorial itself often does not cover the shading and rendering setup - which is fine but be aware of it in advance.
+# No place like here
 
-Submit all source files (if too large link to external storage, e.g., OwnCloud), at least one representative image, a movie (if applicable) and a short project description as `.md` **briefly** covering the following aspects:
+![Image](img/pgs_05/01_1.png)
 
-* Summary
-* Concept
-* Implementation
-* Results
-* Project Reflection & Discussion
-* Lessons Learned
+![Image](img/pgs_05/01_2.png)
 
-Submit your final project as assignment folder `05`.
+![Image](img/pgs_05/01_3.png)
+
+![Image](img/pgs_05/01_4.png)
+
+[Video Link](https://owncloud.gwdg.de/index.php/s/MhuTiz9evsMMXPf)
+
+## Summary
+“No place like here” is an Unreal experience in which you wander through an every repeating and changing maze of rooms and corridors. It is created with procedurally repeating and changing rooms which build an infinite maze to put viewers in a sense of unease and the inevitable realization that there is no escape. The technical implementation focuses on noise, tiling and grid systems in Unreal Blueprints and PCG. 
+
+I had the idea for an ever changing and ever repeating construction of rooms based on the Library of Babel short story by Jorge Luis Borges. In this story there is an infinite library of the same repeating hexagonal room filled with books. These books are filled with randomly assorted characters, but the basis of this place being infinity makes it so every book that has ever been written or will be is contained within it. Instead of generating every book ever or recreating the library I wanted to mix it with my interest in liminal spaces. 
+In my research for this project I also found someone who had already created the library: https://keiwan.itch.io/library-of-babel-3d
+
+I have been fascinated by the concept of a space being dreadful in itself and having a mind of its own, as in House of Leaves or the Backrooms. With these inspirations I wanted to create a procedurally generated network of rooms that confuse through repetition and give viewers an experience of dread. 
+
+### Naming
+The title “No place like here”  should invoke a false feeling of welcomeness, so when read, it should be inviting and bring up comparisons to the phrase “No place like home”. But when experienced it should become more and more obvious that the viewer is trapped in a place which does not let you leave. So there literally is no other place than where they are right now. 
+
+## Implementation
+I structured my project to start with what I didn't understand yet and to build upon that with things I am already familiar with. So I would first need to get a grid of rooms, then set them to vary, then populate the environment and finally make adjustments to visuals.
+
+I started with the Unreal FPS preset, because a first person perspective draws users in more and makes them identify as the player. I then worked with multiple tutorials by [Procedural Minds](https://www.youtube.com/@Procedural_Minds) , deciding I was going to mainly use Unreal's PCG graph editor instead of Blueprints. They function similarly but the PCG systems were more fitting to my goal. 
+
+I created a system in the PCG Graph (/Game/PCG/PCG_Maze), which creates an adjustable point grid that can load and unload. Through random noise the directions of those points are shuffled by increments of 90 degrees. Then I connected that to spawn cubes in that grid. 
+
+After I got that working I needed to model the room in unreal so I could adjust all the settings in my PCG graph accordingly. 
+
+![Image](img/pgs_05/02.png)
+
+![Image](img/pgs_05/03.png)
+
+I then went on to create 3 different room shapes and integrate them into the PCG system. The integration proved hard because I hadn’t considered variation in the initial spawning logic, resulting in a maze consisting exclusively of either Room A or Room B. After looking through multiple online tutorials, I figured out that I would need to create a nested PCG Subgraph within my current PCG system. This subgraph utilizes a parameter array to randomly select and spawn individual room variants per grid point. Here my approach of doing the hardest thing first and then integrating later features really stung me, because I had to rework the spawing system. 
+
+![Image](img/pgs_05/04.png)
+
+I tried to populate the environment with a Blueprint inside my room models but after a lot of ideation I was not really happy with the results. I used the results to create my own room models and used the logic in another PCG system which populates each room with scattered paper documents. 
+
+![Image](img/pgs_05/05.png)
+
+This works by finding points in the mesh from the PCG room system that are perfectly horizontal and putting points there. Then I positioned clusters of points around those so it doesn't look like a random assortment of paper everywhere but rather singular clusters at some points. Here I was already able to apply what I learned previously regarding spawning, random rotation and mesh arrays. 
+
+![Image](img/pgs_05/06.png)
+
+![Image](img/pgs_05/07.png)
+
+Even though the environment is infinitely scalable, I noticed that I should include an option to reduce the scale for less performant computers. I added bookshelves to dynamically cap the ends of the PCG volume. 
+
+![Image](img/pgs_05/08.png)
+
+In the end, I took the time to remove the FPS character's arms, change the movement speed, add a light to the character, draw an icon and loading screen, and adjust various other settings.
+
+![Image](img/pgs_05/09.png)
+
+![Image](img/pgs_05/010.png)
+
+---
+
+[Folder with all large files](https://owncloud.gwdg.de/index.php/s/tgCt4GXyhypIFNz)
+
+*Here is also a video of some of the in-between steps*
+
+
+## Reflection 
+
+I really enjoyed working on this project and I have come back to it a bunch of times even  after reaching my 40 hour goal to play around with more settings and adding just a bit more there and a bit more here. I learned a whole lot through this project and am really fascinated by Unreal. Before this project and this course I always thought my Unity experience would be why I would never work with unreal but now I understand in which ways they are different tools for different tasks. I learned to use PCG systems and became more confident in my work with blueprints. 
+I really hope I can use this project as a basis for something else. Now that I have the environment, I want to do more than just walk around in it. This has really become a passion project and I don’t want it to end here. 
+
+## Challenges
+
+I should have planned more beforehand because a lot of my struggles came from the project being step by step. This of course happened because I didn’t know that much to begin with but some of my struggles could have been avoided earlier. 
+
+The approach to do the hard stuff in the beginning is good if you are not quite sure in which direction the project will develop. But I put a lot of “simple” stuff off and I did not plan my time accordingly. Just because the room creation is hard doesn’t mean you can add and adjust a light in a minute. The last tasks piled up a bit. 
+
+
+
+## Learnings
+
+### General
+I learned how to create PCG systems in unreal, furthered my knowledge of blueprints. I can now understand which part in my system does what and can adjust them and add new features. 
+
+### Abandon and Repurpose
+I tried creating the interior of the rooms with point markers and arrays of possible meshes to fill those. This would have made each interior procedurally different in each room. That took away from the concept of repetition and confusion I liked. It also never really looked as good as I might have hoped. 
+So I scrapped using the procedural room interior for my final version and used it as an inbetween step. I generated rooms, changed the seed and then adjusted objects, added, removed and replaced. I then added those polished rooms into the generator. This gave a random approach to the interior with ideas I would have never thought of and gave me the ability to include rooms I really wanted to have in there. One example of a new idea was when I randomly generated a hallway in which 3 of the paintings were of Ivan the Terrible and because I thought this peculiar coincidence had charm I changed it so all 8 were of Ivan. 
+
+
+### Concept over Approach
+I have noticed that in past projects I focused on what I could do and what tutorials I can find and build my ideas after. That always led to good and functioning results. But in this project I started with a concept and no idea how I would approach it. This led me to way bigger learnings in Unreal which is a software I have never used before this class. Now after I am done, I feel confident enough to use Unreal as a tool in later projects. 
+
+
+
+
 
 ## Wrap-Up - 3 Points
 
@@ -194,8 +271,7 @@ To hand in your homework assignment, you submit images and texts in your OwnClou
 
 That's it. It was a pleasure!
 
-![tom](img/tom.gif)  
-[[pinterest]](https://id.pinterest.com/pin/290271138471721193/)
+
 
 
 ---
